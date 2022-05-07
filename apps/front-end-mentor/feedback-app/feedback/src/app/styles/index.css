@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap");
+.icon-wrapper {
+  padding-top: 0.5rem;
+}
+
+.visually-hidden {
+  visibility: hidden;
+}
+*:focus,
+*:focus-visible {
+  outline-color: 1px solid var(--primary-bravo);
+}

@@ -1,0 +1,84 @@
+{
+  "sourceRoot": "apps/front-end-mentor/feedback-app/feedback/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/front-end-mentor/feedback-app/feedback",
+        "index": "apps/front-end-mentor/feedback-app/feedback/src/index.html",
+        "baseHref": "/",
+        "main": "apps/front-end-mentor/feedback-app/feedback/src/main.tsx",
+        "polyfills": "apps/front-end-mentor/feedback-app/feedback/src/polyfills.ts",
+        "tsConfig": "apps/front-end-mentor/feedback-app/feedback/tsconfig.app.json",
+        "assets": [
+          "apps/front-end-mentor/feedback-app/feedback/src/favicon.ico",
+          "apps/front-end-mentor/feedback-app/feedback/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/front-end-mentor/feedback-app/feedback/src/environments/environment.ts",
+              "with": "apps/front-end-mentor/feedback-app/feedback/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "front-end-mentor-feedback-app-feedback:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "front-end-mentor-feedback-app-feedback:build:development"
+        },
+        "production": {
+          "buildTarget": "front-end-mentor-feedback-app-feedback:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/front-end-mentor/feedback-app/feedback/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/front-end-mentor/feedback-app/feedback"],
+      "options": {
+        "jestConfig": "apps/front-end-mentor/feedback-app/feedback/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["front-end-mentor"]
+}

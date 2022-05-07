@@ -1,0 +1,84 @@
+{
+  "sourceRoot": "apps/front-end-mentor/planets-app/planets/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/front-end-mentor/planets-app/planets",
+        "index": "apps/front-end-mentor/planets-app/planets/src/index.html",
+        "baseHref": "/",
+        "main": "apps/front-end-mentor/planets-app/planets/src/main.tsx",
+        "polyfills": "apps/front-end-mentor/planets-app/planets/src/polyfills.ts",
+        "tsConfig": "apps/front-end-mentor/planets-app/planets/tsconfig.app.json",
+        "assets": [
+          "apps/front-end-mentor/planets-app/planets/src/favicon.ico",
+          "apps/front-end-mentor/planets-app/planets/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/front-end-mentor/planets-app/planets/src/environments/environment.ts",
+              "with": "apps/front-end-mentor/planets-app/planets/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "front-end-mentor-planets-app-planets:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "front-end-mentor-planets-app-planets:build:development"
+        },
+        "production": {
+          "buildTarget": "front-end-mentor-planets-app-planets:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/front-end-mentor/planets-app/planets/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/front-end-mentor/planets-app/planets"],
+      "options": {
+        "jestConfig": "apps/front-end-mentor/planets-app/planets/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
