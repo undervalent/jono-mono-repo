@@ -1,7 +1,10 @@
+import "./app/styles/index.css";
+
 import { StrictMode } from "react";
 import * as ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import "./app/styles/index.css";
+import { RecoilRoot } from "recoil";
+
 import { GlobalStyles } from "./app/styles";
 import App from "./app/app";
 
@@ -12,7 +15,9 @@ root.render(
   <StrictMode>
     <GlobalStyles />
     <BrowserRouter>
-      <App />
+      <RecoilRoot>
+        <App />
+      </RecoilRoot>
     </BrowserRouter>
   </StrictMode>
 );

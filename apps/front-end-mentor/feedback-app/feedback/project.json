@@ -4,7 +4,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/web:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
@@ -64,7 +66,9 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
         "lintFilePatterns": [
           "apps/front-end-mentor/feedback-app/feedback/**/*.{ts,tsx,js,jsx}"
@@ -73,12 +77,16 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/front-end-mentor/feedback-app/feedback"],
+      "outputs": [
+        "coverage/apps/front-end-mentor/feedback-app/feedback"
+      ],
       "options": {
         "jestConfig": "apps/front-end-mentor/feedback-app/feedback/jest.config.ts",
         "passWithNoTests": true
       }
     }
   },
-  "tags": ["front-end-mentor"]
+  "tags": [
+    "front-end-mentor"
+  ]
 }

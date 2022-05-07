@@ -4,7 +4,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/web:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
@@ -64,7 +66,9 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
         "lintFilePatterns": [
           "apps/front-end-mentor/planets-app/planets/**/*.{ts,tsx,js,jsx}"
@@ -73,7 +77,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/front-end-mentor/planets-app/planets"],
+      "outputs": [
+        "coverage/apps/front-end-mentor/planets-app/planets"
+      ],
       "options": {
         "jestConfig": "apps/front-end-mentor/planets-app/planets/jest.config.ts",
         "passWithNoTests": true

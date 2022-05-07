@@ -16,7 +16,9 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
         "lintFilePatterns": [
           "apps/front-end-mentor/feedback-app/feedback-e2e/**/*.{js,ts}"
@@ -25,5 +27,7 @@
     }
   },
   "tags": [],
-  "implicitDependencies": ["front-end-mentor-feedback-app-feedback"]
+  "implicitDependencies": [
+    "front-end-mentor-feedback-app-feedback"
+  ]
 }
