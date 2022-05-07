@@ -1,0 +1,28 @@
+{
+  "sourceRoot": "libs/feedback-ui/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "libs/feedback-ui/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/feedback-ui"
+      ],
+      "options": {
+        "jestConfig": "libs/feedback-ui/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "sourceRoot": "apps/front-end-mentor/planets-app/planets-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/front-end-mentor/planets-app/planets-e2e/cypress.json",
+        "devServerTarget": "front-end-mentor-planets-app-planets:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "front-end-mentor-planets-app-planets:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/front-end-mentor/planets-app/planets-e2e/**/*.{js,ts}"
+        ]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": [
+    "front-end-mentor-planets-app-planets"
+  ]
+}
