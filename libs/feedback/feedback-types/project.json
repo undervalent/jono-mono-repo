@@ -1,0 +1,42 @@
+{
+  "sourceRoot": "libs/feedback/feedback-types/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/libs/feedback/feedback-types",
+        "main": "libs/feedback/feedback-types/src/index.ts",
+        "tsConfig": "libs/feedback/feedback-types/tsconfig.lib.json",
+        "assets": [
+          "libs/feedback/feedback-types/*.md"
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "libs/feedback/feedback-types/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/feedback/feedback-types"
+      ],
+      "options": {
+        "jestConfig": "libs/feedback/feedback-types/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

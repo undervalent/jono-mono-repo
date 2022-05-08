@@ -1,0 +1,53 @@
+/* [data-reach-tabs] {
+} */
+[data-reach-tab-list] {
+  background: transparent;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #8c92b3;
+}
+
+/* [data-reach-tab-panels] {
+   margin-top: 2.4rem;
+} */
+
+/* styles all tabs */
+[data-reach-tab] {
+  font-weight: bold !important;
+  font-size: 1.3rem !important;
+  line-height: 1.9rem !important;
+  color: rgba(58, 67, 116, 0.4) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  height: 5.5rem;
+  border-bottom: 0.45rem solid transparent !important;
+}
+
+/* styles only the selected tab */
+[data-reach-tab][data-selected] {
+  color: rgba(58, 67, 116, 1) !important;
+}
+
+[data-reach-tab][data-selected].tab-in-progress {
+  border-color: var(--primary-alpha) !important;
+}
+[data-reach-tab][data-selected].tab-planned {
+  border-color: var(--primary-charlie) !important;
+}
+[data-reach-tab][data-selected].tab-live {
+  border-color: var(--primary-delta) !important;
+}
+/*
+ styles all tabs */
+[data-reach-tab-panel] {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+[hidden] {
+  display: none !important;
+}

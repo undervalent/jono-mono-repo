@@ -1,0 +1,29 @@
+.dropdown-menu-wrapper {
+  position: relative;
+}
+
+[data-reach-menu-button][aria-expanded="true"] {
+  color: #f2f4fe;
+}
+[data-reach-menu-item] {
+  padding: 1.2rem 2.4rem !important;
+  color: var(--dark-charlie) !important;
+  border-bottom: 1px solid rgba(58, 67, 116, 0.15) !important;
+  height: 4.7rem !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+[data-reach-menu-item][data-selected] {
+  color: var(--primary-alpha) !important;
+  cursor: pointer !important;
+  background: transparent !important;
+}
+
+[data-reach-menu-list] {
+  background: #ffffff !important;
+  box-shadow: 0px 10px 40px -7px rgba(55, 63, 104, 0.350492) !important;
+  border-radius: 1rem !important;
+  width: 25.5rem !important;
+}
+

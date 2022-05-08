@@ -18,8 +18,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@jochoa-mono-repo/feedback-ui": [
-        "libs/feedback-ui/src/index.ts"
+      "@feedback/types": [
+        "libs/feedback/feedback-types/src/index.ts"
       ],
       "@jochoa-mono-repo/hooks": [
         "libs/hooks/src/index.ts"
