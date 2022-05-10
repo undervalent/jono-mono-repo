@@ -1,4 +1,4 @@
-{
+export const data = {
   "currentUser": {
     "image": "https://res.cloudinary.com/dhg6csw2w/image/upload/v1645396620/user-images/image-zena.jpg",
     "name": "Zena Kelley",

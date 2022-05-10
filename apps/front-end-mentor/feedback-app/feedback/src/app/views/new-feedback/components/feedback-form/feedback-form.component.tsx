@@ -9,7 +9,7 @@ import { Button, StyledLinkButton } from "../../../../components/button";
 import { FormInput } from "../../../../components/form-input";
 import { FormDropdown } from "../../../../components/dropdowns";
 import { categoryOptions } from "../../../../lib/constants";
-import NewIcon from "@/assets/shared/icon-new-feedback.svg";
+import NewIcon from "../../../../assets/shared/icon-new-feedback.svg";
 
 import { Wrapper, Img, MenuWrapper } from "../../../shared/styles";
 import { useLocationFrom } from "../../../../lib/hooks";

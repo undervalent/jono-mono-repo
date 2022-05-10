@@ -4,7 +4,7 @@ import { FormInput } from "../../../../components/form-input";
 import { FormDropdown } from "../../../../components/dropdowns";
 import { Button, StyledLinkButton } from "../../../../components/button";
 import { categoryOptions, statusOptions } from "../../../../lib/constants";
-import EditIcon from "@/assets/shared/icon-edit-feedback.svg";
+import EditIcon from "../../../../assets/shared/icon-edit-feedback.svg";
 
 import { Wrapper, Img, MenuWrapper } from "../../../shared/styles";
 import { ButtonWrapper, DeleteWrapper } from "./edit-form.styles";

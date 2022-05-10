@@ -30,6 +30,7 @@ export function useEditFormInfo(): [state: any, handlers: any] {
         const newRequestList = allRequests.filter((el) => el.id !== id);
         setAllRequests(newRequestList);
         navigate("/");
+        return null;
       },
       updateRequest: (values: IValues) => {
         const newItem = {
@@ -41,7 +42,7 @@ export function useEditFormInfo(): [state: any, handlers: any] {
         navigate("/");
       },
     }),
-    [allRequests, id, navigate, setAllRequests]
+    [allRequests, id, navigate, setAllRequests, requestItem]
   );
   const state = { requestItem, from };
   return [state, handlers];

@@ -1,6 +1,6 @@
 import { atom, selector, atomFamily, selectorFamily } from "recoil";
 import _ from "lodash";
-import data from "../data/data.json";
+import { data } from "../data/data";
 import { DropdownValue, ProductRequest } from "@feedback/types";
 import {
   filterProductRequestByStatus,
@@ -10,7 +10,7 @@ import {
 
 const { currentUser, productRequests } = data;
 
-export const requestsAPI = atom({
+export const requestsAPI = atom<ProductRequest[]>({
   key: "requestsAPI",
   default: productRequests,
 });

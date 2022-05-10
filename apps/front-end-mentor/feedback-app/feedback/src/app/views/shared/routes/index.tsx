@@ -23,7 +23,7 @@ const EditFeedback = lazy(() =>
   }))
 );
 
-export const Routing: React.FC = ({ children }) => {
+export const Routing: React.FC = () => {
   return (
     <Suspense fallback={null}>
       <Routes>
