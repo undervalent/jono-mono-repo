@@ -1,7 +1,10 @@
 {
   "version": 2,
   "projects": {
+    "dev-job-devjob-types": "libs/dev-job/devjob-types",
     "feedback-feedback-types": "libs/feedback/feedback-types",
+    "front-end-mentor-dev-job-app-dev-job": "apps/front-end-mentor/dev-job-app/dev-job",
+    "front-end-mentor-dev-job-app-dev-job-e2e": "apps/front-end-mentor/dev-job-app/dev-job-e2e",
     "front-end-mentor-feedback-app-feedback": "apps/front-end-mentor/feedback-app/feedback",
     "front-end-mentor-feedback-app-feedback-e2e": "apps/front-end-mentor/feedback-app/feedback-e2e",
     "front-end-mentor-planets-app-planets": "apps/front-end-mentor/planets-app/planets",

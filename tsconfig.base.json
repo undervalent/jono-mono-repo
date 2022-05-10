@@ -18,6 +18,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@devjobs/types": [
+        "libs/dev-job/devjob-types/src/index.ts"
+      ],
       "@feedback/types": [
         "libs/feedback/feedback-types/src/index.ts"
       ],

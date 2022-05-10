@@ -1,0 +1,28 @@
+{
+  "sourceRoot": "libs/dev-job/devjob-types/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "libs/dev-job/devjob-types/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/dev-job/devjob-types"
+      ],
+      "options": {
+        "jestConfig": "libs/dev-job/devjob-types/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
