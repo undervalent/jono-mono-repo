@@ -1,0 +1,57 @@
+.main-button {
+}
+
+.main-button__small {
+  min-width: 7.3rem;
+}
+.main-button__medium {
+  min-width: 15rem;
+}
+.main-button__large {
+  min-width: 35rem;
+}
+
+.main-button__primary {
+  --background: var(--primary-alpha);
+  background: var(--background);
+  color: #fff;
+}
+.main-button__primary:hover {
+  background: var(--primary-bravo);
+}
+.main-button__secondary {
+  --background: var(--secondary-alpha);
+  background: var(--background);
+  color: var(--primary-charlie);
+}
+.main-button__secondary:hover {
+  background: var(--secondary-bravo);
+}
+.main-button__danger {
+  --background: var(--danger-alpha);
+  background: var(--background);
+  color: #fff;
+}
+.main-button__danger:hover {
+  background: var(--danger-bravo);
+}
+.main-button__icon {
+  padding: 1.7rem 1rem 1.7rem 0.5rem;
+  justify-content: space-around;
+}
+.main-button__icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 10rem;
+  margin-right: 1rem;
+}
+
+.main-button__disabled {
+  pointer-events: none;
+  background: var(--background);
+  opacity: 0.5;
+}
