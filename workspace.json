@@ -13,5 +13,6 @@
     "front-end-mentor-planets-app-planets-e2e": "apps/front-end-mentor/planets-app/planets-e2e",
     "hooks": "libs/hooks",
     "planets-planet-types": "libs/planets/planet-types"
-  }
+  },
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

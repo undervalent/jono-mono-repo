@@ -3,9 +3,6 @@
   "affected": {
     "defaultBase": "main"
   },
-  "cli": {
-    "defaultCollection": "@nrwl/react"
-  },
   "implicitDependencies": {
     "package.json": {
       "dependencies": "*",
@@ -26,14 +23,6 @@
       }
     }
   },
-  "targetDependencies": {
-    "build": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ]
-  },
   "generators": {
     "@nrwl/react": {
       "application": {
@@ -50,5 +39,13 @@
       }
     }
   },
-  "defaultProject": "front-end-mentor-feedback-app-feedback"
+  "defaultProject": "front-end-mentor-feedback-app-feedback",
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ]
+    }
+  }
 }
