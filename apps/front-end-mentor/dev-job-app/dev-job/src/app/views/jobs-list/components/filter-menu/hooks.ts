@@ -3,16 +3,17 @@ import {
   toggleFullTime,
   setSearchQuery,
   setLocation,
-} from "../../../../state/features/filtered";
+  getJobFilterState,
+} from "../../../../state/features/job-list";
 import { ISelectOption } from "@devjobs/types";
 
-interface IState {
+export interface IState {
   locations: ISelectOption[];
   fullTime: boolean;
   searchQuery: string;
 }
 
-interface IHandlers {
+export interface IHandlers {
   handleFullTime(): void;
   handleSearch(e: React.ChangeEvent<HTMLInputElement>): void;
   handleLocation(option: any): void;
@@ -21,11 +22,8 @@ interface IHandlers {
 export function useFilterData(): [IState, IHandlers] {
   const dispatch = useAppDispatch();
 
-  const { locations, fullTime, searchQuery } = useAppSelector((state) => ({
-    fullTime: state.filter.fullTime,
-    searchQuery: state.filter.searchQuery,
-    locations: state.jobList.locations,
-  }));
+  const { locations, fullTime, searchQuery } =
+    useAppSelector(getJobFilterState);
 
   const state = { locations, fullTime, searchQuery };
   const handlers = {

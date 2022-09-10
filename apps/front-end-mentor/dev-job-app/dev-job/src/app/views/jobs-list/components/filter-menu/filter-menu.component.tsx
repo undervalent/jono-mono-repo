@@ -1,46 +1,41 @@
 import React from "react";
-import Select from "react-select";
+import { Select } from "./components/select";
 
 import {
   Wrapper,
-  Divider,
-  LastDivider,
-  Search,
-  HideOnMobile,
+  SearchWrapper,
   SelectMenu,
+  SearchButtonWrapper,
+  SingleWord,
 } from "./filter-menu.styles";
 import { Button, Checkbox } from "../../../../shared-components";
 import { useFilterData } from "./hooks";
+import { SearchInput } from "./components/search-input";
 
 export const FilterMenu = () => {
-  const [
-    { locations, fullTime, searchQuery },
-    { handleFullTime, handleSearch, handleLocation },
-  ] = useFilterData();
+  const [{ locations, fullTime }, { handleFullTime, handleLocation }] =
+    useFilterData();
+
   return (
     <Wrapper>
-      <Divider>
-        <Search>
-          <input type="search" onChange={handleSearch} value={searchQuery} />
-        </Search>
-      </Divider>
-      <HideOnMobile>
-        <Divider>
-          <SelectMenu>
-            <Select isClearable options={locations} onChange={handleLocation} />
-          </SelectMenu>
-        </Divider>
-      </HideOnMobile>
-      <HideOnMobile>
-        <LastDivider>
-          <Checkbox
-            label="Full Time"
-            isSelected={fullTime}
-            onCheckboxChange={handleFullTime}
-          />
-          <Button purpose="primary">Search</Button>
-        </LastDivider>
-      </HideOnMobile>
+      <SearchWrapper>
+        <SearchInput />
+      </SearchWrapper>
+      <SelectMenu>
+        <Select locations={locations} handleLocation={handleLocation} />
+      </SelectMenu>
+      <SearchButtonWrapper>
+        <Checkbox
+          label={
+            <span>
+              Full Time <SingleWord>Only</SingleWord>
+            </span>
+          }
+          isSelected={fullTime}
+          onCheckboxChange={handleFullTime}
+        />
+        <Button purpose="primary">Search</Button>
+      </SearchButtonWrapper>
     </Wrapper>
   );
 };

@@ -1,8 +1,8 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Wrapper } from "./checkbox.styles";
 import CheckMark from "../../assets/desktop/icon-check.svg";
 interface IProps {
-  label: string;
+  label: string | ReactNode;
   isSelected: boolean;
   onCheckboxChange: any;
 }

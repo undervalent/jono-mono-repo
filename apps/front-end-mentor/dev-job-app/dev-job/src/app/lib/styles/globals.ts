@@ -25,6 +25,9 @@ ${CSSReset}
 
   --logo-border-radius: 1.5rem;
   --border-radius: .6rem;
+  --background: red;
+  --input-light: rgba(255,255,255,.5)
+  --input-dark: rgba(25, 32, 45, .5)
 }
   body {
     background: ${({ theme }: GlobalThemeProps) => theme.background};
@@ -76,6 +79,7 @@ export const lightTheme = {
   secondaryBtnText: " #5964E0",
   checkBoxBG: "#E7E8E9",
   checkBoxSelectedBG: "var(--primary-alpha)",
+  input: "var(--input-light)",
 };
 export const darkTheme = {
   background: "var(--dark-bravo)",
@@ -87,4 +91,5 @@ export const darkTheme = {
   secondaryBtnText: "#fff",
   checkBoxBG: "#313743",
   checkBoxSelectedBG: "var(--primary-alpha)",
+  input: "var(--input-dark)",
 };
