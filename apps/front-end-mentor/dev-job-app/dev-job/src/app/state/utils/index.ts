@@ -12,14 +12,9 @@ export const generateSelectOptions = (
   }));
 };
 
-// export const generateJobTitles = (data: IJob[]) => {
-//   const allLocations = data.map((el) => el.position);
-//   const filteredLocations = Array.from(new Set(allLocations));
-//   return filteredLocations.map((el) => ({
-//     value: el,
-//     label: el,
-//   }));
-// };
+function hasSearchQuery(text: string, searchQuery: string) {
+  return text.toLowerCase().includes(searchQuery.toLowerCase());
+}
 
 export const filterJobList = (jobList: IJob[], filterOptions: IFilterState) => {
   const { fullTime, searchQuery, location } = filterOptions;
@@ -32,9 +27,13 @@ export const filterJobList = (jobList: IJob[], filterOptions: IFilterState) => {
     output = output.filter((el) => location.includes(el.location));
   }
   if (searchQuery) {
-    output = output.filter((el) =>
-      el.position.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    output = output.filter((el) => {
+      const hasPosition = hasSearchQuery(el.position, searchQuery);
+      const hasCompany = hasSearchQuery(el.company, searchQuery);
+      const hasRole = hasSearchQuery(el.role.content, searchQuery);
+      const hasDescription = hasSearchQuery(el.description, searchQuery);
+      return hasPosition || hasCompany || hasRole || hasDescription;
+    });
   }
   return output;
 };
