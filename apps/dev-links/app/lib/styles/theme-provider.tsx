@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { tokens } from "@utils";
+import { tokens } from "./design-tokens";
 
 interface ProviderProps {
   children: React.ReactNode;

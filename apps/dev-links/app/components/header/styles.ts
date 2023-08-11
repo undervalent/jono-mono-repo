@@ -25,6 +25,6 @@ gap: ${({ theme }) => theme.spacing.size2};
  padding: ${({ theme } ) => `${theme.spacing.size3} ${ theme.spacing.size7}`};
 
 &:hover, &:focus {
- color: ${({theme})=> theme.colors.primaryDark};
+ color: ${({theme})=> theme.colors.accentDark};
 }
 `
