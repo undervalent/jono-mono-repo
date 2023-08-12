@@ -1,19 +1,23 @@
 import styled from "styled-components";
 import * as Form from "@radix-ui/react-form";
 
+interface Error {
+  $errorMessage: boolean
+}
+
 export const FormField = styled(Form.FormField)`
   position: relative;
   display: grid;
   margin: ${({ theme }) => `${theme.spacing.size1} 0`};
 `;
 
-export const Label = styled(Form.Label)<{errorMessage: boolean}>`
+export const Label = styled(Form.Label)<Error>`
   font-size: ${({ theme }) => theme.fontSize.fontSize1};
   margin-bottom: ${({ theme }) => theme.spacing.three};
-  color: ${({theme,errorMessage}) => errorMessage ? theme.colors.danger : theme.colors.black};
+  color: ${({theme,$errorMessage}) => $errorMessage ? theme.colors.danger : theme.colors.black};
 `;
 
-export const Input = styled.input`
+export const Input = styled.input<Error>`
   all: unset;
   box-sizing: border-box;
   width: 100%;
@@ -24,7 +28,7 @@ export const Input = styled.input`
   height: ${({ theme }) => theme.spacing.size12};
   line-height: 1;
   border-radius: ${({ theme }) => theme.radius.large};
-  border: 1px solid ${({ theme }) => theme.colors.grayLight};
+  border: 1px solid ${({ theme, $errorMessage }) => $errorMessage ? theme.colors.danger : theme.colors.grayLight};
   background: ${({ theme }) => theme.colors.white};
   padding: ${({ theme }) => `${theme.spacing.size3} ${theme.spacing.size10}`};
 

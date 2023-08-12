@@ -33,8 +33,8 @@ export const Input = ({ name, errorMessage, placeholder, label, ...rest }: IProp
     <Styled.FormField name={name}>
       <Styled.IconWrapper>
       {icon}</Styled.IconWrapper>
-      <Styled.Label errorMessage={!!errorMessage} htmlFor={name}>{label}</Styled.Label>
-      <Styled.Input name={name} placeholder={placeholder} {...rest} />
+      <Styled.Label $errorMessage={!!errorMessage} htmlFor={name}>{label}</Styled.Label>
+      <Styled.Input name={name} placeholder={placeholder} {...rest} $errorMessage={!!errorMessage} />
       {!!errorMessage && <Styled.FormMessage>{errorMessage}</Styled.FormMessage>}
     </Styled.FormField>
   );
