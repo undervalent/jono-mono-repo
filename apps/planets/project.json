@@ -1,0 +1,72 @@
+{
+  "name": "planets",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/planets/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/planets"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "planets:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "planets:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "planets:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "planets:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "planets:build:development"
+        },
+        "production": {
+          "buildTarget": "planets:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["coverage/apps/planets"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/apps/planets"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/planets/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": ["fronte-end-menotro"]
+}
