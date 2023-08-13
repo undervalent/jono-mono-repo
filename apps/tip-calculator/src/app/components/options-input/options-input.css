@@ -1,0 +1,37 @@
+.options-input {
+  font: inherit;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  position: relative;
+}
+.options-input__label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--elementLabel);
+  font-size: 16px;
+  margin-bottom: 7px;
+}
+.options-input__text-input {
+  color: var(--dark);
+  font: inherit;
+  background: var(--elementBg);
+  border: none;
+  font-size: 24px;
+  min-height: 48px;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: right;
+  border: 2px solid transparent;
+}
+
+.options-input__text-input-error {
+  border: 2px solid var(--danger);
+}
+.options-input__text-error {
+  color:var(--dangerText) !important;
+}
+.options-input__text-input:focus {
+  border: 2px solid var(--light);
+}

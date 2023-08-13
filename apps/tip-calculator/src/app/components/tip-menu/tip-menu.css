@@ -1,0 +1,28 @@
+.tip-menu {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+.tip-menu__input {
+  color: var(--elementText);
+  font: inherit;
+  background: var(--elementBg);
+  border: none;
+  font-size: 22px;
+  height: 48px;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: right;
+  max-width: 117px;
+  border: 2px solid transparent;
+}
+
+.tip-menu__input:focus {
+  border: 2px solid var(--light);
+}
+.tip-menu__header {
+  color: var(--secondary);
+  font-size: 16px;
+  margin-bottom: 7px;
+}

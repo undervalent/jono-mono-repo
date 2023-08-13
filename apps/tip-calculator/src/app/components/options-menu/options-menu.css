@@ -1,0 +1,16 @@
+.tc-options-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 376px) {
+  .tc-options-menu {
+    width: 379px;
+  }
+}
+.options-menu__icon {
+ max-width: 14px;
+ position: absolute;
+ top:50px;
+ left: 20px;
+}

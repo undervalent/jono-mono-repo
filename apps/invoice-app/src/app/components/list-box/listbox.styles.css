@@ -1,0 +1,98 @@
+[data-reach-listbox-button] {
+  max-width: 24rem;
+  min-height: 4.8rem;
+  border-radius: 0.4rem;
+  margin-top: 1rem;
+  padding: 0 1.7rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  letter-spacing: -0.025px;
+  text-align: left;
+}
+
+[data-reach-listbox-button] [aria-expanded="true"] {
+  border: 1px solid var(--primary-bravo);
+}
+
+[data-reach-listbox-popover] {
+  width: 24rem;
+  outline-color: none !important;
+}
+[data-reach-listbox-popover]:focus {
+  border: none;
+  outline-color: none !important;
+}
+[data-reach-listbox-list]:focus {
+  border: none;
+  outline-color: none !important;
+}
+[data-reach-listbox-list],
+[data-reach-menu-items] {
+  display: block;
+  white-space: nowrap;
+
+  border-radius: 8px;
+  border: none;
+}
+
+[data-reach-listbox-option] {
+  cursor: pointer;
+  display: flex;
+  text-decoration: none;
+  padding: 1.7rem 2.4rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  letter-spacing: -0.025px;
+  align-items: center;
+  justify-content: flex-start;
+}
+[data-reach-menu-item]:hover {
+  background: none;
+}
+[data-reach-menu-item]:last-child {
+  border-bottom: none;
+}
+.popover__light {
+  background: #ffffff;
+  box-shadow: 0px 10px 20px rgba(72, 84, 159, 0.25);
+  border: none;
+}
+.popover__dark {
+  background: var(--dark-delta);
+  box-shadow: 0px 10px 20px rgba(72, 84, 159, 0.25);
+  border: none;
+}
+.dropdown-menu-button__light {
+  color: var(--dark-alpha);
+  border: 1px solid var(--secondary-bravo);
+}
+
+.dropdown-item__light {
+  border-bottom: 1px solid var(--secondary-bravo);
+}
+.dropdown-item__light:hover {
+  color: var(--primary-alpha);
+  background: none;
+}
+
+.dropdown-menu-button__light {
+  background: white;
+  border-bottom: 1px solid var(--secondary-bravo);
+}
+
+.dropdown-menu-button__dark {
+  background: var(--dark-charlie);
+  color: white;
+  border: 1px solid var(--dark-delta);
+}
+
+.dropdown-item__dark {
+  color: white;
+  border-bottom: 1px solid var(--dark-charlie);
+}
+.dropdown-item__dark:hover {
+  background: none;
+  color: var(--primary-alpha);
+}

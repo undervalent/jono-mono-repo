@@ -1,0 +1,64 @@
+.tip-calc__display {
+  font-family: "Space Mono", monospace;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: var(--dark);
+  padding: 25px;
+  min-height: 250px;
+  justify-content: space-around;
+}
+
+.tip-calc__button {
+  width: 120px;
+}
+.tip-calc__reset-btn {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  background: var(--light);
+  border-radius: 5px;
+  min-height: 48px;
+  color: var(--dark);
+  font-size: 20px;
+  cursor: pointer;
+}
+.tip-calc__reset-btn:hover {
+  background: var(--elementSolidHover);
+}
+
+.tip-calc__reset-btn:focus {
+  background: var(--elementSolidHover);
+  border: 2px solid var(--white);
+}
+.tip-calc__reset-btn::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.tip-calc__reset-btn:focus:not(:focus-visible) {
+  outline: none;
+}
+.tip-calc__reset-btn:focus:not(:-moz-focusring) {
+  outline: none;
+}
+
+.tip-calc__reset-btn-disabled {
+  cursor: none;
+  pointer-events: none;
+  opacity: 0.5;
+}
+@media screen and (min-width: 376px) {
+  .tip-calc__display {
+    width: 413px;
+    height: 417px;
+  }
+}
