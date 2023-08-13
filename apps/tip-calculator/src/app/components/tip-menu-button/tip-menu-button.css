@@ -1,0 +1,31 @@
+.tip-menu-button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  font: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  background: var(--dark);
+  border-radius: 5px;
+  min-height: 48px;
+  color: var(--white);
+  font-size: 24px;
+  cursor: pointer;
+  min-width: 117px;
+  margin-bottom: 15px;
+  border: 2px solid transparent;
+}
+
+.tip-menu-button:hover {
+  background: var(--elementSolidHover);
+  color: var(--dark);
+}
+
+.tip-menu-button:focus {
+border: 2px solid var(--light);
+  color: var(--dark);
+  background: var(--elementSolidHover);
+}
