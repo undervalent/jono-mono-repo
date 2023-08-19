@@ -6,8 +6,8 @@
     "build:tip": "npm i && nx run tip-calculator:build:production",
     "build:planets": "npm i && nx run planets:build:production",
     "build:devfinder": "npm i && nx run dev-finder:build:production",
-    "build:devjob": "npm i && nx run dev-job-app:build:production"
-
+    "build:devjob": "npm i && nx run dev-job-app:build:production",
+    "build:resultssummary": "npm i && nx run results-summary:build:production"
   },
   "private": true,
   "dependencies": {

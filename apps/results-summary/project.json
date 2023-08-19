@@ -1,0 +1,72 @@
+{
+  "name": "results-summary",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/results-summary/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/results-summary"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "results-summary:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "results-summary:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "results-summary:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "results-summary:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "results-summary:build:development"
+        },
+        "production": {
+          "buildTarget": "results-summary:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["coverage/apps/results-summary"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/apps/results-summary"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/results-summary/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": ["front-end-mentor"]
+}
