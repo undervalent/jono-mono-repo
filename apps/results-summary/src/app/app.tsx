@@ -31,7 +31,8 @@ const items = [
 
 export function App() {
   return (
-    <main className='summary-container'>
+    <main>
+     <div className='summary-container'>
       <section className="result">
         <h2 className='result__header'>Your result</h2>
         <div className="result__circle">
@@ -46,9 +47,10 @@ export function App() {
         <div className='summary__list'>
           {items.map((summary, idx) => <SummaryItem key={summary.title} {...summary} index={idx} />)}
         </div>
-        <button className="summary__continue-btn">Continue</button>
+        <button className="summary__continue-btn" type="button">Continue</button>
       </section>
-    </main>
+      </div>
+   </main>
   );
 }
 

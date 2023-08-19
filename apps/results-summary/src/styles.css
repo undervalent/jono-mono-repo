@@ -16,8 +16,9 @@ html {
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
   font-size: 62.5%;
+  padding: 0;
+  margin: 0;
 }
-
 /* Sections
  * ========================================================================== */
 
@@ -453,10 +454,7 @@ h1,h2,h3,h4,h5,h6 {
   --lavender: hsl(241, 100%, 89%);
   --gray: hsl(224, 30%, 27%);
   --redBg: var(--red-95-white, linear-gradient(0deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%), #F55);
-}
-body, html {
-  /* height: 100%; */
-  /* width: 100%; */
+  --buttonBg: linear-gradient(180deg, #75F 0%, #6943FF 0.01%, #2F2CE9 100%)
 }
 
 body {

@@ -32,15 +32,25 @@ color: var(--royal-blue)
   gap: 1.2rem;
 }
 .summary-item__headline {
-  font-size: 2.4rem;
+  font-size: 1.6rem;
   font-weight: 500;
 }
 .summary-item__text {
 color: var(--gray);
 text-align: right;
-font-size: 1.8rem;
+font-size: 1.6rem;
 font-weight: 700;
 }
 .summary-item__total {
   opacity: 0.5;
+}
+
+@media screen and (min-width: 752px) {
+
+.summary-item__headline {
+  font-size: 1.8rem;
+}
+.summary-item__text {
+ font-size: 1.8rem;
+}
 }
