@@ -7,7 +7,8 @@
     "build:planets": "npm i && nx run planets:build:production",
     "build:devfinder": "npm i && nx run dev-finder:build:production",
     "build:devjob": "npm i && nx run dev-job-app:build:production",
-    "build:resultssummary": "npm i && nx run results-summary:build:production"
+    "build:resultssummary": "npm i && nx run results-summary:build:production",
+    "build:dictionary": "npm i && nx run dictionary:build:production"
   },
   "private": true,
   "dependencies": {
