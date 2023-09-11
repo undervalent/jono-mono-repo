@@ -54,7 +54,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/apps/planets"],
+      "outputs": ["{workspaceRoot}/coverage/apps/planets"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/apps/planets"

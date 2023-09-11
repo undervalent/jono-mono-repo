@@ -1,3 +1,4 @@
+
 .overlay {
   position: fixed;
   inset: 0;
@@ -28,19 +29,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap:var(--size6);
 }
 .title {
+  color: var(--grayDark);
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: var(--bold);
+  letter-spacing: 1px;
   margin: 0;
-  font-weight: 500;
-  color: var(--mauve-12);
-  font-size: 17px;
-}
-
-.description {
-  margin: 10px 0 20px;
-  color: var(--mauve-11);
-  font-size: 15px;
-  line-height: 1.5;
+  text-transform: uppercase;
 }
 
 .menu {
@@ -48,7 +46,6 @@
   gap: 2rem;
   width: 300px;
 }
-
 @keyframes overlayShow {
   from {
     opacity: 0;
@@ -67,4 +64,24 @@
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
+}
+
+.description {
+  font-size: var(--fontSize8);
+  font-weight: var(--bold);
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--size6);
+  color: var(--grayDark);
+  text-transform: uppercase;
+}
+
+.playerx {
+  color: var(--primaryDark);
+}
+
+.playero {
+  color: var(--accentDark);
 }

@@ -54,7 +54,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/apps/tip-calculator"],
+      "outputs": ["{workspaceRoot}/coverage/apps/tip-calculator"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/apps/tip-calculator"

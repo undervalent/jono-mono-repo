@@ -54,7 +54,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/apps/tic-tac-toe"],
+      "outputs": ["{workspaceRoot}/coverage/apps/tic-tac-toe"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/apps/tic-tac-toe"

@@ -4,7 +4,7 @@ import { gameSlice } from "./features/game";
 
 export const store = configureStore({
   reducer: {
-    game: gameSlice.reducer
+    game: gameSlice.reducer,
   },
   devTools: true,
 });

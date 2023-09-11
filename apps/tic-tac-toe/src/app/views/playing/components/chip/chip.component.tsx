@@ -14,8 +14,8 @@ export function Chip({ variant, title, value }: Props) {
     <article
       className={
         clsx(styles.chip, {
-          [styles.win]: variant === 'win',
-          [styles.loss]: variant === 'loss',
+          [styles.win]: variant === 'xwin',
+          [styles.loss]: variant === 'owin',
           [styles.ties]: variant === 'ties',
         })
       }

@@ -54,7 +54,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/apps/dictionary"],
+      "outputs": ["{workspaceRoot}/coverage/apps/dictionary"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/apps/dictionary"

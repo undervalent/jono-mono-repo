@@ -9,9 +9,9 @@ export function Footer() {
 
   return (
     <section className={styles.container}>
-     <Chip variant="win" title={winLabel} value={xWin} />
+     <Chip variant="xwin" title={winLabel} value={xWin} />
      <Chip variant="ties" title="ties" value={ties} />
-     <Chip variant="loss" title={lossLabel} value={oWin} />
+     <Chip variant="owin" title={lossLabel} value={oWin} />
     </section>
   )
 }
