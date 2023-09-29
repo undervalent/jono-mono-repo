@@ -1,4 +1,5 @@
 import { GameBoard } from "./game";
+import _ from 'lodash';
 const winningConditions = [
   [0, 1, 2],
   [3, 4, 5],
@@ -48,4 +49,32 @@ export function handleValidation(gameState:GameBoard) {
     status: '',
     winningCondition: null
   }
+}
+
+type NumberArray = number[];
+export function getAvailableSpaces(gameBoard: string[]) {
+  const emptySpaces:NumberArray = [];
+
+  gameBoard.forEach((element: string, idx: number) => {
+    if (element) return;
+    emptySpaces.push(idx);
+  });
+
+  return emptySpaces
+}
+
+
+export function getRandomItem(gameBoard: string[]) {
+  const availableSpaces = getAvailableSpaces(gameBoard);
+  const randomItem = _.sample(availableSpaces);
+
+  return randomItem;
+
+}
+export function sleep(milliseconds:number) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
 }

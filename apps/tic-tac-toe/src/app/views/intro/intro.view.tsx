@@ -3,7 +3,7 @@ import PlayerPick from './components/player-pick/player-pick.component'
 import { Button } from '../../../components/button'
 import Logo from '../../../assets/logo.svg'
 import styles from './intro.module.css'
-import { setIsCpu } from '../../../state/features/game';
+import { setIsVsCpu } from '../../../state/features/game';
 import { useAppDispatch } from '../../../state/index';
 
 function useIntro() {
@@ -12,10 +12,10 @@ function useIntro() {
 
   return {
     handlePlayerCpu: () => {
-      dispatch(setIsCpu(true))
+      dispatch(setIsVsCpu(true))
     },
     handlePlayer: () => {
-      dispatch(setIsCpu(false))
+      dispatch(setIsVsCpu(false))
     }
   }
 }

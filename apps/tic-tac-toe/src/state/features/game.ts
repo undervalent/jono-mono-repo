@@ -3,7 +3,7 @@ import {
   createSelector,
 } from "@reduxjs/toolkit";
 import { RootState } from "..";
-import { handleValidation } from "./utils";
+import { handleValidation, getRandomItem, sleep } from "./utils";
 export type GameBoard = string[];
 
 interface InitialState {
@@ -15,13 +15,13 @@ interface InitialState {
   gameBoard: GameBoard;
   firstPlayerMark: 'X' | 'O';
   secondPlayerMark: 'X' | 'O';
-  isCpu: boolean;
+  isVsCpu: boolean;
   winningCondition: number[] | null;
   outcome: 'win' | 'tie' | '';
   isModalActive: boolean;
 }
 
-const gameBoard = ['', '', '', '', '', '', '', '', ''];
+const initialGameBoard = ['', '', '', '', '', '', '', '', ''];
 
 const initialState:InitialState = {
   status: 'intro',
@@ -31,7 +31,7 @@ const initialState:InitialState = {
   currentPlayer: 'X',
   firstPlayerMark: 'X',
   secondPlayerMark: 'O',
-  isCpu: true,
+  isVsCpu: true,
   gameBoard: ['', '', '', '', '', '', '', '', ''],
   winningCondition: null,
   outcome: '',
@@ -55,12 +55,12 @@ export const gameSlice = createSlice({
         state.secondPlayerMark = 'O'
       }
     },
-    setIsCpu: (state, action) => {
-      state.isCpu = action.payload
+    setIsVsCpu: (state, action) => {
+      state.isVsCpu = action.payload
       state.status = 'playing'
     },
     nextGame: (state) => {
-      state.gameBoard = gameBoard
+      state.gameBoard = initialGameBoard
       state.currentPlayer = 'X'
       state.status = 'playing'
       state.outcome = ''
@@ -99,8 +99,8 @@ export const gameSlice = createSlice({
       state.currentPlayer = 'X';
       state.firstPlayerMark= 'X';
       state.secondPlayerMark = 'O';
-      state.isCpu = true;
-      state.gameBoard = ['', '', '', '', '', '', '', '', ''];
+      state.isVsCpu = true;
+      state.gameBoard = initialGameBoard;
       state.winningCondition = null;
       state.outcome = ''
       state.isModalActive = false;
@@ -108,7 +108,7 @@ export const gameSlice = createSlice({
   }
 })
 
-export const { setFirstPlayerMark, setIsCpu, nextGame, setBoardAction, startNewGame, toggleModal } = gameSlice.actions
+export const { setFirstPlayerMark, setIsVsCpu, nextGame, setBoardAction, startNewGame, toggleModal } = gameSlice.actions
 
 export const getFirstPlayerMark = (state:RootState) => state.game.firstPlayerMark;
 export const getSecondPlayerMark = (state:RootState) => state.game.secondPlayerMark;
@@ -117,7 +117,7 @@ export const getCurrentPlayer = (state: RootState) => state.game.currentPlayer
 export const getGameBoard = (state: RootState) => state.game.gameBoard
 export const getWinningCondition = (state: RootState) => state.game.winningCondition
 export const getOutcome = (state: RootState) => state.game.outcome;
-export const getIsCpu = (state: RootState) => state.game.isCpu;
+export const getIsVsCpu = (state: RootState) => state.game.isVsCpu;
 export const getWinTiesLoss = (state: RootState) => {
   return {
     xWin: state.game.xWin,
@@ -126,12 +126,12 @@ export const getWinTiesLoss = (state: RootState) => {
 }
 }
 
-export const getStats = createSelector([getCurrentPlayer,getFirstPlayerMark,getIsCpu,getOutcome], (currentPlayer,firstPlayerMark,isCpu,outcome) => {
+export const getStats = createSelector([getCurrentPlayer,getFirstPlayerMark,getIsVsCpu,getOutcome], (currentPlayer,firstPlayerMark,isVsCpu,outcome) => {
 
-  const vsCpuTitle = isCpu && firstPlayerMark === currentPlayer ? 'You won!' : 'On no, you lost...';
+  const vsCpuTitle = isVsCpu && firstPlayerMark === currentPlayer ? 'You won!' : 'On no, you lost...';
   const vsPlayerTitle = firstPlayerMark === currentPlayer ? 'Player 1 wins!' : 'Player 2 wins!'
   const description = outcome === 'tie' ? 'round tied' : 'Takes the round';
-  const title = isCpu ? vsCpuTitle : vsPlayerTitle;
+  const title = isVsCpu ? vsCpuTitle : vsPlayerTitle;
 
   return {
       currentPlayer,
@@ -142,11 +142,11 @@ export const getStats = createSelector([getCurrentPlayer,getFirstPlayerMark,getI
       submitText:outcome ?  'Next round':'Yes, restart',
     }
 })
+export const getIsCpuTurn = (state:RootState) => state.game.currentPlayer === state.game.secondPlayerMark && state.game.isVsCpu
+export const getGameStats = createSelector([getFirstPlayerMark, getIsVsCpu, getWinTiesLoss],(playerMark, isVsCpu, {xWin,ties,oWin})=> {
 
-export const getGameStats = createSelector([getFirstPlayerMark, getIsCpu, getWinTiesLoss],(playerMark, isCpu, {xWin,ties,oWin})=> {
-
-  const firstPlayer = isCpu ? 'you' : 'P1';
-  const secondPlayer = isCpu ? 'cpu' : 'P2'
+  const firstPlayer = isVsCpu ? 'you' : 'P1';
+  const secondPlayer = isVsCpu ? 'cpu' : 'P2'
 
   const winLabel = playerMark === 'X' ? firstPlayer : secondPlayer;
   const lossLabel = playerMark === 'O' ? firstPlayer : secondPlayer;

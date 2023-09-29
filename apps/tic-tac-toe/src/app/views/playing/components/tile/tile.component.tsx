@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './tile.module.css'
+import _ from 'lodash';
 
 import XHoverIcon from '../../../../../assets/icon-x-outline.svg';
 import XIcon from '../../../../../assets/icon-x.svg';
@@ -8,11 +9,23 @@ import OIcon from '../../../../../assets/icon-o.svg';
 import OWinIcon from '../../../../../assets/icon-o-win.svg';
 import XWinIcon from '../../../../../assets/icon-x-win.svg';
 
-import { getCurrentPlayer, setBoardAction, getGameStatus, getWinningCondition } from '../../../../../state/features/game';
+import { getCurrentPlayer, setBoardAction, getGameStatus, getWinningCondition, getIsVsCpu, getGameBoard, GameBoard } from '../../../../../state/features/game';
 import { useAppSelector, useAppDispatch } from '../../../../../state/index';
-
 type Value = string | null;
 type Idx = number;
+
+type NumberArray = number[];
+
+function getAvailableSpaces(gameBoard: string[]) {
+  const emptySpaces:NumberArray = [];
+
+  gameBoard.forEach((element: string, idx: number) => {
+    if (element) return;
+    emptySpaces.push(idx);
+  });
+
+  return emptySpaces
+}
 
 interface Props {
   value: Value;
@@ -24,6 +37,10 @@ function useTile(value: Value, idx: Idx) {
   const currentPlayer = useAppSelector(getCurrentPlayer);
   const status = useAppSelector(getGameStatus);
   const winningCondition = useAppSelector(getWinningCondition);
+  const isVsCpu = useAppSelector(getIsVsCpu);
+  const gameBoard = useAppSelector(getGameBoard);
+  const availableSpaces = getAvailableSpaces(gameBoard);
+  const randomItem = _.sample(availableSpaces);
 
   const hoveredIcon = currentPlayer === 'X' ? <img src={XHoverIcon} alt="X hover" className={styles.hovered} /> : <img src={OHoverIcon} alt="O hover" className={styles.hovered}/>;
 
@@ -60,7 +77,13 @@ function useTile(value: Value, idx: Idx) {
     icon,
     status
   }, {
-    handleTileClick: ()=> dispatch(setBoardAction(idx))
+    handleTileClick: () => {
+      dispatch(setBoardAction(idx));
+      if (isVsCpu) {
+        console.log('RANDOME -->',randomItem)
+       dispatch(setBoardAction(randomItem));
+      }
+    }
   }]
 }
 
