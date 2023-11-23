@@ -54,14 +54,14 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/apps/dictionary"],
+      "outputs": ["{workspaceRoot}/coverage/apps/dictionary"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/apps/dictionary"
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["apps/dictionary/**/*.{ts,tsx,js,jsx}"]
