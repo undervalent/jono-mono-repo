@@ -54,14 +54,14 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/apps/results-summary"],
+      "outputs": ["{workspaceRoot}/coverage/apps/results-summary"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/apps/results-summary"
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["apps/results-summary/**/*.{ts,tsx,js,jsx}"]

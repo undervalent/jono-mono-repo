@@ -54,14 +54,14 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/apps/dev-finder"],
+      "outputs": ["{workspaceRoot}/coverage/apps/dev-finder"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/apps/dev-finder"
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["apps/dev-finder/**/*.{ts,tsx,js,jsx}"]

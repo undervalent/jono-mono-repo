@@ -54,14 +54,14 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/apps/invoice-app"],
+      "outputs": ["{workspaceRoot}/coverage/apps/invoice-app"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/apps/invoice-app"
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["apps/invoice-app/**/*.{ts,tsx,js,jsx}"]
