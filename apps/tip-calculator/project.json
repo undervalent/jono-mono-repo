@@ -54,14 +54,14 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/apps/tip-calculator"],
+      "outputs": ["{workspaceRoot}/coverage/apps/tip-calculator"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/apps/tip-calculator"
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["apps/tip-calculator/**/*.{ts,tsx,js,jsx}"]
