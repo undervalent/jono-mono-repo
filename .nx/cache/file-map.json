@@ -1,0 +1,3188 @@
+{
+  "version": "6.0",
+  "nxVersion": "17.1.3",
+  "deps": {
+    "@mantine/hooks": "^6.0.19",
+    "@nx/next": "17.1.3",
+    "@radix-ui/react-accessible-icon": "^1.0.3",
+    "@radix-ui/react-checkbox": "^1.0.4",
+    "@radix-ui/react-dialog": "^1.0.4",
+    "@radix-ui/react-form": "^0.0.3",
+    "@radix-ui/react-select": "^1.2.2",
+    "@radix-ui/react-switch": "^1.0.3",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@swc/helpers": "0.5.3",
+    "@tanstack/react-query": "^4.32.6",
+    "@tanstack/react-query-devtools": "^4.32.6",
+    "classnames": "^2.3.2",
+    "date-fns": "^2.30.0",
+    "next": "13.4.1",
+    "next-redux-wrapper": "^8.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.10.1",
+    "react-is": "18.2.0",
+    "react-redux": "^8.1.2",
+    "react-router-dom": "6.11.2",
+    "react-table": "^7.8.0",
+    "recoil": "^0.7.7",
+    "rooks": "^7.14.1",
+    "styled-components": "5.3.6",
+    "styled-media-query": "^2.1.2",
+    "tslib": "^2.3.0",
+    "zod": "^3.22.2",
+    "@nx/cypress": "17.1.3",
+    "@nx/eslint-plugin": "17.1.3",
+    "@nx/jest": "17.1.3",
+    "@nx/js": "17.1.3",
+    "@nx/react": "17.1.3",
+    "@nx/vite": "17.1.3",
+    "@nx/workspace": "17.1.3",
+    "@swc/cli": "~0.1.62",
+    "@swc/core": "1.3.99",
+    "@swc/plugin-styled-components": "^1.5.67",
+    "@testing-library/react": "14.0.0",
+    "@types/jest": "^29.4.0",
+    "@types/node": "18.14.2",
+    "@types/react": "18.2.24",
+    "@types/react-dom": "18.2.9",
+    "@types/react-is": "18.2.2",
+    "@types/styled-components": "5.1.26",
+    "@typescript-eslint/eslint-plugin": "6.12.0",
+    "@typescript-eslint/parser": "6.12.0",
+    "@vitejs/plugin-react": "~4.0.0",
+    "@vitejs/plugin-react-swc": "~3.3.2",
+    "@vitest/coverage-c8": "~0.32.0",
+    "@vitest/ui": "~0.32.0",
+    "babel-jest": "^29.4.1",
+    "babel-plugin-styled-components": "1.10.7",
+    "cypress": "^13.0.0",
+    "eslint": "8.46.0",
+    "eslint-config-next": "13.4.1",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-cypress": "2.15.1",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-react": "7.32.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "jest": "^29.4.1",
+    "jest-environment-jsdom": "^29.4.1",
+    "jsdom": "~22.1.0",
+    "nx": "17.1.3",
+    "prettier": "^2.6.2",
+    "ts-jest": "^29.1.0",
+    "ts-node": "10.9.1",
+    "typescript": "5.2.2",
+    "vite": "~4.3.9",
+    "vite-tsconfig-paths": "~4.2.0",
+    "vitest": "~0.32.0",
+    "@nx/eslint": "17.1.3"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": ".editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": ".eslintignore",
+        "hash": "7663861978715868291"
+      },
+      {
+        "file": ".eslintrc.json",
+        "hash": "17866138117546000433"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "9282048156782452099"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "16448050467312557263"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "235626400633494639"
+      },
+      {
+        "file": "README.md",
+        "hash": "5908091016744454165"
+      },
+      {
+        "file": "apps/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "jest.config.ts",
+        "hash": "12333515226966617182"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "9430166341120122740"
+      },
+      {
+        "file": "libs/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "migrations.json",
+        "hash": "16637069399925763929"
+      },
+      {
+        "file": "nx.json",
+        "hash": "16205124626308133128"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "3509385633886060739"
+      },
+      {
+        "file": "package.json",
+        "hash": "6648044979164997293"
+      },
+      {
+        "file": "tools/tsconfig.tools.json",
+        "hash": "16088922570277978783"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "16936441711144470533"
+      }
+    ],
+    "projectFileMap": {
+      "planets": [
+        {
+          "file": "apps/planets/.eslintrc.json",
+          "hash": "11012487992710232822"
+        },
+        {
+          "file": "apps/planets/index.html",
+          "hash": "1024162603094888406"
+        },
+        {
+          "file": "apps/planets/project.json",
+          "hash": "826426856805697859"
+        },
+        {
+          "file": "apps/planets/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/planets/src/app/App.styles.ts",
+          "hash": "3324387114689488147",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/app.tsx",
+          "hash": "17713875717600752132",
+          "deps": [
+            "npm:react",
+            "npm:recoil",
+            "npm:react-router-dom"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/backdrop/backdrop.component.tsx",
+          "hash": "14594503449696526275",
+          "deps": [
+            "npm:react",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/backdrop/backdrop.styles.ts",
+          "hash": "17978544949428349654",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/backdrop/index.ts",
+          "hash": "16391052640502822145"
+        },
+        {
+          "file": "apps/planets/src/app/components/panel-content/components/button/button.component.tsx",
+          "hash": "7339542409966199399",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/panel-content/components/button/button.styles.ts",
+          "hash": "16132840038568942088",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/panel-content/components/button/index.ts",
+          "hash": "17017939311336942854"
+        },
+        {
+          "file": "apps/planets/src/app/components/panel-content/components/section-menu/index.ts",
+          "hash": "1025922738233547823"
+        },
+        {
+          "file": "apps/planets/src/app/components/panel-content/components/section-menu/section-menu.component.tsx",
+          "hash": "7605594904361466198",
+          "deps": [
+            "npm:react",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/panel-content/components/section-menu/section-menu.styles.ts",
+          "hash": "11545934452850747099",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/panel-content/components/wiki/index.ts",
+          "hash": "9224437610124074267"
+        },
+        {
+          "file": "apps/planets/src/app/components/panel-content/components/wiki/wiki.component.tsx",
+          "hash": "4604581716761855537",
+          "deps": [
+            "npm:react",
+            "npm:react-icons"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/panel-content/components/wiki/wiki.styles.ts",
+          "hash": "13729358505275086447",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/panel-content/index.ts",
+          "hash": "13272532200526893801"
+        },
+        {
+          "file": "apps/planets/src/app/components/panel-content/panel-content.styles.ts",
+          "hash": "4791607095250442096",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/panel-content/panel-content.tsx",
+          "hash": "14345124844642399498",
+          "deps": [
+            "npm:react",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/side-drawer/components/index.ts",
+          "hash": "3173792725191693597"
+        },
+        {
+          "file": "apps/planets/src/app/components/side-drawer/components/menu-button/index.ts",
+          "hash": "15038359226940123592"
+        },
+        {
+          "file": "apps/planets/src/app/components/side-drawer/components/menu-button/menu-button.component.tsx",
+          "hash": "17225885110323055379",
+          "deps": [
+            "npm:react",
+            "npm:react-icons"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/side-drawer/components/menu-button/menu-button.styles.css",
+          "hash": "7753576789114346601"
+        },
+        {
+          "file": "apps/planets/src/app/components/side-drawer/index.ts",
+          "hash": "11393188551656085540"
+        },
+        {
+          "file": "apps/planets/src/app/components/side-drawer/side-drawer.component.tsx",
+          "hash": "1193748928645352116",
+          "deps": [
+            "npm:react",
+            "npm:recoil",
+            "npm:react-router-dom"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/side-drawer/side-drawer.styles.ts",
+          "hash": "7915647308503506858",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/stats/index.ts",
+          "hash": "2777433631656583233"
+        },
+        {
+          "file": "apps/planets/src/app/components/stats/stat-item/index.ts",
+          "hash": "8056287673934909074"
+        },
+        {
+          "file": "apps/planets/src/app/components/stats/stat-item/stat-item.component.tsx",
+          "hash": "1924489847676520326",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/stats/stat-item/stat-item.styles.ts",
+          "hash": "15541900223167987206",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/stats/stats-container.styles.ts",
+          "hash": "18374110468056652279",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/stats/stats-container.tsx",
+          "hash": "2332264312612913709",
+          "deps": [
+            "npm:react",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/tab-menu/index.ts",
+          "hash": "15783072189125655871"
+        },
+        {
+          "file": "apps/planets/src/app/components/tab-menu/tab-menu.component.tsx",
+          "hash": "9536839950288994342",
+          "deps": [
+            "npm:react",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/tab-menu/tab-menu.styles.ts",
+          "hash": "3389178890937566668",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/toolbar/components/toggle-button/index.ts",
+          "hash": "12661541514513550632"
+        },
+        {
+          "file": "apps/planets/src/app/components/toolbar/components/toggle-button/toggle-button.styles.ts",
+          "hash": "15593629387888466495",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/toolbar/components/toggle-button/toggle-button.tsx",
+          "hash": "5362732959760596438",
+          "deps": [
+            "npm:react",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/toolbar/index.ts",
+          "hash": "13451977809226262455"
+        },
+        {
+          "file": "apps/planets/src/app/components/toolbar/toolbar.component.tsx",
+          "hash": "18310171948116198949",
+          "deps": [
+            "npm:react",
+            "npm:recoil",
+            "npm:react-router-dom"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/components/toolbar/toolbar.styles.ts",
+          "hash": "12327210941281760416",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/background-stars.svg",
+          "hash": "5187396889646217657"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/favicon-32x32.png",
+          "hash": "12744533118699211984"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/geology-earth.png",
+          "hash": "8000921863467213095"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/geology-jupiter.png",
+          "hash": "18270701351693287398"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/geology-mars.png",
+          "hash": "6197484277947025816"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/geology-mercury.png",
+          "hash": "16455028714164394917"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/geology-neptune.png",
+          "hash": "17576673305163341711"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/geology-saturn.png",
+          "hash": "1436109704467186121"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/geology-uranus.png",
+          "hash": "3619291433900831391"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/geology-venus.png",
+          "hash": "17975304539343382891"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/icon-chevron.svg",
+          "hash": "3205591638086434983"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/icon-hamburger.svg",
+          "hash": "11327171713533323560"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/icon-source.svg",
+          "hash": "1344902390070635535"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/planet-earth-internal.svg",
+          "hash": "177871713860772305"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/planet-earth.svg",
+          "hash": "12877144918016454225"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/planet-jupiter-internal.svg",
+          "hash": "12152724556324262676"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/planet-jupiter.svg",
+          "hash": "12848129789034387577"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/planet-mars-internal.svg",
+          "hash": "9410453948826028639"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/planet-mars.svg",
+          "hash": "10393967751867569798"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/planet-mercury-internal.svg",
+          "hash": "16939768488766786116"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/planet-mercury.svg",
+          "hash": "15010937754390303291"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/planet-neptune-internal.svg",
+          "hash": "16067734283686930430"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/planet-neptune.svg",
+          "hash": "2396912351565943960"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/planet-saturn-internal.svg",
+          "hash": "4643784000571734311"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/planet-saturn.svg",
+          "hash": "15462900901920957641"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/planet-uranus-internal.svg",
+          "hash": "11658926524244575196"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/planet-uranus.svg",
+          "hash": "11494223721326423310"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/planet-venus-internal.svg",
+          "hash": "13117795784754790718"
+        },
+        {
+          "file": "apps/planets/src/app/lib/assets/planet-venus.svg",
+          "hash": "1519514832061316814"
+        },
+        {
+          "file": "apps/planets/src/app/lib/data/data.json",
+          "hash": "6735001981697546253"
+        },
+        {
+          "file": "apps/planets/src/app/lib/hooks/index.ts",
+          "hash": "14563910139724364206"
+        },
+        {
+          "file": "apps/planets/src/app/lib/hooks/useBodyScrollLock.ts",
+          "hash": "13892043027852270725",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/lib/hooks/usePlanetsImage.ts",
+          "hash": "16945078506669881426"
+        },
+        {
+          "file": "apps/planets/src/app/lib/state/index.ts",
+          "hash": "2609477517696857320",
+          "deps": [
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/planets/src/app/lib/types/index.ts",
+          "hash": "8670000213292926642"
+        },
+        {
+          "file": "apps/planets/src/app/lib/utils/index.ts",
+          "hash": "15663604941703301863"
+        },
+        {
+          "file": "apps/planets/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/planets/src/index.css",
+          "hash": "8425711301240804959"
+        },
+        {
+          "file": "apps/planets/src/main.tsx",
+          "hash": "7072084737500506726",
+          "deps": [
+            "npm:react",
+            "npm:react-dom",
+            "npm:react-router-dom",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/planets/tsconfig.app.json",
+          "hash": "13735997707620885116"
+        },
+        {
+          "file": "apps/planets/tsconfig.json",
+          "hash": "11166545116916107487"
+        },
+        {
+          "file": "apps/planets/tsconfig.spec.json",
+          "hash": "12272256895399471649"
+        },
+        {
+          "file": "apps/planets/vite.config.ts",
+          "hash": "1593895566596054421",
+          "deps": [
+            "npm:vite",
+            "npm:@vitejs/plugin-react-swc",
+            "npm:@nx/vite"
+          ]
+        }
+      ],
+      "dev-finder": [
+        {
+          "file": "apps/dev-finder/.eslintrc.json",
+          "hash": "11012487992710232822"
+        },
+        {
+          "file": "apps/dev-finder/index.html",
+          "hash": "13915472009385117994"
+        },
+        {
+          "file": "apps/dev-finder/project.json",
+          "hash": "2050152282275046391"
+        },
+        {
+          "file": "apps/dev-finder/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/dev-finder/src/app/app.styles.ts",
+          "hash": "14838113646215335138",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dev-finder/src/app/app.tsx",
+          "hash": "12459131818213939926"
+        },
+        {
+          "file": "apps/dev-finder/src/app/components/developer-view/developer-view.styles.ts",
+          "hash": "3723829878596939863",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/dev-finder/src/app/components/developer-view/developer.component.tsx",
+          "hash": "11444841464736442747",
+          "deps": [
+            "npm:react",
+            "npm:date-fns",
+            "npm:react-icons"
+          ]
+        },
+        {
+          "file": "apps/dev-finder/src/app/components/developer-view/index.ts",
+          "hash": "488995718305657953"
+        },
+        {
+          "file": "apps/dev-finder/src/app/components/header/header.component.tsx",
+          "hash": "18425843247089316288",
+          "deps": [
+            "npm:react",
+            "npm:recoil",
+            "npm:react-icons"
+          ]
+        },
+        {
+          "file": "apps/dev-finder/src/app/components/header/header.styles.ts",
+          "hash": "4099807676628550161",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dev-finder/src/app/components/header/index.ts",
+          "hash": "11729177439507169445"
+        },
+        {
+          "file": "apps/dev-finder/src/app/components/search/search-component.tsx",
+          "hash": "18003635520318353115",
+          "deps": [
+            "npm:react",
+            "npm:react-icons",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/dev-finder/src/app/components/search/search.styles.ts",
+          "hash": "12348433501049678889",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dev-finder/src/app/providers/index.tsx",
+          "hash": "9271929621233460117",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/dev-finder/src/app/providers/react-query-provider.tsx",
+          "hash": "14222687500357010669",
+          "deps": [
+            "npm:@tanstack/react-query",
+            "npm:@tanstack/react-query-devtools"
+          ]
+        },
+        {
+          "file": "apps/dev-finder/src/app/providers/recoil-provider.tsx",
+          "hash": "12227250771707964889",
+          "deps": [
+            "npm:react",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/dev-finder/src/app/providers/theme-provider.tsx",
+          "hash": "6120271354964953019",
+          "deps": [
+            "npm:react",
+            "npm:styled-components",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/dev-finder/src/app/services/__mocks__/user.mock.ts",
+          "hash": "17272536576297657278"
+        },
+        {
+          "file": "apps/dev-finder/src/app/services/index.ts",
+          "hash": "17376357778189728330",
+          "deps": [
+            "npm:react",
+            "npm:axios",
+            "npm:@tanstack/react-query",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/dev-finder/src/app/services/utils.ts",
+          "hash": "13138510475030074822"
+        },
+        {
+          "file": "apps/dev-finder/src/app/state/index.ts",
+          "hash": "1942744914192154091",
+          "deps": [
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/dev-finder/src/app/styles/globals.ts",
+          "hash": "7293551737256754342",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dev-finder/src/app/styles/index.ts",
+          "hash": "5999794793314493120",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dev-finder/src/app/types/github.ts",
+          "hash": "10095960932078100319"
+        },
+        {
+          "file": "apps/dev-finder/src/app/types/index.ts",
+          "hash": "6035541418045630864"
+        },
+        {
+          "file": "apps/dev-finder/src/app/types/theme.ts",
+          "hash": "5594460333252222082"
+        },
+        {
+          "file": "apps/dev-finder/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/dev-finder/src/main.tsx",
+          "hash": "763379880219152615",
+          "deps": [
+            "npm:react",
+            "npm:react-dom",
+            "npm:react-router-dom"
+          ]
+        },
+        {
+          "file": "apps/dev-finder/tsconfig.app.json",
+          "hash": "13735997707620885116"
+        },
+        {
+          "file": "apps/dev-finder/tsconfig.json",
+          "hash": "11166545116916107487"
+        },
+        {
+          "file": "apps/dev-finder/tsconfig.spec.json",
+          "hash": "12272256895399471649"
+        },
+        {
+          "file": "apps/dev-finder/vite.config.ts",
+          "hash": "2290541363963814207",
+          "deps": [
+            "npm:vite",
+            "npm:@vitejs/plugin-react-swc",
+            "npm:@nx/vite"
+          ]
+        }
+      ],
+      "invoice-app": [
+        {
+          "file": "apps/invoice-app/.eslintrc.json",
+          "hash": "11012487992710232822"
+        },
+        {
+          "file": "apps/invoice-app/index.html",
+          "hash": "1834565481220330417"
+        },
+        {
+          "file": "apps/invoice-app/project.json",
+          "hash": "12632607799226196896"
+        },
+        {
+          "file": "apps/invoice-app/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/invoice-app/src/app/app.styles.tsx",
+          "hash": "16629212586110056062",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/app.tsx",
+          "hash": "9928235727022280873",
+          "deps": [
+            "npm:styled-components",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/buttons/button/button.component.tsx",
+          "hash": "2893300964992780199",
+          "deps": [
+            "npm:react",
+            "npm:classnames"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/buttons/button/button.styles.css",
+          "hash": "3763940895018904589"
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/buttons/button/index.ts",
+          "hash": "12152008654487908651"
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/buttons/button/stories/Button.stories.tsx",
+          "hash": "16278056328109663517",
+          "deps": [
+            "npm:react",
+            "npm:@storybook/react"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/buttons/index.ts",
+          "hash": "3755811191578293663"
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/buttons/styles/deault-button.css",
+          "hash": "5424577308703020931"
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/buttons/themed-button/index.ts",
+          "hash": "18387211308796457926"
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/buttons/themed-button/stories/themed-button.stories.tsx",
+          "hash": "1770535212993037409",
+          "deps": [
+            "npm:react",
+            "npm:@storybook/react"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/buttons/themed-button/themed-button.compnent.tsx",
+          "hash": "6042896472087180569",
+          "deps": [
+            "npm:react",
+            "npm:classnames",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/buttons/themed-button/themed-button.styles.css",
+          "hash": "5434109860739622521"
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/date-picker/date-picker.component.tsx",
+          "hash": "13930698830377536456",
+          "deps": [
+            "npm:react",
+            "npm:classnames",
+            "npm:react-datepicker",
+            "npm:date-fns",
+            "npm:react-datepicker/dist/react-datepicker.css"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/date-picker/date-picker.styles.css",
+          "hash": "4055606894390288348"
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/date-picker/index.ts",
+          "hash": "13686058932774819172"
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/date-picker/stories/date-picker.stories.tsx",
+          "hash": "9267467757243888818",
+          "deps": [
+            "npm:react",
+            "npm:@storybook/react"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/dropdown/dropdown.component.tsx",
+          "hash": "17976595744439574092",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/dropdown/dropdown.styles.tsx",
+          "hash": "341303790393659891",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/dropdown/index.ts",
+          "hash": "16601085184586761542"
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/inputs/checkbox/checkbox.component.tsx",
+          "hash": "12219595439155066640",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/inputs/checkbox/checkbox.styles.tsx",
+          "hash": "15447445228027171056",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/inputs/checkbox/index.ts",
+          "hash": "4771385483580996526"
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/inputs/choice/choice.component.tsx",
+          "hash": "21015631980214880",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/inputs/choice/choice.context.tsx",
+          "hash": "3429415083430032264",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/inputs/choice/index.ts",
+          "hash": "1436432107983321131"
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/inputs/label/index.ts",
+          "hash": "11090591179559396701"
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/inputs/label/label.component.tsx",
+          "hash": "15147903425398234530",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/inputs/label/label.css",
+          "hash": "14526258529308765270"
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/inputs/label/stories/Label.stories.tsx",
+          "hash": "8489617862948632037",
+          "deps": [
+            "npm:react",
+            "npm:@storybook/react"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/inputs/text-field/index.ts",
+          "hash": "16552098507405299696"
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/inputs/text-field/stories/text-field.stories.tsx",
+          "hash": "151893470430103416",
+          "deps": [
+            "npm:react",
+            "npm:@storybook/react"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/inputs/text-field/text-field.component.tsx",
+          "hash": "11876245588107506341",
+          "deps": [
+            "npm:react",
+            "npm:classnames",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/inputs/text-field/text-field.css",
+          "hash": "1319624741217239739"
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/list-box/index.ts",
+          "hash": "5529726670644342227"
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/list-box/listbox.component.tsx",
+          "hash": "13409661504063938476",
+          "deps": [
+            "npm:react",
+            "npm:classnames",
+            "npm:react-icons",
+            "npm:recoil",
+            "npm:@reach/listbox",
+            "npm:@reach/listbox/styles.css"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/list-box/listbox.styles.css",
+          "hash": "8470836151714616033"
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/list-box/stories/listbox.stories.tsx",
+          "hash": "14591660093591033436",
+          "deps": [
+            "npm:react",
+            "npm:@storybook/react"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/navbar/index.ts",
+          "hash": "5826680055782214883"
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/navbar/navbar.component.tsx",
+          "hash": "5692308328069204431",
+          "deps": [
+            "npm:react",
+            "npm:recoil",
+            "npm:react-icons"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/navbar/navbar.styles.tsx",
+          "hash": "3111932343752729086",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/status-chip/index.ts",
+          "hash": "5319877060439558732"
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/status-chip/status-chip.component.tsx",
+          "hash": "5767636238443086653",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/status-chip/status-chip.styles.tsx",
+          "hash": "11249223921271971476",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/components/status-chip/utils/index.ts",
+          "hash": "10564462916837731001"
+        },
+        {
+          "file": "apps/invoice-app/src/app/hooks/index.ts",
+          "hash": "6066700462496713866"
+        },
+        {
+          "file": "apps/invoice-app/src/app/hooks/useCurrentWidth.tsx",
+          "hash": "4447884988589746755",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/hooks/useLockBodyScroll.tsx",
+          "hash": "10511837455808223279",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/index.css",
+          "hash": "15855942960294349721"
+        },
+        {
+          "file": "apps/invoice-app/src/app/lib/data/invoices.json",
+          "hash": "13316778346585904619"
+        },
+        {
+          "file": "apps/invoice-app/src/app/lib/styles/globals.ts",
+          "hash": "7489238320106939989",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/lib/styles/index.ts",
+          "hash": "8405052566108945275",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/lib/types/index.ts",
+          "hash": "6933248224191472633"
+        },
+        {
+          "file": "apps/invoice-app/src/app/lib/types/invoices.ts",
+          "hash": "5632584500051521989"
+        },
+        {
+          "file": "apps/invoice-app/src/app/lib/types/theme.ts",
+          "hash": "18402826430682041789"
+        },
+        {
+          "file": "apps/invoice-app/src/app/state/form.ts",
+          "hash": "5091222393578796319",
+          "deps": [
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/state/index.ts",
+          "hash": "10722654043124352598"
+        },
+        {
+          "file": "apps/invoice-app/src/app/state/invoices.ts",
+          "hash": "10242467662038486379",
+          "deps": [
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/state/theme.ts",
+          "hash": "6067134837810923765",
+          "deps": [
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/state/user.ts",
+          "hash": "14845007485845566825",
+          "deps": [
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/stories/Header.stories.tsx",
+          "hash": "9838687820739822386",
+          "deps": [
+            "npm:react",
+            "npm:@storybook/react"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/stories/Header.tsx",
+          "hash": "7396535380102237358",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/stories/Introduction.stories.mdx",
+          "hash": "3202305553025834362"
+        },
+        {
+          "file": "apps/invoice-app/src/app/stories/Page.stories.tsx",
+          "hash": "4743000228518843877",
+          "deps": [
+            "npm:react",
+            "npm:@storybook/react"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/stories/Page.tsx",
+          "hash": "18055295922064693043",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/stories/assets/code-brackets.svg",
+          "hash": "1112009941262053247"
+        },
+        {
+          "file": "apps/invoice-app/src/app/stories/assets/colors.svg",
+          "hash": "70613787918346063"
+        },
+        {
+          "file": "apps/invoice-app/src/app/stories/assets/comments.svg",
+          "hash": "9521503280802117255"
+        },
+        {
+          "file": "apps/invoice-app/src/app/stories/assets/direction.svg",
+          "hash": "2992177702218565737"
+        },
+        {
+          "file": "apps/invoice-app/src/app/stories/assets/flow.svg",
+          "hash": "18413723651031157086"
+        },
+        {
+          "file": "apps/invoice-app/src/app/stories/assets/plugin.svg",
+          "hash": "17508760966257502997"
+        },
+        {
+          "file": "apps/invoice-app/src/app/stories/assets/repo.svg",
+          "hash": "15497985304567474255"
+        },
+        {
+          "file": "apps/invoice-app/src/app/stories/assets/stackalt.svg",
+          "hash": "1180133531210893970"
+        },
+        {
+          "file": "apps/invoice-app/src/app/stories/header.css",
+          "hash": "16739693807961009985"
+        },
+        {
+          "file": "apps/invoice-app/src/app/stories/page.css",
+          "hash": "9816693645062284410"
+        },
+        {
+          "file": "apps/invoice-app/src/app/storybook-helpers/index.tsx",
+          "hash": "5414771144909863745",
+          "deps": [
+            "npm:react",
+            "npm:recoil",
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/utils/index.ts",
+          "hash": "3337348976147432270",
+          "deps": [
+            "npm:dinero.js"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/index.ts",
+          "hash": "8602295314097792710"
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/common-styles/index.ts",
+          "hash": "7616434155493984358",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/delete-dialogue/delete-dialogue.component.tsx",
+          "hash": "12797568205975724306",
+          "deps": [
+            "npm:react",
+            "npm:recoil",
+            "npm:@reach/dialog",
+            "npm:@reach/dialog/styles.css"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/delete-dialogue/delete-dialogue.styles.css",
+          "hash": "1106818021293014192"
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/delete-dialogue/delete-dialouge.styles.tsx",
+          "hash": "6597550669503387037",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/delete-dialogue/index.ts",
+          "hash": "11829312874790356921"
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/index.ts",
+          "hash": "5338679399079845127"
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/invoice-content/components/index.ts",
+          "hash": "17239986126566008955"
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/invoice-content/components/invoice-table/components/full-table/full-table.styles.tsx",
+          "hash": "14156575477210700829",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/invoice-content/components/invoice-table/components/full-table/full-table.tsx",
+          "hash": "15942410130921843057",
+          "deps": [
+            "npm:react",
+            "npm:react-table"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/invoice-content/components/invoice-table/components/full-table/index.ts",
+          "hash": "3117810536716681614"
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/invoice-content/components/invoice-table/components/index.ts",
+          "hash": "16681233785952437667"
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/invoice-content/components/invoice-table/components/mobile-table/index.ts",
+          "hash": "16535793934315391345"
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/invoice-content/components/invoice-table/components/mobile-table/mobile-table.component.tsx",
+          "hash": "5369353861933027523",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/invoice-content/components/invoice-table/components/mobile-table-item/index.ts",
+          "hash": "11245864529297650069"
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/invoice-content/components/invoice-table/components/mobile-table-item/table-item.component.tsx",
+          "hash": "1254943030546214156",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/invoice-content/components/invoice-table/components/mobile-table-item/table-item.styles.tsx",
+          "hash": "8748414249331363878",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/invoice-content/components/invoice-table/index.ts",
+          "hash": "15979971340209472134"
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/invoice-content/components/invoice-table/invoice-table.component.tsx",
+          "hash": "3226572062206224269",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/invoice-content/components/invoice-table/invoice-table.styles.ts",
+          "hash": "10517009190421748101",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/invoice-content/index.ts",
+          "hash": "5263559935600885708"
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/invoice-content/invoice-content.component.tsx",
+          "hash": "5706740677772670158",
+          "deps": [
+            "npm:react",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/invoice-content/invoice-content.styles.tsx",
+          "hash": "2698846904563609649",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/invoice-menu/index.ts",
+          "hash": "8740620187977979769"
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/invoice-menu/invoice-menu.component.tsx",
+          "hash": "18285106456458000600",
+          "deps": [
+            "npm:react",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/components/invoice-menu/invoice-menu.styles.tsx",
+          "hash": "4357027543551280592",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/index.ts",
+          "hash": "9026890061765418791"
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/invoice.component.tsx",
+          "hash": "2965061816692815642",
+          "deps": [
+            "npm:react",
+            "npm:recoil",
+            "npm:react-icons"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice/invoice.styles.tsx",
+          "hash": "14380112013121628671",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice-form/index.ts",
+          "hash": "8052836285378408952"
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice-form/invoice-form.component.tsx",
+          "hash": "18006343743527979006",
+          "deps": [
+            "npm:react",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice-form/invoice-form.styles.tsx",
+          "hash": "3048226328725899637",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice-list/components/empty-invoices/empty-invoices.component.tsx",
+          "hash": "10393727582711912125",
+          "deps": [
+            "npm:react",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice-list/components/empty-invoices/empty-invoices.styles.tsx",
+          "hash": "17791620295548440997",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice-list/components/empty-invoices/index.ts",
+          "hash": "992376314065484992"
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice-list/components/header/components/status-filter/index.ts",
+          "hash": "1373437835394097640"
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice-list/components/header/components/status-filter/status-filter.component.tsx",
+          "hash": "6432927490897173410",
+          "deps": [
+            "npm:react",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice-list/components/header/index.ts",
+          "hash": "1135933744184433646"
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice-list/components/header/invoice-header.component.tsx",
+          "hash": "7811362470143236377",
+          "deps": [
+            "npm:react",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice-list/components/header/invoice-header.styles.tsx",
+          "hash": "16202871881733608493",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice-list/components/invoice-item/index.ts",
+          "hash": "7204532208349553315"
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice-list/components/invoice-item/invoice-item.component.tsx",
+          "hash": "402232368836931239",
+          "deps": [
+            "npm:react",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice-list/components/invoice-item/invoice-item.styles.tsx",
+          "hash": "5657265301678831595",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice-list/index.ts",
+          "hash": "2699123687542604597"
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice-list/invoice-list.component.tsx",
+          "hash": "12534043787329950731",
+          "deps": [
+            "npm:react",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/app/views/invoice-list/invoice-list.styles.tsx",
+          "hash": "2533867961898654343",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/invoice-app/src/assets/favicon-32x32.png",
+          "hash": "12744533118699211984"
+        },
+        {
+          "file": "apps/invoice-app/src/assets/icon-arrow-down.svg",
+          "hash": "7299083160811744640"
+        },
+        {
+          "file": "apps/invoice-app/src/assets/icon-arrow-left.svg",
+          "hash": "17242627063490916962"
+        },
+        {
+          "file": "apps/invoice-app/src/assets/icon-arrow-right.svg",
+          "hash": "3580032117552519065"
+        },
+        {
+          "file": "apps/invoice-app/src/assets/icon-calendar.svg",
+          "hash": "6728942767129430695"
+        },
+        {
+          "file": "apps/invoice-app/src/assets/icon-check.svg",
+          "hash": "64457359209212133"
+        },
+        {
+          "file": "apps/invoice-app/src/assets/icon-delete.svg",
+          "hash": "12915946909349474225"
+        },
+        {
+          "file": "apps/invoice-app/src/assets/icon-moon.svg",
+          "hash": "579826997904847683"
+        },
+        {
+          "file": "apps/invoice-app/src/assets/icon-plus.svg",
+          "hash": "9532913615493619527"
+        },
+        {
+          "file": "apps/invoice-app/src/assets/icon-sun.svg",
+          "hash": "5659623910947525406"
+        },
+        {
+          "file": "apps/invoice-app/src/assets/illustration-empty.svg",
+          "hash": "16591047034747867059"
+        },
+        {
+          "file": "apps/invoice-app/src/assets/image-avatar.jpg",
+          "hash": "16541357091917617819"
+        },
+        {
+          "file": "apps/invoice-app/src/assets/logo.svg",
+          "hash": "2580962239674005490"
+        },
+        {
+          "file": "apps/invoice-app/src/main.tsx",
+          "hash": "11149754291045723845",
+          "deps": [
+            "npm:react",
+            "npm:react-dom",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/invoice-app/tsconfig.app.json",
+          "hash": "13735997707620885116"
+        },
+        {
+          "file": "apps/invoice-app/tsconfig.json",
+          "hash": "11166545116916107487"
+        },
+        {
+          "file": "apps/invoice-app/tsconfig.spec.json",
+          "hash": "12272256895399471649"
+        },
+        {
+          "file": "apps/invoice-app/vite.config.ts",
+          "hash": "9583065557151501980",
+          "deps": [
+            "npm:vite",
+            "npm:@vitejs/plugin-react-swc",
+            "npm:@nx/vite"
+          ]
+        }
+      ],
+      "dev-links-e2e": [
+        {
+          "file": "apps/dev-links-e2e/.eslintrc.json",
+          "hash": "14060216369337943343"
+        },
+        {
+          "file": "apps/dev-links-e2e/cypress.config.ts",
+          "hash": "15414076024138857470",
+          "deps": [
+            "npm:cypress",
+            "npm:@nx/cypress"
+          ]
+        },
+        {
+          "file": "apps/dev-links-e2e/project.json",
+          "hash": "10390511128982971385"
+        },
+        {
+          "file": "apps/dev-links-e2e/src/e2e/app.cy.ts",
+          "hash": "17051082486582389694"
+        },
+        {
+          "file": "apps/dev-links-e2e/src/fixtures/example.json",
+          "hash": "11614668686582597233"
+        },
+        {
+          "file": "apps/dev-links-e2e/src/support/app.po.ts",
+          "hash": "11157016311132186162"
+        },
+        {
+          "file": "apps/dev-links-e2e/src/support/commands.ts",
+          "hash": "7314691991044890572"
+        },
+        {
+          "file": "apps/dev-links-e2e/src/support/e2e.ts",
+          "hash": "3666078656922506009"
+        },
+        {
+          "file": "apps/dev-links-e2e/tsconfig.json",
+          "hash": "1788248097864730386"
+        }
+      ],
+      "dictionary": [
+        {
+          "file": "apps/dictionary/.eslintrc.json",
+          "hash": "11012487992710232822"
+        },
+        {
+          "file": "apps/dictionary/index.html",
+          "hash": "7292765235583445010"
+        },
+        {
+          "file": "apps/dictionary/project.json",
+          "hash": "5899939642546177560"
+        },
+        {
+          "file": "apps/dictionary/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/dictionary/src/app/app.tsx",
+          "hash": "11992145562894370491",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/components/definition-content/components/audio-player/audio-player.component.tsx",
+          "hash": "12685576239474930239",
+          "deps": [
+            "npm:react",
+            "npm:react-icons"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/components/definition-content/components/audio-player/audio-player.styles.ts",
+          "hash": "7973418386538309045",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/components/definition-content/components/audio-player/index.ts",
+          "hash": "6213306723291513201"
+        },
+        {
+          "file": "apps/dictionary/src/app/components/definition-content/components/meaning/definition-list.component.tsx",
+          "hash": "5242718962540268329",
+          "deps": [
+            "npm:react",
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/components/definition-content/components/meaning/index.ts",
+          "hash": "461436276589878223"
+        },
+        {
+          "file": "apps/dictionary/src/app/components/definition-content/components/meaning/meaning-list.component.tsx",
+          "hash": "11942450836034677395",
+          "deps": [
+            "npm:react",
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/components/definition-content/components/meaning/synonyms-list.component.tsx",
+          "hash": "3662740901964597419",
+          "deps": [
+            "npm:react",
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/components/definition-content/definition-content.component.tsx",
+          "hash": "16137770338929151180",
+          "deps": [
+            "npm:react",
+            "npm:react-icons"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/components/definition-content/definition-content.styles.ts",
+          "hash": "13456429406782692758",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/components/definition-content/index.ts",
+          "hash": "9731879589206428572"
+        },
+        {
+          "file": "apps/dictionary/src/app/components/dropdown/dropdown.component.tsx",
+          "hash": "16914029379725118486",
+          "deps": [
+            "npm:react",
+            "npm:@radix-ui/react-select",
+            "npm:react-icons"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/components/dropdown/dropdown.styles.ts",
+          "hash": "10918715905443093359",
+          "deps": [
+            "npm:styled-components",
+            "npm:@radix-ui/react-select"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/components/dropdown/index.ts",
+          "hash": "6079194060101752296"
+        },
+        {
+          "file": "apps/dictionary/src/app/components/form/form.component.tsx",
+          "hash": "7737132309364139830",
+          "deps": [
+            "npm:react",
+            "npm:react-icons"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/components/form/form.styles.ts",
+          "hash": "2545758604168559218",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/components/form/hook.ts",
+          "hash": "1891178833418830384",
+          "deps": [
+            "npm:react",
+            "npm:zod"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/components/form/index.ts",
+          "hash": "11129846005662817945"
+        },
+        {
+          "file": "apps/dictionary/src/app/components/header/header.component.tsx",
+          "hash": "14482404516394462884",
+          "deps": [
+            "npm:react",
+            "npm:styled-components",
+            "npm:@radix-ui/react-accessible-icon",
+            "npm:react-icons"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/components/header/index.ts",
+          "hash": "11729177439507169445"
+        },
+        {
+          "file": "apps/dictionary/src/app/components/index.ts",
+          "hash": "2416268956655591447"
+        },
+        {
+          "file": "apps/dictionary/src/app/components/switch/index.ts",
+          "hash": "6016986832313355747"
+        },
+        {
+          "file": "apps/dictionary/src/app/components/switch/switch.component.tsx",
+          "hash": "12866709323688106150",
+          "deps": [
+            "npm:react",
+            "npm:@radix-ui/react-accessible-icon",
+            "npm:react-icons"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/components/switch/switch.styles.ts",
+          "hash": "2495020973577316157",
+          "deps": [
+            "npm:styled-components",
+            "npm:@radix-ui/react-switch"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/lib/styles/common.ts",
+          "hash": "9950223197144271492",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/lib/styles/design-tokens.ts",
+          "hash": "9440285075644077448"
+        },
+        {
+          "file": "apps/dictionary/src/app/lib/styles/globals.ts",
+          "hash": "1304893124471252131",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/lib/styles/index.ts",
+          "hash": "8570160122867448149"
+        },
+        {
+          "file": "apps/dictionary/src/app/lib/styles/reset.ts",
+          "hash": "2304028704510114240",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/lib/types/index.ts",
+          "hash": "1490909479553862367"
+        },
+        {
+          "file": "apps/dictionary/src/app/lib/types/job-list.ts",
+          "hash": "11284426126095455489"
+        },
+        {
+          "file": "apps/dictionary/src/app/lib/types/theme.ts",
+          "hash": "14421975323654861725"
+        },
+        {
+          "file": "apps/dictionary/src/app/lib/utils/index.ts",
+          "hash": "13062671025141900438"
+        },
+        {
+          "file": "apps/dictionary/src/app/providers/index.tsx",
+          "hash": "11865195951987556150",
+          "deps": [
+            "npm:react",
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/state/features/form/api.ts",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/dictionary/src/app/state/features/form/index.ts",
+          "hash": "6553986390475577218",
+          "deps": [
+            "npm:@reduxjs/toolkit"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/state/features/form/types.ts",
+          "hash": "3491640500326065589"
+        },
+        {
+          "file": "apps/dictionary/src/app/state/features/ui/index.ts",
+          "hash": "6600818167824831028",
+          "deps": [
+            "npm:@reduxjs/toolkit"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/state/hooks/index.ts",
+          "hash": "3413893964286441649",
+          "deps": [
+            "npm:react-redux"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/state/store.ts",
+          "hash": "12432840823550466991",
+          "deps": [
+            "npm:@reduxjs/toolkit"
+          ]
+        },
+        {
+          "file": "apps/dictionary/src/app/styles.css",
+          "hash": "681886682417947633"
+        },
+        {
+          "file": "apps/dictionary/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/dictionary/src/assets/icon.svg",
+          "hash": "16539132141168185564"
+        },
+        {
+          "file": "apps/dictionary/src/main.tsx",
+          "hash": "1298784579038328821",
+          "deps": [
+            "npm:react",
+            "npm:react-dom",
+            "npm:react-redux"
+          ]
+        },
+        {
+          "file": "apps/dictionary/styled.d.ts",
+          "hash": "4959460935306566680",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dictionary/tsconfig.app.json",
+          "hash": "13735997707620885116"
+        },
+        {
+          "file": "apps/dictionary/tsconfig.json",
+          "hash": "11166545116916107487"
+        },
+        {
+          "file": "apps/dictionary/tsconfig.spec.json",
+          "hash": "12272256895399471649"
+        },
+        {
+          "file": "apps/dictionary/vite.config.ts",
+          "hash": "3116499594947686875",
+          "deps": [
+            "npm:vite",
+            "npm:@vitejs/plugin-react-swc",
+            "npm:@nx/vite"
+          ]
+        }
+      ],
+      "dev-links": [
+        {
+          "file": "apps/dev-links/.eslintrc.json",
+          "hash": "6634561300352513898"
+        },
+        {
+          "file": "apps/dev-links/app/(pages)/(dashboard)/layout.tsx",
+          "hash": "2043927409459103032",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/dev-links/app/(pages)/(dashboard)/links/page.tsx",
+          "hash": "4866032205735369920",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/dev-links/app/(pages)/(dashboard)/profile/layout.tsx",
+          "hash": "7068211334728293488"
+        },
+        {
+          "file": "apps/dev-links/app/(pages)/(dashboard)/profile/page.tsx",
+          "hash": "6314630241586216442",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/dev-links/app/(pages)/(dashboard)/styles.css",
+          "hash": "15085222359376957027"
+        },
+        {
+          "file": "apps/dev-links/app/(pages)/create-account/page.tsx",
+          "hash": "11894780911281454818",
+          "deps": [
+            "npm:react",
+            "npm:next",
+            "npm:zod"
+          ]
+        },
+        {
+          "file": "apps/dev-links/app/(pages)/global.css",
+          "hash": "3727802178260157473"
+        },
+        {
+          "file": "apps/dev-links/app/(pages)/layout.tsx",
+          "hash": "13661322514837864675"
+        },
+        {
+          "file": "apps/dev-links/app/(pages)/page.tsx",
+          "hash": "14625165442608867178",
+          "deps": [
+            "npm:react",
+            "npm:next",
+            "npm:zod"
+          ]
+        },
+        {
+          "file": "apps/dev-links/app/(pages)/registry.tsx",
+          "hash": "8042242102187572213",
+          "deps": [
+            "npm:react",
+            "npm:next",
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dev-links/app/(pages)/styles.ts",
+          "hash": "5692475946704930901",
+          "deps": [
+            "npm:styled-components",
+            "npm:@radix-ui/react-form",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/dev-links/app/api/hello/route.ts",
+          "hash": "495073956729887886"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/favicon-32x32.png",
+          "hash": "12744533118699211984"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-arrow-right.svg",
+          "hash": "843330643034903281"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-changes-saved.svg",
+          "hash": "10820710934307431280"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-chevron-down.svg",
+          "hash": "17658667587615222226"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-codepen.svg",
+          "hash": "13713098489983272201"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-codewars.svg",
+          "hash": "5978875956873252550"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-devto.svg",
+          "hash": "4126498904138539529"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-drag-and-drop.svg",
+          "hash": "17341434638265656477"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-email.svg",
+          "hash": "2191422292740818118"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-facebook.svg",
+          "hash": "17462862038854336676"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-freecodecamp.svg",
+          "hash": "5063550067033338836"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-frontend-mentor.svg",
+          "hash": "1005646053571232257"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-github.svg",
+          "hash": "6535528698718193585"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-gitlab.svg",
+          "hash": "8927865127211467723"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-hashnode.svg",
+          "hash": "17838766051634005344"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-link-copied-to-clipboard.svg",
+          "hash": "15787243479925362347"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-link.svg",
+          "hash": "3038300389899729188"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-linkedin.svg",
+          "hash": "8164311548950643597"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-links-header.svg",
+          "hash": "14731863226059767754"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-password.svg",
+          "hash": "9646676401753166484"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-preview-header.svg",
+          "hash": "10641464017522002842"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-profile-details-header.svg",
+          "hash": "4894528916228296488"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-stack-overflow.svg",
+          "hash": "13335908436442874092"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-twitch.svg",
+          "hash": "3741537747800361925"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-twitter.svg",
+          "hash": "10993001469330550065"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-upload-image.svg",
+          "hash": "6665996868802936837"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/icon-youtube.svg",
+          "hash": "5743319977111774637"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/illustration-empty.svg",
+          "hash": "18415060741733414343"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/illustration-phone-mockup.svg",
+          "hash": "5203527993477543341"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/logo-devlinks-large.svg",
+          "hash": "3106136966792833631"
+        },
+        {
+          "file": "apps/dev-links/app/assets/images/logo-devlinks-small.svg",
+          "hash": "16833781253050649226"
+        },
+        {
+          "file": "apps/dev-links/app/components/button/button.component.tsx",
+          "hash": "17097826540473514759",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/dev-links/app/components/button/index.ts",
+          "hash": "7899223903687169740"
+        },
+        {
+          "file": "apps/dev-links/app/components/button/styles.ts",
+          "hash": "8821214692201769189",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dev-links/app/components/button/types.ts",
+          "hash": "4426734867104395698",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/dev-links/app/components/header/header.component.tsx",
+          "hash": "1425597538933629361",
+          "deps": [
+            "npm:react",
+            "npm:react-icons",
+            "npm:next",
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dev-links/app/components/header/index.ts",
+          "hash": "11729177439507169445"
+        },
+        {
+          "file": "apps/dev-links/app/components/header/styles.ts",
+          "hash": "13748008250639368423",
+          "deps": [
+            "npm:styled-components",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/dev-links/app/components/index.ts",
+          "hash": "12395968653538136549"
+        },
+        {
+          "file": "apps/dev-links/app/components/input/index.ts",
+          "hash": "14198109184357756535"
+        },
+        {
+          "file": "apps/dev-links/app/components/input/input.component.tsx",
+          "hash": "4998935444102539738",
+          "deps": [
+            "npm:react",
+            "npm:react-icons"
+          ]
+        },
+        {
+          "file": "apps/dev-links/app/components/input/styles.ts",
+          "hash": "5468453314715922322",
+          "deps": [
+            "npm:styled-components",
+            "npm:@radix-ui/react-form"
+          ]
+        },
+        {
+          "file": "apps/dev-links/app/hooks/index.ts",
+          "hash": "10242611548083665911"
+        },
+        {
+          "file": "apps/dev-links/app/hooks/use-form-validator.ts",
+          "hash": "14146215271292320148",
+          "deps": [
+            "npm:react",
+            "npm:zod"
+          ]
+        },
+        {
+          "file": "apps/dev-links/app/lib/styles/design-tokens.ts",
+          "hash": "4374450434897145486"
+        },
+        {
+          "file": "apps/dev-links/app/lib/styles/index.ts",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/dev-links/app/lib/styles/theme-provider.tsx",
+          "hash": "8612990372238263543",
+          "deps": [
+            "npm:react",
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dev-links/app/lib/utils/index.ts",
+          "hash": "3886394852217123204"
+        },
+        {
+          "file": "apps/dev-links/index.d.ts",
+          "hash": "5498222895072842432"
+        },
+        {
+          "file": "apps/dev-links/jest.config.ts",
+          "hash": "10292924837799553394"
+        },
+        {
+          "file": "apps/dev-links/next-env.d.ts",
+          "hash": "5909181270615354023"
+        },
+        {
+          "file": "apps/dev-links/next.config.js",
+          "hash": "9301335525920576465",
+          "deps": [
+            "npm:@nx/next"
+          ]
+        },
+        {
+          "file": "apps/dev-links/project.json",
+          "hash": "16513842258284156284"
+        },
+        {
+          "file": "apps/dev-links/public/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/dev-links/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/dev-links/tsconfig.json",
+          "hash": "18210514357573826375"
+        },
+        {
+          "file": "apps/dev-links/tsconfig.spec.json",
+          "hash": "6922413205408300107"
+        }
+      ],
+      "tip-calculator": [
+        {
+          "file": "apps/tip-calculator/.eslintrc.json",
+          "hash": "11012487992710232822"
+        },
+        {
+          "file": "apps/tip-calculator/index.html",
+          "hash": "10604666265505431764"
+        },
+        {
+          "file": "apps/tip-calculator/project.json",
+          "hash": "13158594663899624054"
+        },
+        {
+          "file": "apps/tip-calculator/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/tip-calculator/src/app/app.tsx",
+          "hash": "1393179814506846719"
+        },
+        {
+          "file": "apps/tip-calculator/src/app/components/display/index.ts",
+          "hash": "920906177925154625"
+        },
+        {
+          "file": "apps/tip-calculator/src/app/components/display/tip-calc-display.compnent.tsx",
+          "hash": "9560563231342997576",
+          "deps": [
+            "npm:react",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/tip-calculator/src/app/components/display/tip-calc-display.css",
+          "hash": "7836051980735786593"
+        },
+        {
+          "file": "apps/tip-calculator/src/app/components/display-item/display-item.css",
+          "hash": "5421665640951585043"
+        },
+        {
+          "file": "apps/tip-calculator/src/app/components/display-item/display-item.tsx",
+          "hash": "4742909433701025305",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/tip-calculator/src/app/components/display-item/index.ts",
+          "hash": "1237868131684762351"
+        },
+        {
+          "file": "apps/tip-calculator/src/app/components/options-input/index.tsx",
+          "hash": "6498674772648560807"
+        },
+        {
+          "file": "apps/tip-calculator/src/app/components/options-input/options-input.component.tsx",
+          "hash": "14242942701490768638",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/tip-calculator/src/app/components/options-input/options-input.css",
+          "hash": "17920140993345324530"
+        },
+        {
+          "file": "apps/tip-calculator/src/app/components/options-menu/index.ts",
+          "hash": "4765428448216903540"
+        },
+        {
+          "file": "apps/tip-calculator/src/app/components/options-menu/options-menu.component.tsx",
+          "hash": "10277273050559427118",
+          "deps": [
+            "npm:react",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/tip-calculator/src/app/components/options-menu/options-menu.css",
+          "hash": "9169168486652629144"
+        },
+        {
+          "file": "apps/tip-calculator/src/app/components/tip-menu/index.ts",
+          "hash": "5364254564500791053"
+        },
+        {
+          "file": "apps/tip-calculator/src/app/components/tip-menu/tip-menu.css",
+          "hash": "9503454719844455300"
+        },
+        {
+          "file": "apps/tip-calculator/src/app/components/tip-menu/tip-menu.tsx",
+          "hash": "1251078261772801762",
+          "deps": [
+            "npm:react",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/tip-calculator/src/app/components/tip-menu-button/index.ts",
+          "hash": "5936440577918939070"
+        },
+        {
+          "file": "apps/tip-calculator/src/app/components/tip-menu-button/tip-menu-button.css",
+          "hash": "9043183379571855655"
+        },
+        {
+          "file": "apps/tip-calculator/src/app/components/tip-menu-button/tip-menu-button.tsx",
+          "hash": "14306504992118351046",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/tip-calculator/src/app/lib/state/index.ts",
+          "hash": "12901999455142492250",
+          "deps": [
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/tip-calculator/src/app/lib/utils/index.ts",
+          "hash": "11400791315258102037"
+        },
+        {
+          "file": "apps/tip-calculator/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/tip-calculator/src/assets/dollar.svg",
+          "hash": "9847587679551976097"
+        },
+        {
+          "file": "apps/tip-calculator/src/assets/logo.svg",
+          "hash": "2418293436307966360"
+        },
+        {
+          "file": "apps/tip-calculator/src/assets/person.svg",
+          "hash": "7843078724887571959"
+        },
+        {
+          "file": "apps/tip-calculator/src/main.tsx",
+          "hash": "10915470290864758702",
+          "deps": [
+            "npm:react",
+            "npm:react-dom",
+            "npm:recoil"
+          ]
+        },
+        {
+          "file": "apps/tip-calculator/src/styles.css",
+          "hash": "12283216321102581861"
+        },
+        {
+          "file": "apps/tip-calculator/tsconfig.app.json",
+          "hash": "13735997707620885116"
+        },
+        {
+          "file": "apps/tip-calculator/tsconfig.json",
+          "hash": "11166545116916107487"
+        },
+        {
+          "file": "apps/tip-calculator/tsconfig.spec.json",
+          "hash": "12272256895399471649"
+        },
+        {
+          "file": "apps/tip-calculator/vite.config.ts",
+          "hash": "10362950627550518029",
+          "deps": [
+            "npm:vite",
+            "npm:@vitejs/plugin-react-swc",
+            "npm:@nx/vite"
+          ]
+        }
+      ],
+      "results-summary": [
+        {
+          "file": "apps/results-summary/.eslintrc.json",
+          "hash": "11012487992710232822"
+        },
+        {
+          "file": "apps/results-summary/index.html",
+          "hash": "10751913103951846610"
+        },
+        {
+          "file": "apps/results-summary/project.json",
+          "hash": "17732082866850276681"
+        },
+        {
+          "file": "apps/results-summary/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/results-summary/src/app/app.css",
+          "hash": "5026275082723136972"
+        },
+        {
+          "file": "apps/results-summary/src/app/app.tsx",
+          "hash": "7852932794005458080"
+        },
+        {
+          "file": "apps/results-summary/src/app/components/summary-item/index.tsx",
+          "hash": "16124126124513950428",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/results-summary/src/app/components/summary-item/styles.css",
+          "hash": "16368723390940115325"
+        },
+        {
+          "file": "apps/results-summary/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/results-summary/src/assets/favicon-32x32.png",
+          "hash": "12744533118699211984"
+        },
+        {
+          "file": "apps/results-summary/src/assets/icon-memory.svg",
+          "hash": "1999786286096341350"
+        },
+        {
+          "file": "apps/results-summary/src/assets/icon-reaction.svg",
+          "hash": "12280576561853913006"
+        },
+        {
+          "file": "apps/results-summary/src/assets/icon-verbal.svg",
+          "hash": "16653070182611530297"
+        },
+        {
+          "file": "apps/results-summary/src/assets/icon-visual.svg",
+          "hash": "5889055079974054119"
+        },
+        {
+          "file": "apps/results-summary/src/main.tsx",
+          "hash": "4731961929376199421",
+          "deps": [
+            "npm:react",
+            "npm:react-dom"
+          ]
+        },
+        {
+          "file": "apps/results-summary/src/styles.css",
+          "hash": "12924889508543670443"
+        },
+        {
+          "file": "apps/results-summary/tsconfig.app.json",
+          "hash": "13735997707620885116"
+        },
+        {
+          "file": "apps/results-summary/tsconfig.json",
+          "hash": "11166545116916107487"
+        },
+        {
+          "file": "apps/results-summary/tsconfig.spec.json",
+          "hash": "12272256895399471649"
+        },
+        {
+          "file": "apps/results-summary/vite.config.ts",
+          "hash": "13680582796437871062",
+          "deps": [
+            "npm:vite",
+            "npm:@vitejs/plugin-react-swc",
+            "npm:@nx/vite"
+          ]
+        }
+      ],
+      "dev-job-app": [
+        {
+          "file": "apps/dev-job-app/.eslintrc.json",
+          "hash": "11012487992710232822"
+        },
+        {
+          "file": "apps/dev-job-app/index.html",
+          "hash": "3759182596001642569"
+        },
+        {
+          "file": "apps/dev-job-app/project.json",
+          "hash": "2353857869236735371"
+        },
+        {
+          "file": "apps/dev-job-app/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/App.styles.ts",
+          "hash": "457605104057926888",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/app.spec.tsx",
+          "hash": "4494120332594388659",
+          "deps": [
+            "npm:@testing-library/react",
+            "npm:react-router-dom"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/app.tsx",
+          "hash": "17064230144127163894",
+          "deps": [
+            "npm:react",
+            "npm:react-router-dom"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/index.css",
+          "hash": "14235545558183388097"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/lib/data/data.js",
+          "hash": "9475294899802099848"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/lib/hooks/index.ts",
+          "hash": "11240832419929416981"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/lib/hooks/use-device.tsx",
+          "hash": "10450599581913642681",
+          "deps": [
+            "npm:react",
+            "npm:@mantine/hooks"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/lib/hooks/use-filter-data.ts",
+          "hash": "2685409839670671749",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/lib/styles/common.ts",
+          "hash": "9950223197144271492",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/lib/styles/globals.ts",
+          "hash": "4957874444607569853",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/lib/styles/index.ts",
+          "hash": "8570160122867448149"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/lib/styles/reset.ts",
+          "hash": "17222202721791952787",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/lib/types/index.ts",
+          "hash": "1490909479553862367"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/lib/types/job-list.ts",
+          "hash": "11284426126095455489"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/lib/types/theme.ts",
+          "hash": "18241863943604453769"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/providers/app-provider.tsx",
+          "hash": "4092634180357088484",
+          "deps": [
+            "npm:react",
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/providers/design-tokens.ts",
+          "hash": "2318908590496584818"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/providers/index.ts",
+          "hash": "6755930041317234711"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/shared-components/button/button.component.tsx",
+          "hash": "13871753901793698706",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/shared-components/button/button.styles.ts",
+          "hash": "18350839193694662895",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/shared-components/button/index.ts",
+          "hash": "17017939311336942854"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/shared-components/checkbox/checkbox.component.tsx",
+          "hash": "16836495742311531300",
+          "deps": [
+            "npm:react",
+            "npm:@radix-ui/react-checkbox"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/shared-components/checkbox/checkbox.styles.ts",
+          "hash": "1282127048582510923",
+          "deps": [
+            "npm:styled-components",
+            "npm:@radix-ui/react-checkbox"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/shared-components/checkbox/index.ts",
+          "hash": "4771385483580996526"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/shared-components/header/components/theme-switch/index.ts",
+          "hash": "11351991772545221798"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/shared-components/header/components/theme-switch/theme-switch.component.tsx",
+          "hash": "2170644517877042176"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/shared-components/header/components/theme-switch/theme-switch.styles.ts",
+          "hash": "3956432333996306410",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/shared-components/header/header.component.tsx",
+          "hash": "17347369706070128165",
+          "deps": [
+            "npm:react",
+            "npm:react-router-dom"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/shared-components/header/header.styles.ts",
+          "hash": "15493596280062733526",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/shared-components/header/index.ts",
+          "hash": "6884600034763574927"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/shared-components/index.ts",
+          "hash": "9229179067418189783"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/shared-components/input/index.ts",
+          "hash": "14198109184357756535"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/shared-components/input/input.component.tsx",
+          "hash": "8931407945076034118",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/shared-components/input/input.styles.ts",
+          "hash": "1782429960041824377",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/shared-components/logo-item/index.ts",
+          "hash": "6185427453447314457"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/shared-components/logo-item/logo-item.styles.ts",
+          "hash": "4470816709383463830",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/shared-components/logo-item/logo-item.tsx",
+          "hash": "9895558553370376964",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/state/actions.ts",
+          "hash": "13017238450154361398"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/state/features/job-list.ts",
+          "hash": "1594953184329860270",
+          "deps": [
+            "npm:@reduxjs/toolkit"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/state/features/ui.ts",
+          "hash": "8396316870580400856",
+          "deps": [
+            "npm:@reduxjs/toolkit"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/state/hooks/index.ts",
+          "hash": "12930031084776709622",
+          "deps": [
+            "npm:react-redux"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/state/index.ts",
+          "hash": "18167910893515238680"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/state/store.tsx",
+          "hash": "6433089185900154693",
+          "deps": [
+            "npm:@reduxjs/toolkit"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/state/utils/index.ts",
+          "hash": "1346278328805256684"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/views/index.ts",
+          "hash": "8965661341444823419"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/views/jobs-list/components/filter-menu/filter-menu.component.tsx",
+          "hash": "9303385421758505826",
+          "deps": [
+            "npm:react",
+            "npm:react-icons",
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/views/jobs-list/components/filter-menu/filter-menu.styles.ts",
+          "hash": "7499235721498600344",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/views/jobs-list/components/filter-menu/index.ts",
+          "hash": "13824773218458387933"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/views/jobs-list/components/filter-menu-mobile/components/modal/index.ts",
+          "hash": "13973185917984343408"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/views/jobs-list/components/filter-menu-mobile/components/modal/modal.component.tsx",
+          "hash": "17163734131102663723",
+          "deps": [
+            "npm:react",
+            "npm:@radix-ui/react-dialog",
+            "npm:react-icons",
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/views/jobs-list/components/filter-menu-mobile/components/modal/modal.styles.ts",
+          "hash": "11008917940207600385",
+          "deps": [
+            "npm:styled-components",
+            "npm:@radix-ui/react-dialog"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/views/jobs-list/components/filter-menu-mobile/filter-menu-mobile.component.tsx",
+          "hash": "1195383776716324017",
+          "deps": [
+            "npm:react",
+            "npm:react-icons"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/views/jobs-list/components/filter-menu-mobile/filter-menu-mobile.styles.ts",
+          "hash": "17674486663448859606",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/views/jobs-list/components/filter-menu-mobile/index.ts",
+          "hash": "17356425940671464788"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/views/jobs-list/components/index.ts",
+          "hash": "6115560479277350069"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/views/jobs-list/components/job-item/index.ts",
+          "hash": "7154974046930281157"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/views/jobs-list/components/job-item/job-item.component.tsx",
+          "hash": "16480549724075117238",
+          "deps": [
+            "npm:react",
+            "npm:react-router-dom"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/views/jobs-list/components/job-item/job-item.styles.ts",
+          "hash": "12476653522799541538",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/views/jobs-list/index.ts",
+          "hash": "9811939036420896734"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/views/jobs-list/job-list.styles.ts",
+          "hash": "16927143218041364667",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/views/jobs-list/jobs-list.component.tsx",
+          "hash": "17103694320208460352",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/views/jobs-list/utils/index.ts",
+          "hash": "3394022392763010022"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/views/selected-job/index.ts",
+          "hash": "12827712643482290190"
+        },
+        {
+          "file": "apps/dev-job-app/src/app/views/selected-job/selected-job.component.tsx",
+          "hash": "11228969028622977535",
+          "deps": [
+            "npm:react",
+            "npm:react-router-dom"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/app/views/selected-job/selected-job.styles.ts",
+          "hash": "8670429308825160348",
+          "deps": [
+            "npm:styled-components",
+            "npm:styled-media-query"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/desktop/bg-pattern-detail-footer.svg",
+          "hash": "14976857455402051154"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/desktop/bg-pattern-header.svg",
+          "hash": "10199292650808624895"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/desktop/icon-check.svg",
+          "hash": "13840594166655946275"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/desktop/icon-location.svg",
+          "hash": "7868628161047913362"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/desktop/icon-moon.svg",
+          "hash": "1355387120090156784"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/desktop/icon-search.svg",
+          "hash": "1547365637492265891"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/desktop/icon-sun.svg",
+          "hash": "10944149978996643369"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/desktop/logo.svg",
+          "hash": "38206651461799577"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/favicon-32x32.png",
+          "hash": "12744533118699211984"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/index.ts",
+          "hash": "9975003683571721112"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/logos/blogr.svg",
+          "hash": "5739733237849882112"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/logos/coffeeroasters.svg",
+          "hash": "8430120392134161997"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/logos/creative.svg",
+          "hash": "8888981404427975268"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/logos/crowdfund.svg",
+          "hash": "9381792686288944857"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/logos/maker.svg",
+          "hash": "3478426779167606323"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/logos/mastercraft.svg",
+          "hash": "17106354664935975513"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/logos/officelite.svg",
+          "hash": "11516673025215032848"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/logos/pod.svg",
+          "hash": "15194017860232583987"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/logos/pomodoro.svg",
+          "hash": "13442556485917249585"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/logos/scoot.svg",
+          "hash": "9458969612643068703"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/logos/typemaster.svg",
+          "hash": "2094826873624457738"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/logos/vector.svg",
+          "hash": "919338232186519682"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/mobile/bg-pattern-detail-footer.svg",
+          "hash": "15867884801340619393"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/mobile/bg-pattern-header.svg",
+          "hash": "17315289251368260428"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/mobile/icon-filter.svg",
+          "hash": "18162099320710106170"
+        },
+        {
+          "file": "apps/dev-job-app/src/assets/tablet/bg-pattern-header.svg",
+          "hash": "17932210855844286380"
+        },
+        {
+          "file": "apps/dev-job-app/src/main.tsx",
+          "hash": "2390350758489924496",
+          "deps": [
+            "npm:react",
+            "npm:react-dom",
+            "npm:react-router-dom",
+            "npm:react-redux"
+          ]
+        },
+        {
+          "file": "apps/dev-job-app/tsconfig.app.json",
+          "hash": "13735997707620885116"
+        },
+        {
+          "file": "apps/dev-job-app/tsconfig.json",
+          "hash": "11166545116916107487"
+        },
+        {
+          "file": "apps/dev-job-app/tsconfig.spec.json",
+          "hash": "12272256895399471649"
+        },
+        {
+          "file": "apps/dev-job-app/vite.config.ts",
+          "hash": "9109290820336196852",
+          "deps": [
+            "npm:vite",
+            "npm:@vitejs/plugin-react-swc",
+            "npm:@nx/vite"
+          ]
+        }
+      ]
+    }
+  }
+}
