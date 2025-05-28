@@ -1,14 +1,14 @@
-import React from "react";
-import { useRecoilValue } from "recoil";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import { Wrapper, MenuItem } from "./toolbar.styles";
-import { ToggleButton } from "./components/toggle-button";
-import { allPlanets, selectedPlanet } from "../../lib/state";
+import { Wrapper, MenuItem } from './toolbar.styles';
+import { ToggleButton } from './components/toggle-button';
+import { selectAllPlanets, getSelectedPlanet } from '../../lib/state/planets';
 
 export const Toolbar: React.FC = () => {
-  const planets = useRecoilValue(allPlanets);
-  const activePlanet = useRecoilValue(selectedPlanet);
+  const planets = useSelector(selectAllPlanets);
+  const activePlanet = useSelector(getSelectedPlanet);
 
   if (!activePlanet) return null;
 
@@ -16,7 +16,7 @@ export const Toolbar: React.FC = () => {
     <li key={el.name}>
       <Link to={el.name}>
         <MenuItem
-          planetColor={activePlanet.name === el.name ? el.color : "transparent"}
+          planetColor={activePlanet.name === el.name ? el.color : 'transparent'}
         >
           {el.name}
         </MenuItem>

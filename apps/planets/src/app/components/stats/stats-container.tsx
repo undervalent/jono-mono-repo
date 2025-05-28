@@ -1,11 +1,11 @@
-import React from "react";
-import { useRecoilValue } from "recoil";
-import { StatItem } from "./stat-item/";
-import { Wrapper } from "./stats-container.styles";
-import { selectedPlanet } from "../../lib/state";
+import React from 'react';
+import { StatItem } from './stat-item/';
+import { Wrapper } from './stats-container.styles';
+import { useSelector } from 'react-redux';
+import { getSelectedPlanetData } from '../../lib/state/planets';
 
 export const StatsContainer = () => {
-  const activePlanet = useRecoilValue(selectedPlanet);
+  const activePlanet = useSelector(getSelectedPlanetData);
   const { rotation, revolution, radius, temperature } = activePlanet;
   return (
     <Wrapper>

@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@front-end-mentor/shared": ["shared/src/index.ts"]
+      "@front-end-mentor/shared": ["shared/src/index.ts"],
+      "@jono/shared-components": ["libs/shared-ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

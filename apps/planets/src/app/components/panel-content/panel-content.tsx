@@ -1,29 +1,33 @@
-import React from "react";
-import { useRecoilValue } from "recoil";
-import { selectedPlanet, selectedSection } from "../../lib/state";
-import { Wiki } from "./components/wiki";
-import { usePlanetImage } from "../../lib/hooks";
-import { PlanetContentWrapper } from "./panel-content.styles";
-import { SectionMenu } from "./components/section-menu";
+import React from 'react';
+import { Wiki } from './components/wiki';
+import { usePlanetImage } from '../../lib/hooks';
+import { PlanetContentWrapper } from './panel-content.styles';
+import { SectionMenu } from './components/section-menu';
+import { useSelector } from 'react-redux';
+import {
+  getSelectedSection,
+  getSelectedPlanetData,
+} from '../../lib/state/planets';
 
-interface Props {}
+interface Props { }
 
 export const PanelContent: React.FC<Props> = () => {
-  const activePlanet = useRecoilValue(selectedPlanet);
+  const activePlanet = useSelector(getSelectedPlanetData);
+  const section = useSelector(getSelectedSection);
+  console.log('ACTIVE PLANET -->', activePlanet);
 
-  const section = useRecoilValue(selectedSection);
   const images = usePlanetImage(activePlanet.name);
   const content = activePlanet[section];
 
   const setImage = () => {
     switch (section) {
-      case "geology":
+      case 'geology':
         return images && images[section] ? (
           <div className="image-container">
             <div className="planet-image-wrapper">
               <img
                 className="planet-image"
-                src={`${images["overview"]}`}
+                src={`${images['overview']}`}
                 alt={activePlanet.name}
               />
               <img

@@ -1,6 +1,6 @@
 import { atom, selector } from 'recoil';
 import { IPlanet, SubSection } from '../types';
-import planets from '../data/data.json';
+import planets from '../data/data';
 
 export const drawerToggleState = atom<boolean>({
   key: 'DrawerToggle',
