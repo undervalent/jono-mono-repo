@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { ThemeProps } from '../../styles/globals';
 
 export const Wrapper = styled.header`
   display: flex;
@@ -6,7 +7,7 @@ export const Wrapper = styled.header`
   align-items: center;
 `;
 
-export const ThemeButton = styled.button`
+export const ThemeButton = styled.button<ThemeProps>`
   cursor: pointer;
   font-weight: 700;
   letter-spacing: 0.25rem;
