@@ -24,4 +24,4 @@ export interface IPlanet {
   };
 }
 
-export type SubSection = "overview" | "geology" | "structure";
+export type ISubSection = 'overview' | 'geology' | 'structure';
