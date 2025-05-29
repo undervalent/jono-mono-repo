@@ -1,10 +1,5 @@
 import * as React from 'react';
-import { useRecoilState, useSetRecoilState, useResetRecoilState } from 'recoil';
-import {
-  useLocation,
-  RouterProvider,
-  createBrowserRouter,
-} from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { StatsContainer } from './components/stats';
 import { SideDrawer } from './components/side-drawer';
 import { Toolbar } from './components/toolbar';
