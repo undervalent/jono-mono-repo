@@ -1,22 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-import {ThemeProvider} from "./theme-provider"
-import {RecoilProvider} from './recoil-provider'
-import {ReactQueryProvider} from './react-query-provider'
+import { Provider } from 'react-redux';
+import { store } from '../state/store';
+import { ThemeProvider } from './theme-provider';
 interface Props {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
-export function Providers({children}:Props) {
-
-
-   return (
-     <RecoilProvider>
-       <ReactQueryProvider>
-        <ThemeProvider>
-         {children}
-        </ThemeProvider>
-       </ReactQueryProvider>
-     </RecoilProvider>
+export function Providers({ children }: Props) {
+  return (
+    <Provider store={store}>
+      <ThemeProvider>{children}</ThemeProvider>
+    </Provider>
   );
 }

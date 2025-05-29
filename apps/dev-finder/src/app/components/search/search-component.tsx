@@ -1,17 +1,14 @@
-import React from "react";
-import { useFetchGithubUser } from "../../services";
-import * as Styled from "./search.styles";
-import { FiSearch } from "react-icons/fi";
-import { useSetRecoilState } from "recoil";
-import { usernameState } from "../../state";
+import React from 'react';
+import { useFetchGithubUser } from '../../services';
+import * as Styled from './search.styles';
+import { FiSearch } from 'react-icons/fi';
 
 function useSearchData(): [any, any] {
-  const [{ error }] = useFetchGithubUser();
-  const setUsername = useSetRecoilState(usernameState);
+  const [{ error }, { setUsername }] = useFetchGithubUser();
   const handleFormSubmit = (e: any) => {
     e.preventDefault();
     const data = new FormData(e.target);
-    const user = data.get("search-github")?.toString() || "";
+    const user = data.get('search-github')?.toString() || '';
     setUsername(user);
   };
   return [{ error }, { handleFormSubmit }];
