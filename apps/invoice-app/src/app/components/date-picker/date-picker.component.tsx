@@ -1,20 +1,14 @@
-import React from "react";
-import classNames from "classnames";
-import DPicker from "react-datepicker";
+import React from 'react';
+import classNames from 'classnames';
+import DPicker from 'react-datepicker';
+import { useSelector } from 'react-redux';
+import { getTheme } from '../../state/ui';
 
-import dateFnsFormat from "date-fns/format";
-import dateFnsParse from "date-fns/parse";
+import 'react-datepicker/dist/react-datepicker.css';
+import './date-picker.styles.css';
 
-import "react-datepicker/dist/react-datepicker.css";
-import "./date-picker.styles.css";
-
-import { ThemeOptions } from "../../lib/types";
-
-interface IDatePickerProps {
-  theme: ThemeOptions;
-}
-
-export const DatePicker: React.FC<IDatePickerProps> = ({ theme }) => {
+export const DatePicker: React.FC = () => {
+  const theme = useSelector(getTheme);
   const [date, setDate] = React.useState(new Date());
 
   const classes = classNames({

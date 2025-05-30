@@ -10,11 +10,9 @@ export const InvoiceContent = () => {
   const {
     id,
     description,
-    clientAddress,
     paymentDue,
     createdAt,
     clientName,
-    senderAddress,
     clientEmail,
     items,
     total,
@@ -31,13 +29,13 @@ export const InvoiceContent = () => {
           <p className="invoice-content__description">{description}</p>
         </div>
         <div className="invoice-content__headline-address">
-          {senderAddress.street}
+          {invoice?.senderStreet}
           <br />
-          {senderAddress.city}
+          {invoice?.senderCity}
           <br />
-          {senderAddress.postCode}
+          {invoice?.senderPostCode}
           <br />
-          {senderAddress.country}
+          {invoice.senderountry}
         </div>
       </header>
       <article className="invoice-content__article">
@@ -55,13 +53,13 @@ export const InvoiceContent = () => {
           <span className="invoice-content__label">Bill to</span>
           <h2 className="invoice-content__headline">{clientName}</h2>
           <div className="invoice-content__client-address">
-            {clientAddress.street}
+            {invoice.clientStreet}
             <br />
-            {clientAddress.city}
+            {invoice.clientCity}
             <br />
-            {clientAddress.postCode}
+            {invoice.clientPostCode}
             <br />
-            {clientAddress.country}
+            {invoice.clineCountry}
           </div>
         </section>
         <section>

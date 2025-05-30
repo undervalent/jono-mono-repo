@@ -1,6 +1,7 @@
 .sidebar-overlay {
   position: fixed;
   inset: 0;
+  z-index: 0;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -11,7 +12,7 @@
   width: 61.6rem;
   height: 100vh;
   background-color: white;
-  padding: 16px;
+  padding: 5.9rem 5.6rem 2rem 5.6rem;
   box-sizing: border-box;
   z-index: 1000;
   border-radius: 0 2rem 2rem 0;
