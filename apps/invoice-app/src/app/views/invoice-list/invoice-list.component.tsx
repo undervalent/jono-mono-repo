@@ -1,15 +1,14 @@
-import React from "react";
-import { useRecoilValue } from "recoil";
-import { selectedInvoices } from "../../state";
+import React from 'react';
 
-import { InvoiceHeader } from "./components/header";
-import { InvoiceItem } from "./components/invoice-item";
-import { EmptyInvoices } from "./components/empty-invoices";
-
-import { Wrapper } from "./invoice-list.styles";
+import { InvoiceHeader } from './components/header';
+import { InvoiceItem } from './components/invoice-item';
+import { EmptyInvoices } from './components/empty-invoices';
+import { useSelector } from 'react-redux';
+import { getFilteredInvoices } from '../../state/invoice';
+import { Wrapper } from './invoice-list.styles';
 
 export const InvoiceList = () => {
-  const invoices = useRecoilValue(selectedInvoices);
+  const invoices = useSelector(getFilteredInvoices);
 
   return (
     <Wrapper>

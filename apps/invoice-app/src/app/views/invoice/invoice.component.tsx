@@ -1,50 +1,36 @@
-import React from "react";
-import { useResetRecoilState, useSetRecoilState, useRecoilValue } from "recoil";
-import {
-  selectedInvoiceIdState,
-  selectedInvoiceState,
-  invoicesState,
-} from "../../state";
+import React from 'react';
 
 import {
   Wrapper,
   InvoiceMenuWrapper,
   HeaderInvoiceMenuWrapper,
   BackButton,
-} from "./invoice.styles";
-import { InvoiceContainer } from "./components/common-styles";
-import { InvoiceContent, DeleteDialogue, InvoiceMenu } from "./components";
-import { StatusChip } from "../../components/status-chip";
+} from './invoice.styles';
+import { InvoiceContainer } from './components/common-styles';
+import { InvoiceContent, DeleteDialogue, InvoiceMenu } from './components';
+import { StatusChip } from '../../components/status-chip';
 
-import { FaChevronLeft } from "react-icons/fa";
-
+import { FaChevronLeft } from 'react-icons/fa';
+import { useSelector, useDispatch } from 'react-redux';
+import { getSelectedInvoice, setActiveId } from '../../state/invoice';
+import { setDialogActive, setDialogOptions } from '../../state/ui';
 export const Invoice = () => {
-  const [showDialog, setShowDialog] = React.useState(false);
-  const invoice = useRecoilValue(selectedInvoiceState);
-  const setInvoices = useSetRecoilState(invoicesState);
-  const resetId = useResetRecoilState(selectedInvoiceIdState);
+  const dispatch = useDispatch();
+  const invoice = useSelector(getSelectedInvoice);
 
-  const open = () => setShowDialog(true);
-  const close = () => setShowDialog(false);
+  const resetId = () => dispatch(setActiveId(''));
+
+  const open = () => {
+    dispatch(setDialogActive(true));
+    dispatch(setDialogOptions(invoice?.id));
+  };
 
   if (!invoice) return null;
-  const { id, status } = invoice;
-
-  const handleDelete = () => {
-    if (invoice) {
-      resetId();
-      setInvoices((prev) => prev.filter((el) => el.id !== id));
-    }
-  };
+  const { status } = invoice;
 
   return (
     <>
-      <DeleteDialogue
-        handleDelete={handleDelete}
-        close={close}
-        isActive={showDialog}
-        id={id}
-      />
+      <DeleteDialogue />
       <Wrapper>
         <div className="back-button-wrapper">
           <BackButton type="button" onClick={resetId}>

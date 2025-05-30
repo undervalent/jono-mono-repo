@@ -1,4 +1,4 @@
-[data-reach-dialog-content] {
+.dialog-content {
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -6,18 +6,30 @@
   background: #ffffff;
   box-shadow: 0px 1rem 1rem -1rem rgba(72, 84, 159, 0.100397);
   border-radius: 0.8rem;
-  width: 48rem;
   height: 24.9rem;
   padding: 4.8rem;
   max-width: 90%;
+  border-radius: 6px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 500px;
+  max-height: 85vh;
+  padding: 25px;
+  animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
 }
-[data-reach-dialog-content].dark {
+.dialog-content.dark {
   background-color: var(--dark-bravo);
 }
-[data-reach-dialog-overlay] {
+.dialog-overlay {
   display: flex;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  inset: 0;
+  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 .dialog-header {
   font-size: 2.4rem;
@@ -36,4 +48,24 @@
   align-self: flex-end;
   margin-top: 1.6rem;
   gap: 0.8rem;
+}
+
+@keyframes overlayShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
 }

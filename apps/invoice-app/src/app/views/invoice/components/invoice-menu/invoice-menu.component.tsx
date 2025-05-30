@@ -1,31 +1,30 @@
-import React from "react";
-import { useRecoilState, useSetRecoilState } from "recoil";
-import { selectedInvoiceState, showFormState } from "../../../../state";
+import React from 'react';
+import { setFormActive } from '../../../../state/ui';
+import { useSelector, useDispatch } from 'react-redux';
+import { Button } from '../../../../components/buttons';
+import { Wrapper } from './invoice-menu.styles';
+import {
+  markInvoiceAsPaid,
+  getSelectedInvoice,
+} from '../../../../state/invoice';
 
-import { Button } from "../../../../components/buttons";
-import { Wrapper } from "./invoice-menu.styles";
 interface Props {
   open(): void;
 }
 
 export const InvoiceMenu: React.FC<Props> = ({ open }) => {
-  const [invoice, setInvoice] = useRecoilState(selectedInvoiceState);
-  const editForm = useSetRecoilState(showFormState);
+  const dispatch = useDispatch();
+  const activeInvoice = useSelector(getSelectedInvoice);
 
-  if (!invoice) return null;
-  const { status } = invoice;
-  const isPaid = status === "paid";
+  if (!activeInvoice) return null;
+  const { status } = activeInvoice;
+  const isPaid = status === 'paid';
 
   const handleMarkAsPaid = () => {
-    if (invoice) {
-      setInvoice({
-        ...invoice,
-        status: "paid",
-      });
-    }
+    dispatch(markInvoiceAsPaid(activeInvoice.id));
   };
   const handleEdit = () => {
-    editForm(true);
+    dispatch(setFormActive('edit'));
   };
   return (
     <Wrapper>

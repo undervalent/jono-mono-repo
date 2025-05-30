@@ -1,0 +1,27 @@
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 61.6rem;
+  height: 100vh;
+  background-color: white;
+  padding: 16px;
+  box-sizing: border-box;
+  z-index: 1000;
+  border-radius: 0 2rem 2rem 0;
+}
+
+.sidebar-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}

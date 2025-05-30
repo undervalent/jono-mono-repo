@@ -1,6 +1,6 @@
-import React from "react";
-import { useTable } from "react-table";
-import { TableHead, TableCell, TableRow } from "./full-table.styles";
+import React from 'react';
+import { useTable } from 'react-table';
+import { TableHead, TableCell, TableRow } from './full-table.styles';
 
 interface Props {
   //Had to set this to any as I couldn't figure out how to get the columns typed correctly
@@ -12,30 +12,30 @@ export const FullTable: React.FC<Props> = ({ items }) => {
   const columns = React.useMemo(
     () => [
       {
-        Header: "Invoice name",
-        accessor: "name",
+        Header: 'Invoice name',
+        accessor: 'name',
       },
       {
-        Header: "QTY",
-        accessor: "quantity",
+        Header: 'QTY',
+        accessor: 'quantity',
       },
       {
-        Header: "Price",
-        accessor: "price",
+        Header: 'Price',
+        accessor: 'price',
       },
       {
-        Header: "Total",
-        accessor: "total",
+        Header: 'Total',
+        accessor: 'total',
       },
     ],
 
-    []
+    [],
   );
   const tableInstance = useTable({ columns, data });
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     tableInstance;
   return (
-    <table {...getTableProps()} style={{ width: "100%" }}>
+    <table {...getTableProps()} style={{ width: '100%' }}>
       <thead>
         {
           // Loop over the header rows
@@ -48,12 +48,12 @@ export const FullTable: React.FC<Props> = ({ items }) => {
                   return (
                     // Apply the header cell props
                     <TableHead
-                      alignment={column.id === "name" ? "left" : "right"}
+                      alignment={column.id === 'name' ? 'left' : 'right'}
                       {...column.getHeaderProps()}
                     >
                       {
                         // Render the header
-                        column.render("Header")
+                        column.render('Header')
                       }
                     </TableHead>
                   );
@@ -76,21 +76,21 @@ export const FullTable: React.FC<Props> = ({ items }) => {
                 {
                   // Loop over the rows cells
                   row.cells.map((cell) => {
-                    console.log("CELL -->", { cell });
+                    // console.log("CELL -->", { cell });
                     // Apply the cell props
                     return (
                       <TableCell
                         {...cell.getCellProps()}
-                        alignment={cell.column.id === "name" ? "left" : "right"}
+                        alignment={cell.column.id === 'name' ? 'left' : 'right'}
                         darkened={
-                          cell.column.id === "name" ||
-                          cell.column.id === "total"
+                          cell.column.id === 'name' ||
+                          cell.column.id === 'total'
                         }
                       >
                         {
                           // Render the cell contents
 
-                          cell.render("Cell")
+                          cell.render('Cell')
                         }
                       </TableCell>
                     );

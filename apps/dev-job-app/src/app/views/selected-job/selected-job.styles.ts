@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import media from "styled-media-query";
+// @ts-nocheck
+import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const Container = styled.div`
   position: relative;
@@ -17,7 +18,7 @@ export const PageWrapper = styled.section`
     width: 100%;
   }
 
-  ${media.greaterThan("medium")`
+  ${media.greaterThan('medium')`
   .apply-button-wrapper {
     width: auto;
   }
@@ -55,7 +56,7 @@ export const Header = styled.header`
     text-decoration: none;
   }
 
-  ${media.greaterThan("medium")`
+  ${media.greaterThan('medium')`
       flex-direction: row;
       padding: 4rem;
       height: 14rem;
@@ -125,7 +126,7 @@ export const Content = styled.article`
     display: block;
   }
 
-  ${media.greaterThan("medium")`
+  ${media.greaterThan('medium')`
   .content-header__info {
     margin: 0;
   }
@@ -161,7 +162,7 @@ export const Footer = styled.footer`
     width: 100%;
   }
 
-  ${media.greaterThan("medium")`
+  ${media.greaterThan('medium')`
   .footer__info {
   display: flex;
   flex-direction: column;
@@ -174,7 +175,7 @@ export const Footer = styled.footer`
   }
 
   `}
-  ${media.greaterThan("large")`
+  ${media.greaterThan('large')`
   .footer-content {
     max-width: 111rem;
   }
@@ -189,7 +190,7 @@ export const UnorderedList = styled.ul`
   margin-left: 4rem;
 
   > li:before {
-    content: "• ";
+    content: '• ';
     font-weight: bold;
     font-size: 1.6rem;
     line-height: 2.6rem;
@@ -213,7 +214,7 @@ export const OrderedList = styled.ol`
   }
   > li:before {
     counter-increment: list;
-    content: counters(list, " ") " ";
+    content: counters(list, ' ') ' ';
     font-weight: bold;
     font-size: 1.6rem;
     line-height: 2.6rem;

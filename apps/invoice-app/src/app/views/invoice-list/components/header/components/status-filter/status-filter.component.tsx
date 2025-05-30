@@ -1,38 +1,36 @@
-import React from "react";
-import { useRecoilState } from "recoil";
-import { invoiceFilterState } from "../../../../../../state";
-import { Dropdown } from "../../../../../../components/dropdown";
-import { Checkbox } from "../../../../../../components/inputs/checkbox";
-
+import React from 'react';
+import { Dropdown } from '../../../../../../components/dropdown';
+import { Checkbox } from '../../../../../../components/inputs/checkbox';
+import { useSelector } from 'react-redux';
+import { getFilter } from '../../../../../../state/invoice';
 const dropdownOptions = [
   {
-    value: "all",
-    displayName: "All",
+    value: 'all',
+    displayName: 'All',
   },
   {
-    value: "draft",
-    displayName: "Draft",
+    value: 'draft',
+    displayName: 'Draft',
   },
   {
-    value: "pending",
-    displayName: "Pending",
+    value: 'pending',
+    displayName: 'Pending',
   },
   {
-    value: "paid",
-    displayName: "Paid",
+    value: 'paid',
+    displayName: 'Paid',
   },
 ];
 
 export const StatusFilter = () => {
-  const [invoiceFilter, setInvoiceFilter] = useRecoilState(invoiceFilterState);
-
+  const filter = useSelector(getFilter);
   return (
     <Dropdown>
       {dropdownOptions.map((el) => (
         <Checkbox
           label={el.displayName}
           value={el.value}
-          checked={invoiceFilter.includes(el.value)}
+          checked={filter.includes(el.value)}
         />
       ))}
     </Dropdown>

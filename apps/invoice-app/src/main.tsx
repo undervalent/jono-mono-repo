@@ -1,16 +1,17 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { RecoilRoot } from "recoil";
+import { Provider } from 'react-redux';
+import { store } from './app/state/store';
 
 import App from './app/app';
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById('root') as HTMLElement,
 );
 root.render(
   <StrictMode>
-    <RecoilRoot>
+    <Provider store={store}>
       <App />
-    </RecoilRoot>
-  </StrictMode>
+    </Provider>
+  </StrictMode>,
 );

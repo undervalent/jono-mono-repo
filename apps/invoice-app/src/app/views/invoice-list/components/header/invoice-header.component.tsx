@@ -1,23 +1,25 @@
-import React from "react";
-import { useRecoilValue } from "recoil";
-import { invoiceFilterState, selectedInvoices } from "../../../../state";
-import { Button } from "../../../../components/buttons";
+import React from 'react';
+import { Button } from '../../../../components/buttons';
 
-import { Wrapper } from "./invoice-header.styles";
-import { StatusFilter } from "./components/status-filter";
+import { Wrapper } from './invoice-header.styles';
+import { StatusFilter } from './components/status-filter';
+import { setFormActive } from '../../../../state/ui';
+import { useSelector, useDispatch } from 'react-redux';
+import { getFilteredInvoices, getFilter } from '../../../../state/invoice';
 
 const generateInvoiceLabel = (count: number, selected: string) => {
   if (count === 0) {
-    return "No Invoices";
+    return 'No Invoices';
   }
-  return `There are ${count} ${selected === "all" ? "" : selected} invoices`;
+  return `There are ${count} ${selected === 'all' ? '' : selected} invoices`;
 };
 
 export const InvoiceHeader = () => {
-  const invoiceFilter = useRecoilValue(invoiceFilterState);
-  const invoices = useRecoilValue(selectedInvoices);
+  const dispatch = useDispatch();
+  const invoiceFilter = useSelector(getFilter);
+  const invoices = useSelector(getFilteredInvoices);
   const invoiceNumber = generateInvoiceLabel(invoices.length, invoiceFilter);
-
+  const handdleNewInvoice = () => dispatch(setFormActive('new'));
   return (
     <Wrapper>
       <div>
@@ -35,7 +37,7 @@ export const InvoiceHeader = () => {
       </div>
 
       <div>
-        <Button type="primary" size="small" icon onClick={() => {}}>
+        <Button type="primary" size="small" icon onClick={handdleNewInvoice}>
           New Invoice
         </Button>
       </div>

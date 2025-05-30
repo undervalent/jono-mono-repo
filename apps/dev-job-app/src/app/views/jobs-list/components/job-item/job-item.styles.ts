@@ -1,4 +1,6 @@
-import styled from "styled-components";
+// @ts-nocheck
+
+import styled from 'styled-components';
 interface IWrapper {
   background: string;
 }

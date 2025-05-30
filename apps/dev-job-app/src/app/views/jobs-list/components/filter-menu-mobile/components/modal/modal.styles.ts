@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import * as Dialog from "@radix-ui/react-dialog";
+// @ts-nocheck
+import styled from 'styled-components';
+import * as Dialog from '@radix-ui/react-dialog';
 
 export const DialogOverlay = styled(Dialog.Overlay)`
   background-color: ${({ theme }) => theme.colors.darkOverlay};

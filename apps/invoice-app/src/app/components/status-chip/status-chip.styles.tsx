@@ -1,24 +1,25 @@
-import styled from "styled-components";
-import { ThemeProps } from "../../lib/types";
+import styled from 'styled-components';
+import { ThemeProps } from '../../lib/types';
 interface Props {
   status: string;
 }
 
 const generateColors = (status: string, theme: ThemeProps): any => {
-  if (status === "draft") {
+  if (!status) return '';
+  if (status === 'draft') {
     return { color: theme.draftText, background: theme.draftBg };
   }
 
   switch (status) {
-    case "paid":
+    case 'paid':
       return {
-        color: "#33d69f",
-        background: "rgba(51, 214, 159, 0.06)",
+        color: '#33d69f',
+        background: 'rgba(51, 214, 159, 0.06)',
       };
-    case "pending":
+    case 'pending':
       return {
-        color: "#ff8f00",
-        background: "rgba(255, 143, 0, 0.06)",
+        color: '#ff8f00',
+        background: 'rgba(255, 143, 0, 0.06)',
       };
   }
 };

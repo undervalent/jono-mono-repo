@@ -1,11 +1,11 @@
-import React from "react";
-import { useRecoilValue } from "recoil";
-import { selectedInvoiceState } from "../../../../state";
-import { Wrapper } from "./invoice-content.styles";
-import { InvoiceTable } from "./components";
+import React from 'react';
+import { Wrapper } from './invoice-content.styles';
+import { InvoiceTable } from './components';
+import { useSelector } from 'react-redux';
+import { getSelectedInvoice } from '../../../../state/invoice';
 
 export const InvoiceContent = () => {
-  const invoice = useRecoilValue(selectedInvoiceState);
+  const invoice = useSelector(getSelectedInvoice);
   if (!invoice) return null;
   const {
     id,
