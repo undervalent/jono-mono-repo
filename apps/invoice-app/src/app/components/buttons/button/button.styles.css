@@ -12,28 +12,41 @@
 }
 
 .main-button__primary {
-  --background: var(--primary-alpha);
-  background: var(--background);
-  color: #fff;
+  background: var(--primaryBackground);
+  color: var(--primaryText);
 }
 .main-button__primary:hover {
-  background: var(--primary-bravo);
+  background: var(--primaryBackgroundHover);
 }
 .main-button__secondary {
-  --background: var(--secondary-alpha);
-  background: var(--background);
-  color: var(--primary-charlie);
+  background: var(--secondaryBackground);
+  color: var(--secondaryText);
 }
 .main-button__secondary:hover {
-  background: var(--secondary-bravo);
+  background: var(--secondaryBackgroundHover);
 }
 .main-button__danger {
-  --background: var(--danger-alpha);
-  background: var(--background);
-  color: #fff;
+  background: var(--dangerBackground);
+  color: var(--dangerText);
 }
 .main-button__danger:hover {
-  background: var(--danger-bravo);
+  background: var(--dangerBackgroundHover);
+}
+
+.main-button__tertiary {
+  background: var(--tertiaryBackground);
+  color: var(--tertiaryText);
+}
+.main-button__tertiary:hover {
+  background: var(--tertiaryBackgroundHover);
+}
+
+.main-button__subtle {
+  background: var(--subtleBackground);
+  color: var(--subtleText);
+}
+.main-button__subtle:hover {
+  background: var(--subtleBackgroundHover);
 }
 .main-button__icon {
   padding: 1.7rem 1rem 1.7rem 0.5rem;
@@ -52,6 +65,5 @@
 
 .main-button__disabled {
   pointer-events: none;
-  background: var(--background);
   opacity: 0.5;
 }

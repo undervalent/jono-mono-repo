@@ -15,15 +15,7 @@ export const data = [
     clientStreet: '106 Kendell Street',
     clientCity: 'Sharrington',
     clientPostCode: 'NR24 5WQ',
-    items: [
-      {
-        name: 'Brand Guidelines',
-        quantity: 1,
-        price: 1800.9,
-        total: 1800.9,
-      },
-    ],
-    total: 1800.9,
+    clientCountry: 'United Kingdom',
   },
   {
     id: 'XM9141',
@@ -42,21 +34,6 @@ export const data = [
     clientCity: 'Bradford',
     clientPostCode: 'BD1 9PB',
     clientCountry: 'United Kingdom',
-    items: [
-      {
-        name: 'Banner Design',
-        quantity: 1,
-        price: 156.0,
-        total: 156.0,
-      },
-      {
-        name: 'Email Design',
-        quantity: 2,
-        price: 200.0,
-        total: 400.0,
-      },
-    ],
-    total: 556.0,
   },
   {
     id: 'RG0314',
@@ -75,15 +52,6 @@ export const data = [
     clientCity: 'Bradford',
     clientPostCode: 'BD1 9PB',
     clientCountry: 'United Kingdom',
-    items: [
-      {
-        name: 'Website Redesign',
-        quantity: 1,
-        price: 14002.33,
-        total: 14002.33,
-      },
-    ],
-    total: 14002.33,
   },
   {
     id: 'RT2080',
@@ -102,15 +70,6 @@ export const data = [
     clientCity: 'Bradford',
     clientPostCode: 'BD1 9PB',
     clientCountry: 'United Kingdom',
-    items: [
-      {
-        name: 'Logo Sketches',
-        quantity: 1,
-        price: 102.04,
-        total: 102.04,
-      },
-    ],
-    total: 102.04,
   },
   {
     id: 'AA1449',
@@ -129,21 +88,6 @@ export const data = [
     clientCity: 'Bradford',
     clientPostCode: 'BD1 9PB',
     clientCountry: 'United Kingdom',
-    items: [
-      {
-        name: 'New Logo',
-        quantity: 1,
-        price: 1532.33,
-        total: 1532.33,
-      },
-      {
-        name: 'Brand Guidelines',
-        quantity: 1,
-        price: 2500.0,
-        total: 2500.0,
-      },
-    ],
-    total: 4032.33,
   },
   {
     id: 'TY9141',
@@ -162,15 +106,6 @@ export const data = [
     clientCity: 'Bradford',
     clientPostCode: 'BD1 9PB',
     clientCountry: 'United Kingdom',
-    items: [
-      {
-        name: 'Web Design',
-        quantity: 1,
-        price: 6155.91,
-        total: 6155.91,
-      },
-    ],
-    total: 6155.91,
   },
   {
     id: 'FV2353',
@@ -189,14 +124,5 @@ export const data = [
     clientCity: 'Bradford',
     clientPostCode: 'BD1 9PB',
     clientCountry: 'United Kingdom',
-    items: [
-      {
-        name: 'Logo Re-design',
-        quantity: 1,
-        price: 3102.04,
-        total: 3102.04,
-      },
-    ],
-    total: 3102.04,
   },
 ];

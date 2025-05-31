@@ -22,10 +22,10 @@ export const InvoiceContent = () => {
     <Wrapper>
       <header className="invoice-content__header">
         <div className="invoice-content__headline-wrapper">
-          <h1 className="invoice-content__headline">
+          <h2 className="invoice-content__headline">
             <span className="invoice-content__headline-hash">#</span>
             {id}
-          </h1>
+          </h2>
           <p className="invoice-content__description">{description}</p>
         </div>
         <div className="invoice-content__headline-address">
@@ -64,10 +64,10 @@ export const InvoiceContent = () => {
         </section>
         <section>
           <span className="invoice-content__label">Sent to</span>
-          <h2 className="invoice-content__headline">{clientEmail}</h2>
+          <h3 className="invoice-content__headline">{clientEmail}</h3>
         </section>
       </article>
-      <InvoiceTable items={items} total={total} />
+      <InvoiceTable items={items} total={total} invoiceId={id}/>
     </Wrapper>
   );
 };

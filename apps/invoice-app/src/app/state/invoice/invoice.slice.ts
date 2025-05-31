@@ -6,10 +6,7 @@ import {
 } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 import { data } from './invoices';
-import { convertInvoices } from '../../utils';
 import { Invoice } from '../../lib/types';
-
-const invoices = convertInvoices(data);
 
 const invoicesAdapter = createEntityAdapter<Invoice>();
 
@@ -23,7 +20,7 @@ const initialState: InvoicesState = invoicesAdapter.setAll(
     filter: 'all',
     activeId: '',
   }),
-  invoices,
+  data,
 );
 export const invoiceSlice = createSlice({
   name: 'invoice',

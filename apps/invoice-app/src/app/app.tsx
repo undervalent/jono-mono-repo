@@ -1,3 +1,4 @@
+import React from 'react';
 import './index.css';
 import { useSelector } from 'react-redux';
 import { getTheme } from './state/ui';
@@ -13,6 +14,11 @@ function App() {
   const theme = useSelector(getTheme);
   const selected = useSelector(getSelectedInvoice);
   const isDarkTheme = theme === 'dark';
+
+  React.useEffect(() => {
+    document.body.className = theme;
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>

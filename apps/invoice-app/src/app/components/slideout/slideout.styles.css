@@ -11,8 +11,8 @@
   left: 0;
   width: 61.6rem;
   height: 100vh;
-  background-color: white;
-  padding: 5.9rem 5.6rem 2rem 5.6rem;
+  background-color: var(--uiElementBackgroundSecondary);
+  padding: 5.9rem 2.8rem 2rem 2.8rem;
   box-sizing: border-box;
   z-index: 1000;
   border-radius: 0 2rem 2rem 0;

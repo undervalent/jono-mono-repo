@@ -1,17 +1,21 @@
-import React from "react";
-import { useCurrentWidth } from "../../../../../../hooks";
-import { InvoiceItem } from "../../../../../../lib/types";
-import { TableWrapper } from "./invoice-table.styles";
-import { MobileTable, FullTable } from "./components";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { useCurrentWidth } from '../../../../../../hooks';
+import {
+  selectInvoiceTotal,
+  selectEntriesByInvoiceId,
+} from '../../../../../../state/entries/entries.slice';
+import { MobileTable, FullTable } from './components';
+import './invoice-table.styles.css';
 
 interface Props {
-  items: InvoiceItem[];
-  total: number | string;
+  invoiceId: string;
 }
 
-export const InvoiceTable: React.FC<Props> = ({ items, total }) => {
+export const InvoiceTable: React.FC<Props> = ({ invoiceId }) => {
   const currentWidth = useCurrentWidth();
-
+  const total = useSelector(selectInvoiceTotal(invoiceId));
+  const items = useSelector(selectEntriesByInvoiceId(invoiceId));
   const table =
     currentWidth < 768 ? (
       <MobileTable items={items} />
@@ -19,12 +23,12 @@ export const InvoiceTable: React.FC<Props> = ({ items, total }) => {
       <FullTable items={items} />
     );
   return (
-    <TableWrapper>
+    <section className="table__wrapper">
       <div className="invoice-table">{table}</div>
       <div className="total-wrapper">
         <span className="total-wrapper__label">Amount Due</span>
         <span className="total-wrapper__total">{total}</span>
       </div>
-    </TableWrapper>
+    </section>
   );
 };

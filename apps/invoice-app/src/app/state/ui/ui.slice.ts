@@ -4,7 +4,10 @@ import { RootState } from '../store';
 export const uiSlice = createSlice({
   name: 'ui',
   initialState: {
-    theme: 'light',
+    theme:
+      typeof window !== 'undefined'
+        ? localStorage.getItem('theme') || 'light'
+        : 'light',
     activeForm: '',
     isFormActive: false,
     isDialogActive: false,

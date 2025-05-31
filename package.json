@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@dinero.js/currencies": "2.0.0-alpha.1",
     "@mantine/hooks": "^8.0.2",
     "@nx/next": "21.1.2",
     "@radix-ui/react-accessible-icon": "^1.1.7",
@@ -24,7 +25,9 @@
     "@swc/helpers": "0.5.17",
     "@tanstack/react-query": "^5.77.2",
     "@tanstack/react-query-devtools": "^5.77.2",
+    "@types/dinero.js": "^1.9.4",
     "classnames": "^2.5.1",
+    "currency.js": "^2.0.4",
     "date-fns": "^4.1.0",
     "dinero.js": "^1.9.1",
     "framer-motion": "^12.15.0",

@@ -1,12 +1,5 @@
 import React from 'react';
 
-import {
-  Wrapper,
-  InvoiceMenuWrapper,
-  HeaderInvoiceMenuWrapper,
-  BackButton,
-} from './invoice.styles';
-import { InvoiceContainer } from './components/common-styles';
 import { InvoiceContent, DeleteDialogue, InvoiceMenu } from './components';
 import { StatusChip } from '../../components/status-chip';
 
@@ -14,6 +7,8 @@ import { FaChevronLeft } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { getSelectedInvoice, setActiveId } from '../../state/invoice';
 import { setDialogActive, setDialogOptions } from '../../state/ui';
+import './invoice.styles.css';
+
 export const Invoice = () => {
   const dispatch = useDispatch();
   const invoice = useSelector(getSelectedInvoice);
@@ -31,31 +26,37 @@ export const Invoice = () => {
   return (
     <>
       <DeleteDialogue />
-      <Wrapper>
+      <section>
         <div className="back-button-wrapper">
-          <BackButton type="button" onClick={resetId}>
+          <button
+            className="invoice__back-button"
+            type="button"
+            onClick={resetId}
+          >
             <FaChevronLeft color="#7C5DFA" /> <span>Go back</span>
-          </BackButton>
+          </button>
         </div>
 
-        <InvoiceContainer>
-          <div className="status-wrapper">
-            <span className="status">Status</span>
-            {status && <StatusChip status={status} />}
+        <div className="invoice">
+          <div className="invoice__top">
+            <div className="status-wrapper">
+              <span className="status">Status</span>
+              {status && <StatusChip status={status} />}
+            </div>
+            <div className="invoice__header">
+              <InvoiceMenu open={open} />
+            </div>
           </div>
-          <HeaderInvoiceMenuWrapper>
-            <InvoiceMenu open={open} />
-          </HeaderInvoiceMenuWrapper>
-        </InvoiceContainer>
-        <InvoiceContainer>
+        </div>
+        <div className="invoice">
           <InvoiceContent />
-        </InvoiceContainer>
-      </Wrapper>
-      <InvoiceMenuWrapper>
-        <InvoiceContainer>
+        </div>
+      </section>
+      <div className="invoice__menu-wrapper">
+        <div className="invoice">
           <InvoiceMenu open={open} />
-        </InvoiceContainer>
-      </InvoiceMenuWrapper>
+        </div>
+      </div>
     </>
   );
 };

@@ -1,0 +1,66 @@
+const entries = [
+  {
+    id: Math.random().toString(36).slice(2, 8),
+    invoiceId: 'RT3080',
+    name: 'Brand Guidelines',
+    quantity: 1,
+    price: 1800.9,
+  },
+  {
+    id: Math.random().toString(36).slice(2, 8),
+    invoiceId: 'XM9141',
+    name: 'Banner Design',
+    quantity: 1,
+    price: 156.0,
+  },
+  {
+    id: Math.random().toString(36).slice(2, 8),
+    invoiceId: 'XM9141',
+    name: 'Email Design',
+    quantity: 2,
+    price: 200.0,
+  },
+  {
+    id: Math.random().toString(36).slice(2, 8),
+    invoiceId: 'RG0314',
+    name: 'Website Redesign',
+    quantity: 1,
+    price: 14002.33,
+  },
+  {
+    id: Math.random().toString(36).slice(2, 8),
+    invoiceId: 'RT2080',
+    name: 'Logo Sketches',
+    quantity: 1,
+    price: 102.04,
+  },
+  {
+    id: Math.random().toString(36).slice(2, 8),
+    invoiceId: 'AA1449',
+    name: 'New Logo',
+    quantity: 1,
+    price: 1532.33,
+  },
+  {
+    id: Math.random().toString(36).slice(2, 8),
+    invoiceId: 'AA1449',
+    name: 'Brand Guidelines',
+    quantity: 1,
+    price: 2500.0,
+  },
+  {
+    id: Math.random().toString(36).slice(2, 8),
+    invoiceId: 'TY9141',
+    name: 'Web Design',
+    quantity: 1,
+    price: 6155.91,
+  },
+  {
+    id: Math.random().toString(36).slice(2, 8),
+    invoiceId: 'FV2353',
+    name: 'Logo Re-design',
+    quantity: 1,
+    price: 3102.04,
+  },
+];
+export default entries;

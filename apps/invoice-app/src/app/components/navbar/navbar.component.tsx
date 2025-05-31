@@ -1,6 +1,6 @@
 import React from 'react';
 import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs';
-import { Wrapper } from './navbar.styles';
+import './navbar.styles.css';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { getTheme, toggleTheme } from '../../state/ui';
@@ -21,7 +21,7 @@ export const NavBar = () => {
     );
 
   return (
-    <Wrapper>
+    <nav className="navbar">
       <div className="navbar__logo">
         <div className="navbar__logo-icon"></div>
         <div className="navbar__logo-bottom"></div>
@@ -41,6 +41,6 @@ export const NavBar = () => {
           <img src={avatarImg} alt="avatar" className="navbar__avatar" />
         </div>
       </div>
-    </Wrapper>
+    </nav>
   );
 };

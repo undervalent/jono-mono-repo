@@ -9,10 +9,10 @@ import { senderFormItems, clientFormItems } from './constants';
 import { DatePicker } from '../../../../components/date-picker/date-picker.component';
 import { Dropdown } from '../../../../components/dropdown/dropdown.component';
 const options = [
-  { value: 1, label: 'Next 1 Day' },
-  { value: 7, label: 'Next 7 Days' },
-  { value: 14, label: 'Next 14 Days' },
-  { value: 30, label: 'Next 30 Days' },
+  { value: 1, label: 'Net 1 Day' },
+  { value: 7, label: 'Net 7 Days' },
+  { value: 14, label: 'Net 14 Days' },
+  { value: 30, label: 'Net 30 Days' },
 ];
 export function EditForm() {
   const activeInvoice = useSelector(getSelectedInvoice);
@@ -44,7 +44,13 @@ export function EditForm() {
           );
         })}
         <DatePicker />
-        <Dropdown options={options} />
+        <Dropdown
+          options={options}
+          placeholder="Select Payment Terms"
+          label="Payment Terms"
+          defaultValue={activeInvoice?.paymentTerms}
+          name="paymentTerms"
+        />
         <TextField
           name="projectDescription"
           defaultValue={activeInvoice?.description}

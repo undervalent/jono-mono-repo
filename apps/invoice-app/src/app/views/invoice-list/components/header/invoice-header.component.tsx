@@ -23,7 +23,7 @@ export const InvoiceHeader = () => {
   return (
     <Wrapper>
       <div>
-        <h2>Invoices</h2>
+        <h1>Invoices</h1>
         <p className="invoice-header__text">{invoiceNumber}</p>
       </div>
       <div>
