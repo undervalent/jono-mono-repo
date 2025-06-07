@@ -8,14 +8,7 @@ import currency from 'currency.js';
 
 import { RootState } from '../store';
 import entries from './data';
-
-interface Entry {
-  id: string;
-  invoiceId: string;
-  name: string;
-  quantity: number;
-  price: number;
-}
+import { Entry } from '../../lib/schemas';
 
 const entriesAdapter = createEntityAdapter<Entry>();
 type InvoicesState = EntityState<Entry, string> & {
@@ -72,4 +65,5 @@ export const selectInvoiceTotal = (invoiceId: string) => (state: RootState) => {
   );
   return total.format();
 };
+
 export default entriesSlice.reducer;

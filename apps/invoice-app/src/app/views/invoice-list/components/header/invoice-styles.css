@@ -1,0 +1,44 @@
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.invoice-header__text {
+  margin-top: 0.5rem;
+}
+.invoice-header__menu {
+  display: flex;
+  align-items: center;
+}
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 10rem;
+  margin-right: 1rem;
+}
+
+/* Medium and down (up to 767px) */
+@media (max-width: 767px) {
+  .invoice-header {
+    margin-bottom: 3.3rem;
+  }
+}
+
+/* Large and down (up to 1169px) */
+@media (max-width: 1169px) {
+  .invoice-header {
+    margin-bottom: 5.6rem;
+  }
+}
+
+/* large and up */
+@media (min-width: 1170px) {
+  .invoice-header {
+    margin-bottom: 6.5rem;
+  }
+}

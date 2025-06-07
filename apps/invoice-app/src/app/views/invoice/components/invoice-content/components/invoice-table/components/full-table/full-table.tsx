@@ -1,7 +1,8 @@
 import React from 'react';
 import { useTable } from 'react-table';
 import '../table.styles.css';
-
+import classNames from 'classnames';
+import { formatDate } from 'date-fns';
 interface Props {
   //Had to set this to any as I couldn't figure out how to get the columns typed correctly
   items: any;
@@ -40,29 +41,35 @@ export const FullTable: React.FC<Props> = ({ items }) => {
       <thead>
         {
           // Loop over the header rows
-          headerGroups.map((headerGroup) => (
-            // Apply the header row props
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {
-                // Loop over the headers in each row
-                headerGroup.headers.map((column) => {
-                  return (
-                    // Apply the header cell props
-                    <th
-                      alignment={column.id === 'name' ? 'left' : 'right'}
-                      className={` ${column.id === 'name' ? 'align-left' : 'align-right'}`}
-                      {...column.getHeaderProps()}
-                    >
-                      {
-                        // Render the header
-                        column.render('Header')
-                      }
-                    </th>
-                  );
-                })
-              }
-            </tr>
-          ))
+          headerGroups.map((headerGroup) => {
+            return (
+              // Apply the header row props
+              <tr {...headerGroup.getHeaderGroupProps()}>
+                {
+                  // Loop over the headers in each row
+                  headerGroup.headers.map((column) => {
+                    const classes = classNames({
+                      'align-left': column.id === 'name',
+                      'align-right': column.id !== 'name',
+                    });
+                    return (
+                      // Apply the header cell props
+                      <th
+                        alignment={column.id === 'name' ? 'left' : 'right'}
+                        className={classes}
+                        {...column.getHeaderProps()}
+                      >
+                        {
+                          // Render the header
+                          column.render('Header')
+                        }
+                      </th>
+                    );
+                  })
+                }
+              </tr>
+            );
+          })
         }
       </thead>
 
@@ -78,13 +85,20 @@ export const FullTable: React.FC<Props> = ({ items }) => {
                 {
                   // Loop over the rows cells
                   row.cells.map((cell) => {
+                    const classes = classNames({
+                      'align-left': cell.column.id === 'name',
+                      'align-right': cell.column.id !== 'name',
+                      'light-text':
+                        cell.column.id === 'quantity' ||
+                        cell.column.id === 'price',
+                    });
                     // console.log("CELL -->", { cell });
                     // Apply the cell props
                     return (
                       <td
                         {...cell.getCellProps()}
                         alignment={cell.column.id === 'name' ? 'left' : 'right'}
-                        className={` ${cell.column.id === 'name' ? 'align-left' : 'align-right'}`}
+                        className={classes}
                         darkened={
                           cell.column.id === 'name' ||
                           cell.column.id === 'total'

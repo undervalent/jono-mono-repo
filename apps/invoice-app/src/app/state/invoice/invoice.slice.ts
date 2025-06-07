@@ -7,11 +7,14 @@ import {
 import { RootState } from '../store';
 import { data } from './invoices';
 import { Invoice } from '../../lib/types';
+import { formatInvoice } from './utils';
 
 const invoicesAdapter = createEntityAdapter<Invoice>();
 
+export type InvoiceFilter = 'all' | 'draft' | 'pending' | 'paid';
+
 type InvoicesState = EntityState<Invoice, string> & {
-  filter: string;
+  filter: InvoiceFilter;
   activeId: string;
 };
 
@@ -26,7 +29,7 @@ export const invoiceSlice = createSlice({
   name: 'invoice',
   initialState,
   reducers: {
-    setFilter: (state, action: PayloadAction<string>) => {
+    setFilter: (state, action: PayloadAction<InvoiceFilter>) => {
       state.filter = action.payload;
     },
     setActiveId: (state, action: PayloadAction<string>) => {
@@ -63,28 +66,39 @@ export const getFilter = (state: RootState) => state.invoice.filter;
 
 export const getFilteredInvoices = (state: RootState) => {
   const { filter } = state.invoice;
-  if (filter === 'draft') {
-    return selectAllInvoices(state).filter(
-      (invoice) => invoice.status === 'draft',
-    );
+  let filteredInvoices = null;
+  switch (filter) {
+    case 'all':
+      filteredInvoices = selectAllInvoices(state);
+      break;
+    case 'draft':
+      filteredInvoices = selectAllInvoices(state).filter(
+        (invoice) => invoice.status === 'draft',
+      );
+      break;
+    case 'pending':
+      filteredInvoices = selectAllInvoices(state).filter(
+        (invoice) => invoice.status === 'pending',
+      );
+      break;
+    case 'paid':
+      filteredInvoices = selectAllInvoices(state).filter(
+        (invoice) => invoice.status === 'paid',
+      );
+      break;
   }
-  if (filter === 'pending') {
-    return selectAllInvoices(state).filter(
-      (invoice) => invoice.status === 'pending',
-    );
-  }
-  if (filter === 'paid') {
-    return selectAllInvoices(state).filter(
-      (invoice) => invoice.status === 'paid',
-    );
-  }
-  return selectAllInvoices(state);
+
+  return filteredInvoices.map((invoice) => formatInvoice(invoice));
 };
 
-export const getSelectedInvoice = (state: RootState) =>
-  selectInvoiceById(state, state.invoice.activeId);
+export const getSelectedInvoice = (state: RootState) => {
+  const invoice = selectInvoiceById(state, state.invoice.activeId);
+  return formatInvoice(invoice);
+};
 
-export const getInvoiceById = (id: string) => (state: RootState) =>
-  selectInvoiceById(state, id);
+export const getInvoiceById = (id: string) => (state: RootState) => {
+  const invoice = selectInvoiceById(state, id);
+  return formatInvoice(invoice);
+};
 
 export default invoiceSlice.reducer;

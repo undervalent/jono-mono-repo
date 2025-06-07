@@ -41,11 +41,11 @@ export const DeleteDialogue: React.FC = () => {
             </p>
           </Dialog.Description>
           <div className="dialog-menu">
-            <Button type="secondary" size="small" onClick={close}>
+            <Button type="tertiary" size="small" onClick={close}>
               Cancel
             </Button>
             <Button type="danger" size="small" onClick={handleDelete}>
-              Confirm
+              Delete
             </Button>
           </div>
         </Dialog.Content>

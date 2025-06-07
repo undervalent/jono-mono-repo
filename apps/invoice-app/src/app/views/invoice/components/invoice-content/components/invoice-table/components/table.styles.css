@@ -29,3 +29,7 @@
   color: var(--headers);
   padding-bottom: 3.2rem;
 }
+
+.light-text {
+  color: var(--primaryBodyText) !important;
+}

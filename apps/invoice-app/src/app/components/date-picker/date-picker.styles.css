@@ -1,1 +1,71 @@
+.datepicker {
+}
 
+.datepicker label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #a2a1c2;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.input-wrapper {
+  border: 1px solid #a2a1f2;
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.calendar {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: #fdfcff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.calendar-header button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #5e5cfc;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.day {
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 500;
+  color: #222;
+}
+
+.day:hover {
+  background: #e8e7ff;
+}
+
+.day.selected {
+  background: #5e5cfc;
+  color: white;
+}

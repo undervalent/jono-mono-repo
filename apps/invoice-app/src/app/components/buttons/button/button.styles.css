@@ -52,16 +52,6 @@
   padding: 1.7rem 1rem 1.7rem 0.5rem;
   justify-content: space-around;
 }
-.main-button__icon-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: white;
-  width: 3.2rem;
-  height: 3.2rem;
-  border-radius: 10rem;
-  margin-right: 1rem;
-}
 
 .main-button__disabled {
   pointer-events: none;

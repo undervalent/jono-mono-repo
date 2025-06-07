@@ -1,5 +1,5 @@
 .inv-text-field {
-  min-width: 24rem;
+  /* min-width: 24rem; */
   min-height: 4.8rem;
   border-radius: 0.4rem;
   margin-top: 1rem;
@@ -40,4 +40,7 @@
 .inv-text-field__light:focus-visible {
   border: 1px solid var(--uiElementBorderHover);
   outline-color: var(--uiElementBorderHover);
+}
+.inv-text-field__dynamic-width {
+  width: var(--width, auto) !important;
 }

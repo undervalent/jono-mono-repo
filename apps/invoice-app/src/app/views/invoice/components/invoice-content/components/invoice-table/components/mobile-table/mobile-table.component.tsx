@@ -1,6 +1,5 @@
-import React from "react";
-import { MobileTableItem } from "../mobile-table-item";
-import { InvoiceItem } from "../../../../../../../../lib/types";
+import { MobileTableItem } from '../mobile-table-item';
+import { Entry as InvoiceItem } from '../../../../../../../../lib/schemas';
 
 interface Props {
   items: InvoiceItem[];
