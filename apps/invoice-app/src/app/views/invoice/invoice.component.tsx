@@ -1,13 +1,14 @@
 import React from 'react';
-
-import { InvoiceContent, DeleteDialogue, InvoiceMenu } from './components';
-import { StatusChip } from '../../components/status-chip';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { FaChevronLeft } from 'react-icons/fa';
-import { useSelector, useDispatch } from 'react-redux';
-import { getSelectedInvoice, setActiveId } from '../../state/invoice';
-import { setDialogActive, setDialogOptions } from '../../state/ui';
+import { getSelectedInvoice, setActiveId } from '@state/invoice';
+import { setDialogActive, setDialogOptions } from '@state/ui';
 import './invoice.styles.css';
+import { InvoiceMenu } from '@components/invoice-menu';
+import { InvoiceContent } from '@components/invoice-content';
+import { StatusChip } from '@components/status-chip';
+import { DeleteDialogue } from '@components/delete-dialogue';
 
 export const Invoice = () => {
   const dispatch = useDispatch();

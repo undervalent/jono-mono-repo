@@ -6,11 +6,11 @@ import {
 } from '@reduxjs/toolkit';
 import currency from 'currency.js';
 
-import { RootState } from '../store';
+import { RootState } from '@state/store';
 import entries from './data';
-import { Entry } from '../../lib/schemas';
+import { Entry } from '@lib/schemas';
 
-const entriesAdapter = createEntityAdapter<Entry>();
+const entriesAdapter = createEntityAdapter<any>();
 type InvoicesState = EntityState<Entry, string> & {
   activeInvoiceId: string;
 };

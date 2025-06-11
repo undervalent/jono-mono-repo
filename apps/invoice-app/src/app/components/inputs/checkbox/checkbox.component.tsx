@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { FaCheck } from 'react-icons/fa';
 
 import './checkbox.styles.css';
-import { htmlSafeId } from '../../../lib/utils';
+import { htmlSafeId } from '@lib/utils';
 
 interface Props {
   label: string;

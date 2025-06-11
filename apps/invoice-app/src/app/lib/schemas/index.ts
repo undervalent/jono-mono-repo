@@ -20,10 +20,10 @@ export const entrySchema = z.object({
   id: z.string(),
   invoiceId: z.string(),
   name: z.string(),
-  quantity: z.number(),
-  price: z.number(),
+  quantity: z.string(),
+  price: z.string(),
+  total: z.string().optional(),
 });
-
 
 export const formSchema = z.object({
   invoice: invoiceSchema,

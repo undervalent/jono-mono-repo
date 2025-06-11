@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './slideout.styles.css';
 import { getIsFormActive, setFormActive } from '../../state/ui';
 import { useSelector, useDispatch } from 'react-redux';
-import { EditForm } from '../../views/invoice/components/edit-form/edit-form.component';
-import { NewForm } from '../../views/invoice/components/new-form/new-form.component';
+import { EditForm } from '@components/edit-form/edit-form.component';
+import { NewForm } from '@components/new-form/new-form.component';
 
 export function SlideOut() {
   const dispatch = useDispatch();

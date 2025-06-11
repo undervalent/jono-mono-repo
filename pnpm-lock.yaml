@@ -186,6 +186,9 @@ importers:
       '@types/react-is':
         specifier: 19.0.0
         version: 19.0.0
+      '@types/react-table':
+        specifier: ^7.7.20
+        version: 7.7.20
       '@types/styled-components':
         specifier: 5.1.34
         version: 5.1.34
@@ -3935,6 +3938,9 @@ packages:
 
   '@types/react-is@19.0.0':
     resolution: {integrity: sha512-71dSZeeJ0t3aoPyY9x6i+JNSvg5m9EF2i2OlSZI5QoJuI8Ocgor610i+4A10TQmURR+0vLwcVCEYFpXdzM1Biw==}
+
+  '@types/react-table@7.7.20':
+    resolution: {integrity: sha512-ahMp4pmjVlnExxNwxyaDrFgmKxSbPwU23sGQw2gJK4EhCvnvmib2s/O/+y1dfV57dXOwpr2plfyBol+vEHbi2w==}
 
   '@types/react@19.1.6':
     resolution: {integrity: sha512-JeG0rEWak0N6Itr6QUx+X60uQmN+5t3j9r/OVDtWzFXKaj6kD1BwJzOksD0FF6iWxZlbE1kB0q9vtnU2ekqa1Q==}
@@ -14569,6 +14575,10 @@ snapshots:
       '@types/react': 19.1.6
 
   '@types/react-is@19.0.0':
+    dependencies:
+      '@types/react': 19.1.6
+
+  '@types/react-table@7.7.20':
     dependencies:
       '@types/react': 19.1.6
 

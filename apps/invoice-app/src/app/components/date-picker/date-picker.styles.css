@@ -1,71 +1,114 @@
-.datepicker {
-}
-
-.datepicker label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #a2a1c2;
-  font-weight: 500;
-  font-size: 14px;
-}
-
-.input-wrapper {
-  border: 1px solid #a2a1f2;
-  border-radius: 8px;
-  padding: 0.6rem 0.8rem;
+.popover {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.calendar {
-  margin-top: 1rem;
-  padding: 1rem;
-  border-radius: 12px;
-  background: #fdfcff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.calendar-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
   margin-bottom: 1rem;
-  font-weight: 600;
+  max-width: 24rem;
+}
+.popover__content {
+  z-index: 10000;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  background: var(--uiElementBackground);
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+.popover__content[data-state='open'][data-side='top'] {
+  animation-name: slideDownAndFade;
+}
+.popover__content[data-state='open'][data-side='right'] {
+  animation-name: slideLeftAndFade;
+}
+.popover__content[data-state='open'][data-side='bottom'] {
+  animation-name: slideUpAndFade;
+}
+.popover__content[data-state='open'][data-side='left'] {
+  animation-name: slideRightAndFade;
 }
 
-.calendar-header button {
-  background: none;
-  border: none;
+.PopoverArrow {
+  fill: var(--uiElementBackground);
+}
+
+.popover__button {
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  height: 4.5rem;
+  width: 4.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+.popover__button:hover {
+  cursor: pointer;
+}
+.popover__button:focus {
+  border: 1px solid var(--uiElementBorder);
+  outline-color: var(--uiElementBorderHover);
+}
+
+.popover__input {
+  min-height: 4.8rem;
+  border-radius: 0.4rem;
+  margin-top: 1rem;
+  padding: 0 1.7rem;
   font-size: 1.2rem;
-  cursor: pointer;
-  color: #5e5cfc;
+  font-weight: 700;
+  line-height: 1.5rem;
+  letter-spacing: -0.025px;
+  background: var(--uiElementBackground);
+  color: var(--uiElementText);
+  border: 1px solid var(--uiElementBorder);
+  color: var(--uiElementText);
+}
+.popover__input:focus {
+  box-shadow: 0 0 0 2px var(--violet-8);
 }
 
-.calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 0.5rem;
+@keyframes slideUpAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.day {
-  width: 2rem;
-  height: 2rem;
-  line-height: 2rem;
-  text-align: center;
-  border-radius: 50%;
-  cursor: pointer;
-  font-weight: 500;
-  color: #222;
+@keyframes slideRightAndFade {
+  from {
+    opacity: 0;
+    transform: translateX(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.day:hover {
-  background: #e8e7ff;
+@keyframes slideDownAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.day.selected {
-  background: #5e5cfc;
-  color: white;
+@keyframes slideLeftAndFade {
+  from {
+    opacity: 0;
+    transform: translateX(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

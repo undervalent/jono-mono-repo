@@ -2,13 +2,14 @@ import React from 'react';
 import { Form } from 'radix-ui';
 import classNames from 'classnames';
 import { toCssSize } from '../../../lib/utils';
+import { TextInputType } from '@lib/types';
 
 import './text-field.css';
 
 interface Props {
   labelValue: string;
   name: string;
-  type?: 'text' | 'email' | 'password' | 'number' | 'tel' | 'url' | 'search';
+  type?: TextInputType;
   defaultValue?: string;
   width?: number | string;
 }

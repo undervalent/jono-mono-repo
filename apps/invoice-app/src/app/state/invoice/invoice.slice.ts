@@ -6,10 +6,10 @@ import {
 } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 import { data } from './invoices';
-import { Invoice } from '../../lib/types';
+import { Invoice } from '@lib/schemas';
 import { formatInvoice } from './utils';
 
-const invoicesAdapter = createEntityAdapter<Invoice>();
+const invoicesAdapter = createEntityAdapter<any>();
 
 export type InvoiceFilter = 'all' | 'draft' | 'pending' | 'paid';
 

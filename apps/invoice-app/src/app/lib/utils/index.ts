@@ -1,3 +1,5 @@
+import Dinero from 'dinero.js';
+import { Invoices } from '@lib/types';
 import { formatDate } from 'date-fns';
 
 export function htmlSafeId(label?: string): string {
@@ -25,3 +27,30 @@ export function toCssSize(
     /^(?:-?\d*\.?\d+)(px|em|rem|vh|vw|vmin|vmax|ch|ex|%|cm|mm|in|pt|pc)$/i;
   return validUnits.test(value) ? value : undefined;
 }
+
+export const convertToDollars = (amount: number | string) => {
+  if (typeof amount === 'number') {
+    const total = amount * 100;
+    return Dinero({
+      amount: total,
+      precision: 2,
+      currency: 'USD',
+    }).toFormat('$0,0.00');
+  }
+  return `$ ${amount}`;
+};
+
+export const convertItemsToDollars = (items: Invoices[]): any =>
+  items.map((el) => ({
+    ...el,
+    price: convertToDollars(el.price),
+    total: convertToDollars(el.total),
+  }));
+
+export const convertInvoices = (invoices: any) => {
+  return invoices.map((el: any) => ({
+    ...el,
+    items: convertItemsToDollars(el.items),
+    total: convertToDollars(el.total),
+  }));
+};
