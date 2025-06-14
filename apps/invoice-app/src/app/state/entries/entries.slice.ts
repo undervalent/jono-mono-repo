@@ -1,7 +1,6 @@
 import {
   createSlice,
   createEntityAdapter,
-  PayloadAction,
   EntityState,
 } from '@reduxjs/toolkit';
 import currency from 'currency.js';
@@ -9,6 +8,7 @@ import currency from 'currency.js';
 import { RootState } from '@state/store';
 import entries from './data';
 import { Entry } from '@lib/schemas';
+import { convertToDollars, generateInvoiceItemTotal } from '@lib/utils';
 
 const entriesAdapter = createEntityAdapter<any>();
 type InvoicesState = EntityState<Entry, string> & {
@@ -44,13 +44,10 @@ export const selectEntriesByInvoiceId =
     const entries = Object.values(entities).filter(
       (entry) => entry?.invoiceId === invoiceId,
     );
-    console.log('ENTRIES -->', entries);
     const withTotals = entries.map((entry) => {
-      const total = currency(entry.price).multiply(entry.quantity);
       return {
         ...entry,
-        price: currency(entry.price).format(),
-        total: total.format(),
+        currencyPrice: convertToDollars(entry.price),
       };
     });
 
