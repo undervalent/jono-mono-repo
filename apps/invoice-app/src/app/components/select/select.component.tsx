@@ -2,6 +2,7 @@
 import React from 'react';
 import { Select as RadixSelect } from 'radix-ui';
 import classNames from 'classnames';
+import { Controller } from 'react-hook-form';
 import { htmlSafeId } from '../../lib/utils';
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa6';
 
@@ -16,12 +17,14 @@ interface DropdownProps {
   options?: Option[];
   placeholder?: string;
   label: string;
-  defaultValue?: string | undefined;
   name: string;
+  control?: any; // optional React Hook Form
+  value?: string | number; // controlled value
+  onChange?: (val: string) => void; // controlled handler
 }
 
 const SelectItem = React.forwardRef(
-  ({ children, className, ...props }, forwardedRef) => {
+  ({ children, className, ...props }: any, forwardedRef: any) => {
     return (
       <RadixSelect.Item
         className={classNames('select__item', className)}
@@ -29,42 +32,43 @@ const SelectItem = React.forwardRef(
         ref={forwardedRef}
       >
         <RadixSelect.ItemText>{children}</RadixSelect.ItemText>
-        {/* <Select.ItemIndicator className="select__item-indicator"></Select.ItemIndicator> */}
       </RadixSelect.Item>
     );
   },
 );
+
 export const Select: React.FC<DropdownProps> = ({
   options,
   placeholder,
   label,
-  defaultValue,
   name,
+  control,
+  value,
+  onChange,
 }) => {
-  const [selected, setSelected] = React.useState(
-    defaultValue || options?.[0].value,
-  );
   const id = htmlSafeId(name);
+  const isUsingRHF = !!control;
 
-  const selectedItemText = options?.find(
-    (option) => option.value === parseInt(selected, 10),
-  )?.label;
+  const [localValue, setLocalValue] = React.useState(
+    value?.toString() ?? options?.[0]?.value?.toString() ?? '',
+  );
 
-  return (
+  const getLabelForValue = (val: string | number | undefined) => {
+    return options?.find((opt) => opt.value.toString() === val?.toString())
+      ?.label;
+  };
+
+  const renderSelect = (
+    selectedValue: string,
+    handleChange: (val: string) => void,
+  ) => (
     <div className="select__container">
-      <input type="hidden" name={name} value={selected} />
+      <input type="hidden" name={name} value={selectedValue} />
       <label htmlFor={id}>{label}</label>
-      <RadixSelect.Root defaultValue={defaultValue} onValueChange={setSelected}>
-        <RadixSelect.Trigger
-          className="select__trigger"
-          id={id}
-          aria-label={label}
-        >
-          <RadixSelect.Value
-            placeholder={placeholder}
-            className="select__item-value"
-          >
-            {selectedItemText}
+      <RadixSelect.Root value={selectedValue} onValueChange={handleChange}>
+        <RadixSelect.Trigger className="select__trigger" id={id}>
+          <RadixSelect.Value placeholder={placeholder}>
+            {getLabelForValue(selectedValue)}
           </RadixSelect.Value>
           <RadixSelect.Icon className="select__icon">
             <FaAngleDown size="1.5rem" />
@@ -78,7 +82,10 @@ export const Select: React.FC<DropdownProps> = ({
               </RadixSelect.ScrollUpButton>
               <RadixSelect.Viewport className="select__viewport">
                 {options?.map((option) => (
-                  <SelectItem key={option.value} value={option.value}>
+                  <SelectItem
+                    key={option.value}
+                    value={option.value.toString()}
+                  >
                     {option.label}
                   </SelectItem>
                 ))}
@@ -92,6 +99,29 @@ export const Select: React.FC<DropdownProps> = ({
       </RadixSelect.Root>
     </div>
   );
+
+  if (isUsingRHF) {
+    return (
+      <Controller
+        name={name}
+        control={control}
+        render={({ field }) =>
+          renderSelect(field.value?.toString(), (val) =>
+            field.onChange(Number(val)),
+          )
+        }
+      />
+    );
+  }
+
+  // fallback to controlled or local state
+  const selectedValue = value?.toString() ?? localValue;
+  const handleChange = (val: string) => {
+    if (onChange) onChange(val);
+    else setLocalValue(val);
+  };
+
+  return renderSelect(selectedValue, handleChange);
 };
 
 export default Select;

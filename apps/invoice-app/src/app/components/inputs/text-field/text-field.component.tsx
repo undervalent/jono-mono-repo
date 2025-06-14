@@ -3,45 +3,85 @@ import { Form } from 'radix-ui';
 import classNames from 'classnames';
 import { toCssSize } from '../../../lib/utils';
 import { TextInputType } from '@lib/types';
+import { Invoice } from '@lib/schemas';
+import { Controller } from 'react-hook-form';
 
 import './text-field.css';
 
-interface Props {
-  labelValue: string;
-  name: string;
-  type?: TextInputType;
-  defaultValue?: string;
-  width?: number | string;
-}
+type ControlledProps = {
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  name: any;
+  defaultValue?: never;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
+};
 
-export const OriginalTextField: React.FC<Props> = ({
-  labelValue,
-  type = 'text',
-  name = '',
-  defaultValue = '',
-  width = '',
-}) => {
+type UncontrolledProps = {
+  defaultValue?: string;
+  value?: never;
+  onChange?: never;
+  name: keyof Invoice;
+};
+
+type CommonProps = {
+  labelValue: string;
+  type?: TextInputType;
+  width?: number | string;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
+};
+
+type Props = CommonProps & (ControlledProps | UncontrolledProps);
+
+export const TextField: React.FC<Props> = (props) => {
+  const {
+    labelValue,
+    type = 'text',
+    width = '',
+    name,
+    value,
+    onChange,
+    onBlur,
+    defaultValue,
+  } = props;
+
   const classes = classNames({
     'inv-text-field': true,
     'inv-text-field__dynamic-width': !!width,
   });
+
   const style = {
     '--width': toCssSize(width),
   } as React.CSSProperties;
+
   return (
     <Form.Field name={name} className="inv-text-field__container">
-      <Form.Label>{labelValue}</Form.Label>
-      <Form.Control
-        className={classes}
-        type={type}
-        defaultValue={defaultValue}
-        style={style}
-      />
-      {/* <Form.Message className="inv-text-field__message">message</Form.Message> */}
+      <Form.Label htmlFor={String(name)}>{labelValue}</Form.Label>
+      <Form.Control asChild>
+        <input
+          id={String(name)}
+          name={String(name)}
+          type={type}
+          className={classes}
+          style={style}
+          value={value}
+          defaultValue={defaultValue}
+          onChange={onChange}
+          onBlur={onBlur}
+          autoComplete="off"
+        />
+      </Form.Control>
     </Form.Field>
   );
 };
 
-export const TextField: React.FC<Exclude<Props, 'theme'>> = ({ ...props }) => {
-  return <OriginalTextField {...props} />;
-};
+export function ControllerTextField({ item, control }: any) {
+  return (
+    <Controller
+      name={item.name}
+      control={control}
+      render={({ field }) => (
+        <TextField {...field} labelValue={item.labelValue} type={item.type} />
+      )}
+    />
+  );
+}

@@ -15,6 +15,7 @@ export const invoiceSchema = z.object({
   clientCountry: z.string(),
   clientEmail: z.string(),
   status: z.string(),
+  description: z.string(),
 });
 export const entrySchema = z.object({
   id: z.string(),
@@ -22,7 +23,6 @@ export const entrySchema = z.object({
   name: z.string(),
   quantity: z.string(),
   price: z.string(),
-  total: z.string().optional(),
 });
 
 export const formSchema = z.object({

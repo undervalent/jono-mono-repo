@@ -9,6 +9,7 @@ interface Props {
   disabled?: boolean;
   iconLabel?: string;
   style?: React.CSSProperties;
+  children?: React.ReactNode;
 }
 
 export const IconButton: React.FC<Props> = ({

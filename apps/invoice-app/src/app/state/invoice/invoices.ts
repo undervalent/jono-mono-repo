@@ -1,8 +1,8 @@
 export const data = [
   {
     id: 'RT3080',
-    createdAt: '2021-08-18:00:00.000Z',
-    paymentDue: '2021-08-19:00:00.000Z',
+    invoiceDate: '2021-08-18:01:00.000Z',
+    paymentDue: '2021-08-19:01:00.000Z',
     description: 'Re-branding',
     paymentTerms: 1,
     clientName: 'Jensen Huang',
@@ -19,8 +19,8 @@ export const data = [
   },
   {
     id: 'XM9141',
-    createdAt: '2021-08-21:00:00.000Z',
-    paymentDue: '2021-09-20:00:00.000Z',
+    invoiceDate: '2021-08-21T:00:00.000Z',
+    paymentDue: '2021-09-20T:00:00.000Z',
     description: 'Graphic Design',
     paymentTerms: 30,
     clientName: 'Alex Grim',
@@ -37,8 +37,8 @@ export const data = [
   },
   {
     id: 'RG0314',
-    createdAt: '2021-09-24:00:00.000Z',
-    paymentDue: '2021-10-01:00:00.000Z',
+    invoiceDate: '2021-09-24T:00:00.000Z',
+    paymentDue: '2021-10-01T:00:00.000Z',
     description: 'Website Redesign',
     paymentTerms: 7,
     clientName: 'John Morrison',
@@ -55,8 +55,8 @@ export const data = [
   },
   {
     id: 'RT2080',
-    createdAt: '2021-10-11T:00:00.000Z',
-    paymentDue: '2021-10-12:00:00.000Z',
+    invoiceDate: '2021-10-11T:00:00.000Z',
+    paymentDue: '2021-10-12T:00:00.000Z',
     description: 'Logo Concept',
     paymentTerms: 1,
     clientName: 'Alysa Werner',
@@ -73,8 +73,8 @@ export const data = [
   },
   {
     id: 'AA1449',
-    createdAt: '2021-10-7:00:00.000Z',
-    paymentDue: '2021-10-14:00:00.000Z',
+    invoiceDate: '2021-10-7T:00:00.000Z',
+    paymentDue: '2021-10-14T:00:00.000Z',
     description: 'Re-branding',
     paymentTerms: 7,
     clientName: 'Mellisa Clarke',
@@ -91,8 +91,8 @@ export const data = [
   },
   {
     id: 'TY9141',
-    createdAt: '2021-10-01:00:00.000Z',
-    paymentDue: '2021-10-31:00:00.000Z',
+    invoiceDate: '2021-10-01T:00:00.000Z',
+    paymentDue: '2021-10-31T:00:00.000Z',
     description: 'Landing Page Design',
     paymentTerms: 30,
     clientName: 'Thomas Wayne',
@@ -109,8 +109,8 @@ export const data = [
   },
   {
     id: 'FV2353',
-    createdAt: '2021-11-05:00:00.000Z',
-    paymentDue: '2021-11-12:00:00.000Z',
+    invoiceDate: '2021-11-05T:00:00.000Z',
+    paymentDue: '2021-11-12T:00:00.000Z',
     description: 'Logo Re-design',
     paymentTerms: 7,
     clientName: 'Anita Wainwright',

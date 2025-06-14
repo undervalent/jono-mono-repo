@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import media from "styled-media-query";
+import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const Wrapper = styled.section`
   width: 100%;
@@ -49,7 +49,7 @@ export const Wrapper = styled.section`
     margin-top: 0.8rem;
   }
 
-  ${media.greaterThan("medium")`
+  ${media.greaterThan('medium')`
     align-items: center;
     width: 100%;
   .invoice-content__header {

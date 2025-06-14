@@ -3,15 +3,21 @@ import { getSelectedInvoice } from '@state/invoice';
 import { useSelector, useDispatch } from 'react-redux';
 import { Form } from 'radix-ui';
 import { ThemedButton } from '@components/buttons';
-import { TextField } from '@components/inputs/text-field';
+import { TextField, ControllerTextField } from '@components/inputs/text-field';
 import ScrollArea from '@components/scroll-area/scroll-area.component';
 import { senderFormItems, clientFormItems } from './constants';
 import { DatePicker } from '@components/date-picker';
 import { Select } from '@components/select';
 import { selectEntriesByInvoiceId } from '@state/entries';
 import { EntryList } from './entry-list';
+import {
+  useForm as useReactHookForm,
+  UseFormReturn,
+  Controller,
+} from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 
-import { formSchema } from '@lib/schemas';
+import { formSchema, invoiceSchema, Invoice } from '@lib/schemas';
 
 const options = [
   { value: 1, label: 'Net 1 Day' },
@@ -20,68 +26,93 @@ const options = [
   { value: 30, label: 'Net 30 Days' },
 ];
 
-function useForm() {
+export function useForm(): [
+  {
+    activeInvoice: Invoice | undefined;
+    entries: any; // Replace with actual entry type if you have it
+    register: UseFormReturn<Invoice>['register'];
+    errors: UseFormReturn<Invoice>['formState']['errors'];
+    control: UseFormReturn<Invoice>['control'];
+  },
+  {
+    handleSubmit: (e: React.FormEvent) => void;
+  },
+] {
   const activeInvoice = useSelector(getSelectedInvoice);
   const entries = useSelector(selectEntriesByInvoiceId(activeInvoice?.id));
+
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useReactHookForm<Invoice>({
+    resolver: zodResolver(invoiceSchema),
+    defaultValues: {
+      ...activeInvoice,
+    },
+  });
+
+  const onSubmit = (data: Invoice) => console.log('data', data);
 
   return [
     {
       activeInvoice,
       entries,
+      register,
+      errors,
+      control,
     },
     {
-      handleSubmit: (e: any) => {
-        e.preventDefault();
-      },
+      handleSubmit: handleSubmit(onSubmit),
     },
   ];
 }
 export function EditForm() {
-  const [{ activeInvoice, entries }, { handleSubmit }] = useForm();
+  const [
+    { activeInvoice, entries, register, errors, control },
+    { handleSubmit },
+  ] = useForm();
+  console.log('ERRORS -->', errors);
   return (
     <Form.Root onSubmit={handleSubmit}>
       <ScrollArea>
         {senderFormItems.map((item) => {
           return (
-            <TextField
+            <ControllerTextField
               key={item.name}
-              name={item.name}
-              defaultValue={activeInvoice?.[item.name]}
-              labelValue={item.labelValue}
-              type={item.type}
+              item={item}
+              control={control}
             />
           );
         })}
 
         {clientFormItems.map((item) => {
           return (
-            <TextField
+            <ControllerTextField
               key={item.name}
-              name={item.name}
-              defaultValue={activeInvoice?.[item.name]}
-              labelValue={item.labelValue}
-              type={item.type}
+              item={item}
+              control={control}
             />
           );
         })}
-        <DatePicker
-          title="Invoice date"
-          defaultValue={activeInvoice?.createdAt}
-        />
+        <DatePicker title="Invoice date" control={control} name="invoiceDate" />
         <Select
+          name="paymentTerms"
           options={options}
           placeholder="Select Payment Terms"
           label="Payment Terms"
-          defaultValue={activeInvoice?.paymentTerms}
-          name="paymentTerms"
+          control={control}
         />
-        <TextField
-          name="projectDescription"
-          defaultValue={activeInvoice?.description}
-          labelValue="Project Description"
-          type="text"
+        <ControllerTextField
+          control={control}
+          item={{
+            name: 'description',
+            labelValue: 'Project Description',
+            type: 'text',
+          }}
         />
-        <EntryList entries={entries} />
+        <EntryList entries={entries} activeInvoiceId={activeInvoice?.id} />
       </ScrollArea>
       <Form.Submit asChild>
         <ThemedButton type="secondary">Submit</ThemedButton>
