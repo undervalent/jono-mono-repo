@@ -12,9 +12,10 @@ interface DatePickerProps {
   title: string;
   name: string;
   control: any;
+  error?: string;
 }
 
-export function DatePicker({ title, name, control }: DatePickerProps) {
+export function DatePicker({ title, name, control, error }: DatePickerProps) {
   const today = new Date();
   const [month, setMonth] = React.useState(today);
 
@@ -22,7 +23,8 @@ export function DatePicker({ title, name, control }: DatePickerProps) {
     <Controller
       name={name}
       control={control}
-      render={({ field: { value, onChange, ref } }) => {
+      render={({ field }) => {
+        const { value, onChange, ref } = field;
         const parsedDate = value ? new Date(value) : today;
         const isValidDate = isValid(parsedDate);
         const inputValue = isValidDate ? format(parsedDate, dateFormat) : '';
@@ -48,6 +50,7 @@ export function DatePicker({ title, name, control }: DatePickerProps) {
                 }}
                 ref={ref}
               />
+              <div>{error}</div>
               <Popover.Trigger asChild>
                 <button
                   className="popover__button"

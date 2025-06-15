@@ -11,7 +11,6 @@ interface Props {
 
 export const FullTable: React.FC<Props> = ({ items }) => {
   const data = React.useMemo(() => items, [items]);
-  console.log('ITEMS -->', items);
   const columns = React.useMemo(
     () => [
       {
@@ -43,9 +42,10 @@ export const FullTable: React.FC<Props> = ({ items }) => {
         {
           // Loop over the header rows
           headerGroups.map((headerGroup) => {
+            const { key, ...rest } = headerGroup.getHeaderGroupProps()
             return (
               // Apply the header row props
-              <tr {...headerGroup.getHeaderGroupProps()}>
+              <tr key={key} {...rest}>
                 {
                   // Loop over the headers in each row
                   headerGroup.headers.map((column) => {

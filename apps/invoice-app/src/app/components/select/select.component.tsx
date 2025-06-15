@@ -21,6 +21,7 @@ interface DropdownProps {
   control?: any; // optional React Hook Form
   value?: string | number; // controlled value
   onChange?: (val: string) => void; // controlled handler
+  error?: string;
 }
 
 const SelectItem = React.forwardRef(
@@ -44,8 +45,12 @@ export const Select: React.FC<DropdownProps> = ({
   name,
   control,
   value,
+  error,
   onChange,
 }) => {
+  if (error) {
+    console.log('TODO: INCLUDE ERROR');
+  }
   const id = htmlSafeId(name);
   const isUsingRHF = !!control;
 
@@ -58,12 +63,19 @@ export const Select: React.FC<DropdownProps> = ({
       ?.label;
   };
 
+  // fallback to controlled or local state
+  const selectedValue = value?.toString() ?? localValue;
+  const handleChange = (val: string) => {
+    if (onChange) onChange(val);
+    else setLocalValue(val);
+  };
+
   const renderSelect = (
     selectedValue: string,
     handleChange: (val: string) => void,
   ) => (
     <div className="select__container">
-      <input type="hidden" name={name} value={selectedValue} />
+      <input type="hidden" name={name} value={localValue} />
       <label htmlFor={id}>{label}</label>
       <RadixSelect.Root value={selectedValue} onValueChange={handleChange}>
         <RadixSelect.Trigger className="select__trigger" id={id}>
@@ -113,13 +125,6 @@ export const Select: React.FC<DropdownProps> = ({
       />
     );
   }
-
-  // fallback to controlled or local state
-  const selectedValue = value?.toString() ?? localValue;
-  const handleChange = (val: string) => {
-    if (onChange) onChange(val);
-    else setLocalValue(val);
-  };
 
   return renderSelect(selectedValue, handleChange);
 };

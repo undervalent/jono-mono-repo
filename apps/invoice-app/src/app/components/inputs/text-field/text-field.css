@@ -1,7 +1,7 @@
 .inv-text-field {
-  /* min-width: 24rem; */
   min-height: 4.8rem;
   border-radius: 0.4rem;
+  max-width: var(--width);
   margin-top: 1rem;
   padding: 0 1.7rem;
   font-size: 1.2rem;
@@ -27,20 +27,19 @@
   border: 1px solid var(--uiElementBorder);
 }
 
-.inv-text-field__light:active {
-  border: 1px solid var(--uiElementBorderHover);
-  outline-color: var(--uiElementBorderHover);
+.inv-text-field__error {
+  color: var(--dangerBorder);
+  border: 1px solid var(--dangerBorder);
+  label {
+    color: var(--dangerBorder);
+  }
 }
 
-.inv-text-field__light:focus {
-  border: 1px solid var(--uiElementBorderHover);
-  outline-color: var(--uiElementBorderHover);
+.inv-text-field__error-message {
+  color: var(--dangerBorder);
 }
-
-.inv-text-field__light:focus-visible {
-  border: 1px solid var(--uiElementBorderHover);
-  outline-color: var(--uiElementBorderHover);
-}
-.inv-text-field__dynamic-width {
-  width: var(--width, auto) !important;
+.inv-text-field__label-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

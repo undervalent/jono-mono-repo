@@ -56,6 +56,7 @@ export default defineConfig({
       '@utils': path.resolve(__dirname, 'src/app/utils'),
       '@components': path.resolve(__dirname, 'src/app/components'),
       '@lib': path.resolve(__dirname, 'src/app/lib'),
+      '@assets': path.resolve(__dirname, 'src/aassets'),
     },
   },
 });

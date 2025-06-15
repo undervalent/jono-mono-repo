@@ -4,12 +4,12 @@ import classNames from 'classnames';
 import { toCssSize } from '../../../lib/utils';
 import { TextInputType } from '@lib/types';
 import { Invoice } from '@lib/schemas';
-import { Controller } from 'react-hook-form';
+import { Controller, Control } from 'react-hook-form';
 
 import './text-field.css';
 
 type ControlledProps = {
-  value: string;
+  value?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   name: any;
   defaultValue?: never;
@@ -28,6 +28,7 @@ type CommonProps = {
   type?: TextInputType;
   width?: number | string;
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
+  error?: string;
 };
 
 type Props = CommonProps & (ControlledProps | UncontrolledProps);
@@ -36,17 +37,22 @@ export const TextField: React.FC<Props> = (props) => {
   const {
     labelValue,
     type = 'text',
-    width = '',
+    width = '100%',
     name,
     value,
     onChange,
     onBlur,
     defaultValue,
+    error,
   } = props;
 
+  const containerClasses = classNames({
+    'inv-text-field__container': true,
+  });
   const classes = classNames({
     'inv-text-field': true,
     'inv-text-field__dynamic-width': !!width,
+    'inv-text-field__error': !!error,
   });
 
   const style = {
@@ -54,8 +60,15 @@ export const TextField: React.FC<Props> = (props) => {
   } as React.CSSProperties;
 
   return (
-    <Form.Field name={name} className="inv-text-field__container">
-      <Form.Label htmlFor={String(name)}>{labelValue}</Form.Label>
+    <Form.Field name={name} className={containerClasses} style={style}>
+      <div className="inv-text-field__label-wrapper">
+        <Form.Label htmlFor={String(name)}>{labelValue}</Form.Label>
+        {error && (
+          <Form.Message className="inv-text-field__error-message">
+            {error}
+          </Form.Message>
+        )}
+      </div>
       <Form.Control asChild>
         <input
           id={String(name)}
@@ -73,15 +86,37 @@ export const TextField: React.FC<Props> = (props) => {
     </Form.Field>
   );
 };
-
-export function ControllerTextField({ item, control }: any) {
+interface ControllerTextFieldProps {
+  control: Control<any>;
+  item: {
+    name: string;
+    labelValue: string;
+    type?: TextInputType;
+  };
+  error?: string;
+  width?: number | string;
+}
+export function ControllerTextField({
+  item,
+  control,
+  width,
+  error,
+}: ControllerTextFieldProps) {
   return (
     <Controller
       name={item.name}
       control={control}
-      render={({ field }) => (
-        <TextField {...field} labelValue={item.labelValue} type={item.type} />
-      )}
+      render={({ field }) => {
+        return (
+          <TextField
+            {...field}
+            labelValue={item.labelValue}
+            type={item.type}
+            width={width}
+            error={error}
+          />
+        );
+      }}
     />
   );
 }

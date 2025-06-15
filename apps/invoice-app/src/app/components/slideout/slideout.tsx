@@ -1,18 +1,16 @@
 import { Dialog } from 'radix-ui';
 import { motion, AnimatePresence } from 'framer-motion';
 import './slideout.styles.css';
-import { getIsFormActive, setFormActive } from '../../state/ui';
-import { useSelector, useDispatch } from 'react-redux';
+import { getActiveForm } from '@state/ui';
+import { useSelector } from 'react-redux';
 import { EditForm } from '@components/edit-form/edit-form.component';
-import { NewForm } from '@components/new-form/new-form.component';
 
 export function SlideOut() {
-  const dispatch = useDispatch();
-  const showForm = useSelector(getIsFormActive);
-  const form = showForm === 'edit' ? <EditForm /> : <NewForm />;
-  const title = showForm === 'edit' ? 'Edit Invoice' : 'New Invoice';
+  const activeForm = useSelector(getActiveForm);
+  const title = activeForm === 'edit' ? 'Edit Invoice' : 'New Invoice';
+
   return (
-    <Dialog.Root open={!!showForm}>
+    <Dialog.Root open={!!activeForm}>
       <Dialog.Portal>
         <Dialog.Overlay className="sidebar-overlay" />
 
@@ -21,7 +19,6 @@ export function SlideOut() {
             <Dialog.Title asChild>
               <h2 className="dialog-header">{title}</h2>
             </Dialog.Title>
-
             <motion.div
               initial={{ x: '-100%' }}
               animate={{ x: 0 }}
@@ -29,13 +26,7 @@ export function SlideOut() {
               transition={{ type: 'tween', duration: 0.3 }}
               className="sidebar-content"
             >
-              <Dialog.Close
-                className="sidebar-close"
-                onClick={() => dispatch(setFormActive(''))}
-              >
-                <span className="close-icon">X</span>
-              </Dialog.Close>
-              {form}
+              <EditForm />
             </motion.div>
           </Dialog.Content>
         </AnimatePresence>

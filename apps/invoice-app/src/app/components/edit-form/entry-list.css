@@ -6,7 +6,7 @@
 
 .entry-list__item {
   display: flex;
-  gap: 2.2rem;
+  gap: 1rem;
   align-items: center;
 }
 .entry-list__item > * {

@@ -24,7 +24,11 @@ const initialState: InvoicesState = entriesAdapter.setAll(
 export const entriesSlice = createSlice({
   name: 'entris',
   initialState,
-  reducers: {},
+  reducers: {
+    updateEntries: (state, action) => {
+      entriesAdapter.upsertMany(state, action.payload);
+    },
+  },
 });
 
 const selectors = entriesAdapter.getSelectors<RootState>(
@@ -62,5 +66,7 @@ export const selectInvoiceTotal = (invoiceId: string) => (state: RootState) => {
   );
   return total.format();
 };
+
+export const { updateEntries } = entriesSlice.actions;
 
 export default entriesSlice.reducer;

@@ -9,7 +9,6 @@ export const uiSlice = createSlice({
         ? localStorage.getItem('theme') || 'light'
         : 'light',
     activeForm: '',
-    isFormActive: false,
     isDialogActive: false,
     dialogOptions: null,
   },
@@ -20,9 +19,6 @@ export const uiSlice = createSlice({
     setFormActive: (state, action) => {
       state.activeForm = action.payload;
     },
-    toggleForm: (state) => {
-      state.isFormActive = !state.isFormActive;
-    },
     setDialogActive: (state, action) => {
       if (action.payload === false) {
         state.dialogOptions = null;
@@ -32,19 +28,17 @@ export const uiSlice = createSlice({
     setDialogOptions: (state, action) => {
       state.dialogOptions = action.payload;
     },
+    resetActiveForm: (state) => {
+      state.activeForm = '';
+    },
   },
 });
 
-export const {
-  toggleForm,
-  toggleTheme,
-  setDialogActive,
-  setDialogOptions,
-  setFormActive,
-} = uiSlice.actions;
+export const { toggleTheme, setDialogActive, setDialogOptions, setFormActive } =
+  uiSlice.actions;
 
 export const getTheme = (state: RootState) => state.ui.theme;
-export const getIsFormActive = (state: RootState) => state.ui.activeForm;
+export const getActiveForm = (state: RootState) => state.ui.activeForm;
 export const getIsDialogActive = (state: RootState) => state.ui.isDialogActive;
 export const getDialogOptions = (state: RootState) => state.ui.dialogOptions;
 

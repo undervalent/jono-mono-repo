@@ -1,5 +1,5 @@
 import React from 'react';
-import { setFormActive } from '@state/ui';
+import { setFormActive } from '../../state/ui';
 import { useSelector, useDispatch } from 'react-redux';
 import { Button } from '../buttons';
 import { Wrapper } from './invoice-menu.styles';

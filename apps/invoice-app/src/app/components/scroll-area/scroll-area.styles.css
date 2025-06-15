@@ -14,11 +14,9 @@
 
 .scroll-area_scrollbar {
   display: flex;
-  /* ensures no selection */
   user-select: none;
-  /* disable browser handling of all panning and zooming gestures on touch devices */
   touch-action: none;
-  padding: 2px;
+  padding: 0.2rem;
   background: var(--black-a3);
   transition: background 160ms ease-out;
 }

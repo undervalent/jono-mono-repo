@@ -9,11 +9,12 @@ interface Props {
   type?: 'primary' | 'secondary' | 'danger' | 'tertiary';
   size?: 'small' | 'medium' | 'large';
   icon?: any;
-  onClick(): void;
-  disabled?: boolean;
   children: React.ReactNode;
   iconLabel?: string;
   width?: number | string;
+  disabled?: boolean;
+  onClick?: any;
+  intent?: string;
 }
 
 export const Button: React.FC<Props> = ({
@@ -21,10 +22,10 @@ export const Button: React.FC<Props> = ({
   size = 'medium',
   children,
   icon = null,
-  onClick,
-  disabled,
   iconLabel = '',
   width = '',
+  disabled = false,
+  ...htmlAttributes
 }) => {
   const classes = classNames({
     'default-button': true,
@@ -38,9 +39,9 @@ export const Button: React.FC<Props> = ({
   return (
     <button
       className={classes}
-      onClick={onClick}
-      disabled={disabled}
       style={{ maxWidth: toCssSize(width) }}
+      disabled={disabled}
+      {...htmlAttributes}
     >
       {icon && (
         <AccessibleIcon.Root label={iconLabel ?? 'Icon'}>

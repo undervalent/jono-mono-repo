@@ -2,13 +2,13 @@
 }
 
 .main-button__small {
-  min-width: 7.3rem;
+  /* min-width: 7.3rem; */
 }
 .main-button__medium {
-  min-width: 15rem;
+  /* min-width: 15rem; */
 }
 .main-button__large {
-  min-width: 35rem;
+  /* min-width: 35rem; */
 }
 
 .main-button__primary {

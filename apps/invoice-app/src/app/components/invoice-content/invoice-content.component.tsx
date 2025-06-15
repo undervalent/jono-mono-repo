@@ -7,8 +7,14 @@ import { getSelectedInvoice } from '@state/invoice';
 export const InvoiceContent = () => {
   const invoice = useSelector(getSelectedInvoice);
   if (!invoice) return null;
-  const { id, description, paymentDue, createdAt, clientName, clientEmail } =
-    invoice;
+  const {
+    id,
+    description,
+    clientName,
+    clientEmail,
+    formattedInvoiceDate,
+    formattedDueDate,
+  } = invoice;
 
   return (
     <Wrapper>
@@ -34,11 +40,13 @@ export const InvoiceContent = () => {
         <section>
           <div className="invoice-content__dates">
             <span className="invoice-content__label">Invoice date</span>
-            <h2 className="invoice-content__headline"> {createdAt}</h2>
+            <h2 className="invoice-content__headline">
+              {formattedInvoiceDate}
+            </h2>
           </div>
           <div className="invoice-content__dates">
             <span className="invoice-content__label">Payment due</span>
-            <h2 className="invoice-content__headline">{paymentDue}</h2>
+            <h2 className="invoice-content__headline">{formattedDueDate}</h2>
           </div>
         </section>
         <section>

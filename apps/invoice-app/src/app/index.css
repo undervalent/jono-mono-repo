@@ -211,7 +211,7 @@
   --dangerBackground: var(--red1);
   --dangerBackgroundHover: var(--red2);
   --dangerText: var(--white);
-  --dangerBorder: transparent;
+  --dangerBorder: var(--red1);
 
   --subtleBackground: var(--purple6);
   --subtleBackgroundHover: var(--purple5);
@@ -222,6 +222,8 @@
 
   --warningText: #ff8f00;
   --warningBackground: rgba(255, 143, 0, 0.06);
+
+  --emptyText: var(--purple4);
 }
 
 /* Dark Mode Styles */
@@ -242,10 +244,12 @@
   --tableFooterBackground: var(--dark1);
 
   --secondaryText: var(--purple5);
-  --tertiaryBackground: var(--dark4);
-  --tertiaryBackgroundHover: var(--purple2);
-  --tertiaryText: var(--purple5);
+  --tertiaryBackground: var(--purple6);
+  --tertiaryBackgroundHover: var(--purple5);
+  --tertiaryText: var(--purple3);
   --tertiaryBorder: transparent;
+
+  --emptyText: var(--purple5);
 }
 
 html {
@@ -532,4 +536,13 @@ h4 {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }

@@ -1,59 +1,63 @@
 import React from 'react';
-import type { Entry } from '@lib/schemas';
-import { TextField } from '@components/inputs/text-field';
+import { useFormContext, Control } from 'react-hook-form';
+
+import { ControllerTextField } from '@components/inputs/text-field';
 import { IconButton } from '@components/buttons';
 import { FaTrash } from 'react-icons/fa';
+import type { FormSchema } from '@lib/schemas';
 
 import { generateInvoiceItemTotal } from '@lib/utils';
 
 interface Props {
-  entry: Entry;
-  removeItem: () => void;
+  index: number;
+  remove: () => void;
+  control: Control<FormSchema>;
+  field: any;
 }
-export function EntryItem({ entry, removeItem }: Props) {
-  const [ent, setEnt] = React.useState<Entry>(entry);
+export function EntryItem({ index, remove, control, field }: Props) {
   const total = generateInvoiceItemTotal({
-    price: ent.price,
-    quantity: ent.quantity,
+    quantity: +field.quantity,
+    price: +field.price,
   });
   return (
     <div className="entry-list__item">
-      <TextField
-        type="text"
-        name="name"
-        labelValue="Item name"
+      <ControllerTextField
+        control={control}
         width="21.4rem"
-        value={ent.name}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          setEnt({ ...ent, name: e.target.value })
-        }
+        item={{
+          name: `entities.${index}.name`,
+          labelValue: 'Item name',
+          type: 'text',
+        }}
       />
-      <TextField
-        labelValue="Qty."
-        type="number"
-        name="quantity"
-        width="5.8rem"
-        value={ent.quantity}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          setEnt({ ...ent, quantity: e.target.value })
-        }
+      <ControllerTextField
+        control={control}
+        width="4.8rem"
+        item={{
+          name: `entities.${index}.quantity`,
+          labelValue: 'Qty.',
+          type: 'text',
+        }}
       />
-      <TextField
-        type="text"
-        name="price"
-        labelValue="Price"
-        width="11rem"
-        value={ent.price}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          setEnt({ ...ent, price: e.target.value })
-        }
+      <ControllerTextField
+        control={control}
+        width="10rem"
+        item={{
+          name: `entities.${index}.price`,
+          labelValue: 'Price',
+          type: 'text',
+        }}
       />
+
       <div className="entry-list__total">
         <span className="entry-list__total-label">Total</span>
         <span className="entry-list__total-value">{total}</span>
       </div>
-
-      <IconButton onClick={removeItem} icon={<FaTrash />} />
+      <IconButton
+        icon={<FaTrash />}
+        onClick={remove}
+        iconLabel="delete entry"
+      />
     </div>
   );
 }

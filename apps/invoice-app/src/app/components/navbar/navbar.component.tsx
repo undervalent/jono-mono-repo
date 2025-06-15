@@ -38,7 +38,11 @@ export const NavBar = () => {
           </button>
         </div>
         <div className="navbar__avatar-wrapper">
-          <img src={avatarImg} alt="avatar" className="navbar__avatar" />
+          <img
+            src="public/assets/image-avatar.jpg"
+            alt=""
+            className="navbar__avatar"
+          />
         </div>
       </div>
     </nav>

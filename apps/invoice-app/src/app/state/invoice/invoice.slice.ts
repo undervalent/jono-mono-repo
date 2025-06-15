@@ -45,6 +45,9 @@ export const invoiceSlice = createSlice({
         changes: { status: 'paid' },
       });
     },
+    updateInvoice: (state, action) => {
+      invoicesAdapter.upsertOne(state, action.payload);
+    },
   },
 });
 
@@ -59,8 +62,13 @@ export const {
   selectIds: selectInvoiceIds,
 } = selectors;
 
-export const { setFilter, setActiveId, removeInvoiceById, markInvoiceAsPaid } =
-  invoiceSlice.actions;
+export const {
+  setFilter,
+  setActiveId,
+  removeInvoiceById,
+  markInvoiceAsPaid,
+  updateInvoice,
+} = invoiceSlice.actions;
 
 export const getFilter = (state: RootState) => state.invoice.filter;
 

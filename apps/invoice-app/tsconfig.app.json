@@ -17,6 +17,9 @@
       ],
       "@lib/*": [
         "app/lib/*"
+      ],
+      "@assets/*": [
+        "assets/*"
       ]
     },
     "outDir": "../../dist/out-tsc",
