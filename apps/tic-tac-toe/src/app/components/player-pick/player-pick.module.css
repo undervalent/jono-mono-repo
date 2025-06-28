@@ -1,0 +1,33 @@
+.container {
+  border-radius: var(--xLarge);
+  background: var(--blackLight);
+  box-shadow: 0px -8px 0px 0px #10212A inset;
+  padding: var(--size6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--size5);
+  width: 46rem;
+}
+
+.header  {
+  color: var(--grayDark);
+  text-align: center;
+  font-size: var(--fontSize2);
+  font-style: normal;
+  font-weight: var(--bold);
+  line-height: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.sub {
+  color: var(--grayDark);
+  text-align: center;
+  font-size: var(--fontSize1);
+  font-style: normal;
+  font-weight: var(--bold);
+  line-height: normal;
+  letter-spacing: 0.875px;
+  opacity: var(--opacity50);
+  text-transform: uppercase;
+}

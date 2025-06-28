@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--size10);
+  margin-top: var(--size120)
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+}
