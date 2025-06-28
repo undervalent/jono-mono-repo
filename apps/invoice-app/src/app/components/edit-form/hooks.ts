@@ -40,6 +40,7 @@ export function useForm(): [UseFormState, UseFormActions] {
   }));
 
   const methods = useReactHookForm<FormSchema>({
+    // @ts-expect-error  -- duplicate RHF Resolver types after pnpm hoisting
     resolver: zodResolver(formSchema),
     defaultValues: {
       invoice: {
