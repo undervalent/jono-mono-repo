@@ -4,7 +4,10 @@ import { getUsername, setUsername } from '../state/ui';
 import { useDispatch, useSelector } from 'react-redux';
 import { useGetDevQuery } from '../state/services';
 
-export function useFetchGithubUser() {
+export function useFetchGithubUser(): [
+  any,
+  { setUsername: (username: string) => void },
+] {
   const username = useSelector(getUsername);
   const dispatch = useDispatch();
   const { data, error, isLoading } = useGetDevQuery(username);

@@ -1,0 +1,120 @@
+.select__container {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.select__trigger {
+  background-color: var(--uiElementBackground) !important;
+  border: 1px solid var(--uiElementBorder) !important;
+  color: var(--uiElementText) !important;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 24rem;
+  min-height: 4.8rem;
+  border-radius: 0.4rem;
+  margin-top: 1rem;
+  padding: 0 1.7rem !important;
+  font-size: 1.2rem !important;
+  font-weight: bold !important;
+  line-height: 1.5rem;
+  letter-spacing: -0.025px;
+}
+
+.select__trigger:focus,
+.select__trigger:active,
+.select__trigger[data-state='open'] {
+  border: 1px solid var(--uiElementBorderHover) !important;
+  outline-color: var(--uiElementBorder);
+}
+
+.select__trigger[data-placeholder] {
+  color: var(--uiElementText);
+}
+
+.select__icon {
+  color: Var(--uiElementActiveText);
+}
+.select__portal {
+  position: fixed;
+  z-index: 1000;
+}
+.select__content {
+  max-height: 200px;
+  overflow: hidden;
+  background-color: var(--uiElementBackground);
+  border-radius: 6px;
+  box-shadow: var(--lifted);
+}
+
+.select__viewport {
+  padding: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.select__item {
+  line-height: 1;
+  color: var(--uiElementText);
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  height: 6.6rem;
+  padding: 0 35px 0 25px;
+  position: relative;
+  user-select: none;
+  border-bottom: 1px solid var(--uiElementBorder);
+}
+
+.select__item[data-disabled] {
+  color: var(--mauve-8);
+  pointer-events: none;
+}
+
+.select__item[data-highlighted] {
+  outline: none;
+  /* background-color: var(--uiElementActiveText); */
+  color: var(--uiElementActiveText);
+}
+
+.select__label {
+  padding: 0 25px;
+  font-size: 12px;
+  line-height: 25px;
+  color: var(--mauve-11);
+}
+
+.select__separator {
+  height: 1px;
+  background-color: var(--uiElementBorder);
+  margin: 5px;
+}
+
+.select__item-indicator {
+  position: absolute;
+  left: 0;
+  width: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select__scroll-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  background-color: var(--uiElementBackground);
+  color: Var(--uiElementActiveText);
+  cursor: default;
+}
+.select__item-value {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--headers);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

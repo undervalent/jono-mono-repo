@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import media from "styled-media-query";
+// @ts-nocheck
+import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const Wrapper = styled.section`
   width: 100%;
@@ -13,11 +14,11 @@ export const Listings = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(30rem, 32.7rem));
   justify-content: center;
 
-  ${media.greaterThan("medium")`
+  ${media.greaterThan('medium')`
     margin-top: ${({ theme }) => theme.spacing.size18};
   `}
 
-  ${media.greaterThan("large")`
+  ${media.greaterThan('large')`
     margin-top: ${({ theme }) => theme.spacing.size100};
   `}
 `;

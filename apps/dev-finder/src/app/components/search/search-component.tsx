@@ -9,7 +9,9 @@ function useSearchData(): [any, any] {
     e.preventDefault();
     const data = new FormData(e.target);
     const user = data.get('search-github')?.toString() || '';
-    setUsername(user);
+    if (user) {
+      setUsername(user);
+    }
   };
   return [{ error }, { handleFormSubmit }];
 }

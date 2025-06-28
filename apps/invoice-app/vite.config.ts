@@ -1,4 +1,5 @@
 /// <reference types="vitest" />
+import path from 'path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
@@ -47,5 +48,15 @@ export default defineConfig({
     },
     environment: 'jsdom',
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+  },
+  resolve: {
+    alias: {
+      '@state': path.resolve(__dirname, 'src/app/state'),
+      '@hooks': path.resolve(__dirname, 'src/app/hooks'),
+      '@utils': path.resolve(__dirname, 'src/app/utils'),
+      '@components': path.resolve(__dirname, 'src/app/components'),
+      '@lib': path.resolve(__dirname, 'src/app/lib'),
+      '@assets': path.resolve(__dirname, 'src/aassets'),
+    },
   },
 });

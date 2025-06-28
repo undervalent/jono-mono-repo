@@ -1,0 +1,60 @@
+.invoice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--uiElementBackground);
+  box-shadow: var(--skim);
+  border-radius: 0.8rem;
+  padding: 3.2rem 2rem;
+  margin-bottom: 1.6rem;
+  flex: 1;
+}
+.invoice__back-button {
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.025rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 8rem;
+  cursor: pointer;
+  color: var(--headers);
+}
+.invoice__top {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+}
+.invoice__menu-wrapper {
+  /* small and up */
+  @media (min-width: 450px) {
+    display: none;
+  }
+}
+.invoice__header {
+  display: flex;
+  justify-self: end;
+  /* small and down */
+  @media (max-width: 449px) {
+    display: none;
+  }
+}
+
+.back-button-wrapper {
+  margin-bottom: 2.5rem;
+  padding-top: 2.2rem;
+}
+
+.status-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.status {
+  display: block;
+  margin-right: 1.6rem;
+}

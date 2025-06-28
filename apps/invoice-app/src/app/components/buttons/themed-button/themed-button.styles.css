@@ -1,34 +1,18 @@
 .themed-button {
 }
 
-.themed-button__primary-light {
-  background: var(--secondary-alpha);
-  color: var(--primary-charlie);
+.themed-button__primary {
+  background: var(--primaryBackground);
+  color: var(--primaryText);
 }
-.themed-button__primary-light:hover {
-  background: var(--secondary-bravo);
-}
-
-.themed-button__primary-dark {
-  color: var(--secondary-bravo);
-  background: var(--dark-delta);
-}
-.themed-button__primary-dark:hover {
-  background: #fff;
+.themed-button__primary:hover {
+  background: var(--primaryBackgroundHover);
 }
 
-.themed-button__secondary-light {
-  color: var(--primary-delta);
-  background: var(--primary-echo);
+.themed-button__secondary {
+  background: var(--secondaryBackground);
+  color: var(--secondaryText);
 }
-.themed-button__secondary-light:hover {
-  background: var(--dark-alpha);
-}
-
-.themed-button__secondary-dark {
-  color: var(--secondary-bravo);
-  background: var(--primary-echo);
-}
-.themed-button__secondary-dark:hover {
-  background: var(--dark-charlie);
+.themed-button__secondary:hover {
+  background: var(--secondaryBackgroundHover);
 }

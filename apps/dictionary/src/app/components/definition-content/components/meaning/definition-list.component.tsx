@@ -1,5 +1,7 @@
-import React from 'react'
-import { IDefinition } from '../../../../state/features/form/types'
+// @ts-nocheck
+
+import React from 'react';
+import { IDefinition } from '../../../../state/features/form/types';
 import styled from 'styled-components';
 
 export const UnorderedList = styled.ul`
@@ -11,11 +13,11 @@ export const UnorderedList = styled.ul`
   margin-left: 4rem;
 
   > li:before {
-    content: "• ";
-    font-weight: ${({theme})=> theme.fontWeight.bold};
-    font-size: ${({theme})=> theme.fontSize.fontSize2};
-    color: ${({ theme })=> theme.colors.accent};
-    margin-right: ${({theme})=> theme.spacing.size5};
+    content: '• ';
+    font-weight: ${({ theme }) => theme.fontWeight.bold};
+    font-size: ${({ theme }) => theme.fontSize.fontSize2};
+    color: ${({ theme }) => theme.colors.accent};
+    margin-right: ${({ theme }) => theme.spacing.size5};
   }
   > li {
     margin-bottom: 1rem;
@@ -29,12 +31,8 @@ export function DefinitionList({ definitions }: Props) {
   return (
     <UnorderedList>
       {definitions.map(({ definition }) => {
-        return <li key={definition}>
-          {definition}
-        </li>
+        return <li key={definition}>{definition}</li>;
       })}
-
     </UnorderedList>
-  )
+  );
 }
-

@@ -1,3 +1,5 @@
+// @ts-nocheck
+//
 import styled from 'styled-components';
 import * as Select from '@radix-ui/react-select';
 import { determineFontFamily } from '../../lib/utils';
@@ -19,13 +21,13 @@ export const SelectTrigger = styled(Select.SelectTrigger)`
 export const SelectIcon = styled(Select.SelectIcon)``;
 
 export const SelectContent = styled(Select.Content)`
-  background-color: ${({theme})=> theme.elementBackground};
+  background-color: ${({ theme }) => theme.elementBackground};
   border-radius: 1.6rem;
   box-shadow: ${({ theme }) => `0 5px 20px 0 ${theme.elementShadow}`};
-  color: ${({theme})=>theme.text};
+  color: ${({ theme }) => theme.text};
   padding: 2.4rem;
   margin-top: 6rem;
-  `;
+`;
 
 export const SelectViewport = styled(Select.Viewport)`
   display: flex;
@@ -63,7 +65,6 @@ export const SelectLabel = styled(Select.Label)`
   font-size: 12px;
   line-height: 25px;
 `;
-
 
 export const StyledItemIndicator = styled(Select.ItemIndicator)`
   position: absolute;

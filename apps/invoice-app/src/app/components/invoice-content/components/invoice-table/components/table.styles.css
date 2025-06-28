@@ -1,0 +1,35 @@
+.table {
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+  letter-spacing: -0.0229167rem;
+  padding-bottom: 3.2rem;
+  background: var(--tableBackground);
+}
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.table th {
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+  letter-spacing: -0.0229167rem;
+  padding-bottom: 3.2rem;
+}
+.table td {
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.025rem;
+  color: var(--headers);
+  padding-bottom: 3.2rem;
+}
+
+.light-text {
+  color: var(--primaryBodyText) !important;
+}

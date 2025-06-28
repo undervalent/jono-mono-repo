@@ -1,0 +1,35 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.checkbox__root {
+  background-color: var(--purple5) !important;
+  border: 1px solid var(--purple5) !important;
+  width: 1.6rem !important;
+  height: 1.6rem !important;
+  border-radius: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox__root:hover,
+.checkbox__root:focus {
+  border: 1px solid var(--purple1) !important;
+}
+.checkbox__active {
+  background-color: var(--purple1) !important;
+  border: 1px solid var(--purple1) !important;
+}
+.checkbox__indicator {
+  display: flex;
+  align-items: center;
+  color: var(--white) !important;
+}
+
+.checkbox__label {
+  color: var(--uiElementText) !important;
+  font-weight: bold;
+  font-size: 1.24rem;
+}

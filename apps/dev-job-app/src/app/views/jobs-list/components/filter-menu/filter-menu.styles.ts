@@ -1,4 +1,5 @@
-import styled from "styled-components";
+// @ts-nocheck
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   border-radius: ${({ theme }) => theme.radius.medium};

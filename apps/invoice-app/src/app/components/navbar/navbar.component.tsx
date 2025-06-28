@@ -1,25 +1,27 @@
-import React from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
-import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
-import { themeState, avatarState } from "../../state";
-import { Wrapper } from "./navbar.styles";
+import React from 'react';
+import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs';
+import './navbar.styles.css';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { getTheme, toggleTheme } from '../../state/ui';
 
 export const NavBar = () => {
-  const [theme, setTheme] = useRecoilState(themeState);
-  const avatarImg = useRecoilValue(avatarState);
-  const handleThemToggle = () =>
-    setTheme((val) => (val === "light" ? "dark" : "light"));
-  const iconColor = "#858BB2";
+  const dispatch = useDispatch();
+  const theme = useSelector(getTheme);
+  const handleThemToggle = () => dispatch(toggleTheme());
+
+  const iconColor = '#858BB2';
+  const avatarImg = '';
 
   const icon =
-    theme === "light" ? (
+    theme === 'light' ? (
       <BsFillMoonFill color={iconColor} size="26px" />
     ) : (
       <BsFillSunFill color={iconColor} size="26px" />
     );
 
   return (
-    <Wrapper>
+    <nav className="navbar">
       <div className="navbar__logo">
         <div className="navbar__logo-icon"></div>
         <div className="navbar__logo-bottom"></div>
@@ -36,9 +38,13 @@ export const NavBar = () => {
           </button>
         </div>
         <div className="navbar__avatar-wrapper">
-          <img src={avatarImg} alt="avatar" className="navbar__avatar" />
+          <img
+            src="public/assets/image-avatar.jpg"
+            alt=""
+            className="navbar__avatar"
+          />
         </div>
       </div>
-    </Wrapper>
+    </nav>
   );
 };

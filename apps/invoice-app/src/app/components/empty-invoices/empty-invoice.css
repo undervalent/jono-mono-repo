@@ -1,0 +1,20 @@
+.empty-invoices {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 12rem;
+}
+.empty-invoices__headline {
+  margin-bottom: 2.4rem;
+  margin-top: 5rem;
+}
+.empty-invoices__text {
+  color: var(--emptyText);
+  max-width: 30ch;
+  line-height: 2;
+}
+.empty-invoices__text-bold {
+  font-weight: 700;
+}

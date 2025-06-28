@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import media from "styled-media-query";
-
-export const Wrapper = styled.section`
+import styled from 'styled-components';
+import media from 'styled-media-query';
+import { ThemeProps } from '../../styles/globals';
+export const Wrapper = styled.section<ThemeProps>`
   gap: 3.7rem;
   justify-content: space-between;
   background: ${({ theme }) => theme.contentBackground};
@@ -25,7 +25,7 @@ export const UserInfo = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  ${media.greaterThan("medium")`
+  ${media.greaterThan('medium')`
     flex-direction: row;
  `}
 `;
@@ -34,14 +34,14 @@ export const Bio = styled.p`
   margin-top: 2rem;
   margin-bottom: 3.2rem;
 `;
-export const Statistics = styled.div`
+export const Statistics = styled.div<ThemeProps>`
   background: ${({ theme }) => theme.background};
   border-radius: 1rem;
   padding: 1.5rem 3.2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   text-align: center;
-  ${media.greaterThan("medium")`
+  ${media.greaterThan('medium')`
     text-align:left;
   `}
 `;
@@ -55,7 +55,7 @@ export const StatItem = styled.div`
   flex-direction: column;
 `;
 export const StatName = styled.span``;
-export const StatValue = styled.span`
+export const StatValue = styled.span<ThemeProps>`
   font-size: 2.2rem;
   font-weight: 700;
   line-height: 3.3rem;
@@ -70,11 +70,11 @@ interface IntSocialItem {
 export const SocialItem = styled.div<IntSocialItem>`
   display: flex;
   gap: 2rem;
-  opacity: ${({ isDisabled }) => (isDisabled ? ".5" : "1")};
+  opacity: ${({ isDisabled }) => (isDisabled ? '.5' : '1')};
   margin-right: 4.2rem;
   margin-bottom: 2rem;
 `;
 
-export const SocialItemText = styled.span`
+export const SocialItemText = styled.span<ThemeProps>`
   color: ${({ theme }) => theme.text};
 `;
