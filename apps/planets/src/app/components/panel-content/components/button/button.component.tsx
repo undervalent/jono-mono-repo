@@ -1,11 +1,13 @@
-import React from "react";
-import { PlanetButton } from "./button.styles";
-import { SubSection } from "../../../../lib/types";
+import React from 'react';
+import { PlanetButton } from './button.styles';
+import { ISubSection } from '../../../../lib/types';
+
 interface Props {
+  children: React.ReactNode;
   color?: string;
   displayNumber?: string;
-  section: SubSection;
-  clickHandler(section: SubSection): void;
+  section: ISubSection;
+  clickHandler(section: ISubSection): void;
 }
 
 export const Button: React.FC<Props> = ({
@@ -18,7 +20,7 @@ export const Button: React.FC<Props> = ({
   const numberDisplay = displayNumber && (
     <span className="planet-button__displayNumber">{displayNumber}</span>
   );
-  const activeColor = color || "transparent";
+  const activeColor = color || 'transparent';
 
   const handleClick = () => clickHandler(section);
 

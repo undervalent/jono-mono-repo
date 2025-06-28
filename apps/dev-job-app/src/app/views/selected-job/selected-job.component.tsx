@@ -1,5 +1,5 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React from 'react';
+import { useParams } from 'react-router-dom';
 import {
   PageWrapper,
   Header,
@@ -9,13 +9,13 @@ import {
   Container,
   OrderedList,
   UnorderedList,
-} from "./selected-job.styles";
-import { useAppSelector } from "../../state";
-import { Button, LogoItem } from "../../shared-components";
-import { ContentWrapper } from "../../lib/styles";
+} from './selected-job.styles';
+import { useAppSelector } from '../../state';
+import { Button, LogoItem } from '../../shared-components';
+import { ContentWrapper } from '../../lib/styles';
 
 export const SelectedJob = () => {
-  const { id } = useParams();
+  const { id }: any = useParams();
   const { entities } = useAppSelector((state) => {
     return {
       entities: state.jobList.entities,

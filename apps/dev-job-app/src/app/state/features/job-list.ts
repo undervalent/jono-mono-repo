@@ -2,13 +2,12 @@ import {
   createSlice,
   createEntityAdapter,
   PayloadAction,
-  Dictionary,
   EntityId,
-} from "@reduxjs/toolkit";
-import jobListData from "../../lib/data/data";
-import { IJob } from "../../lib/types";
-import { RootState } from "../store";
-import { generateFilteredJobList } from "../utils/index";
+} from '@reduxjs/toolkit';
+import { data } from './data';
+import { IJob } from '../../lib/types';
+import { RootState } from '../store';
+import { generateFilteredJobList } from '../utils/index';
 const jobsAdapter = createEntityAdapter<IJob>({
   // Assume IDs are stored in a field other than `job.id`
   // selectId: (job) => job.id,
@@ -17,10 +16,10 @@ const jobsAdapter = createEntityAdapter<IJob>({
 });
 
 const emptyInitialState = jobsAdapter.getInitialState();
-const initialState = jobsAdapter.upsertMany(emptyInitialState, jobListData);
+const initialState = jobsAdapter.upsertMany(emptyInitialState, data);
 
 export interface JobListState {
-  entities: Dictionary<IJob>;
+  entities: any;
   ids: EntityId[];
   fullTime: boolean;
   searchQuery: string;
@@ -30,13 +29,13 @@ export interface JobListState {
 }
 
 export const jobListSlice = createSlice({
-  name: "jobList",
+  name: 'jobList',
   initialState: {
     ...initialState,
     fullTime: false,
-    searchQuery: "",
+    searchQuery: '',
     location: [],
-    locationQuery: "",
+    locationQuery: '',
     filteredJobList: initialState.ids,
     showCount: 1,
   },
@@ -75,7 +74,7 @@ export const getFilteredJobList = (state: RootState) => {
   const { entities, filteredJobList, showCount } = state.jobList;
   const count = showCount * 12;
   return filteredJobList.map((id: any, idx: number) =>
-    idx < count ? entities[id] : null
+    idx < count ? entities[id] : null,
   );
 };
 export const getEntities = (state: RootState) => state.jobList.entities;

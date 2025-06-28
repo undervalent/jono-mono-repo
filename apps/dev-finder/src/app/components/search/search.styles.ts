@@ -1,6 +1,6 @@
-import styled from "styled-components";
-
-export const Wrapper = styled.form`
+import styled from 'styled-components';
+import { ThemeProps } from '../../styles/globals';
+export const Wrapper = styled.form<ThemeProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,7 +14,7 @@ export const Wrapper = styled.form`
   gap: 2.4rem;
 `;
 
-export const Input = styled.input`
+export const Input = styled.input<ThemeProps>`
   width: 100%;
   height: 100%;
   border: 0;

@@ -1,4 +1,6 @@
-import styled from "styled-components";
+//@ts-nocheck
+
+import styled from 'styled-components';
 // import * as Form from "@radix-ui/react-form";
 
 export const Input = styled.input`

@@ -1,9 +1,18 @@
 /// <reference types="vitest" />
+import path from 'path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
 export default defineConfig({
+  root: __dirname,
+  build: {
+    outDir: '../../dist/apps/invoice-app',
+    reportCompressedSize: true,
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
+  },
   cacheDir: '../../node_modules/.vite/invoice-app',
 
   server: {
@@ -16,10 +25,7 @@ export default defineConfig({
     host: 'localhost',
   },
 
-  plugins: [
-    react(),
-    nxViteTsPaths(),
-  ],
+  plugins: [react(), nxViteTsPaths()],
 
   // Uncomment this if you are using workers.
   // worker: {
@@ -31,11 +37,26 @@ export default defineConfig({
   // },
 
   test: {
+    reporters: ['default'],
+    coverage: {
+      reportsDirectory: '../../coverage/apps/invoice-app',
+      provider: 'v8',
+    },
     globals: true,
     cache: {
       dir: '../../node_modules/.vitest',
     },
     environment: 'jsdom',
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+  },
+  resolve: {
+    alias: {
+      '@state': path.resolve(__dirname, 'src/app/state'),
+      '@hooks': path.resolve(__dirname, 'src/app/hooks'),
+      '@utils': path.resolve(__dirname, 'src/app/utils'),
+      '@components': path.resolve(__dirname, 'src/app/components'),
+      '@lib': path.resolve(__dirname, 'src/app/lib'),
+      '@assets': path.resolve(__dirname, 'src/aassets'),
+    },
   },
 });

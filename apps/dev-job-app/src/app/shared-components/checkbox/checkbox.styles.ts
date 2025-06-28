@@ -1,5 +1,7 @@
-import styled from "styled-components";
-import * as Checkbox from "@radix-ui/react-checkbox";
+//@ts-nocheck
+
+import styled from 'styled-components';
+import * as Checkbox from '@radix-ui/react-checkbox';
 interface IProps {
   isSelected: boolean;
 }
