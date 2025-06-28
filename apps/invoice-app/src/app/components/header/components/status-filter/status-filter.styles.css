@@ -1,0 +1,13 @@
+.status-filter__dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size5);
+  width: 19.2rem;
+  background: var(--uiElementBackground);
+  border-radius: var(--size2);
+  padding: var(--size7);
+}
+.status-filter__trigger {
+  font-weight: bold;
+  color: var(--uiElementText);
+}

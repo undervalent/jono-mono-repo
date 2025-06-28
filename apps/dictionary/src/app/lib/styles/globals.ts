@@ -1,20 +1,16 @@
-import { createGlobalStyle } from "styled-components";
-import { CSSReset } from "./reset";
-import { ThemeProps } from "../types";
-
-type GlobalThemeProps = {
-  theme: ThemeProps;
-};
+// @ts-nocheck
+import { createGlobalStyle } from 'styled-components';
+import { CSSReset } from './reset';
 
 export const GlobalStyles = createGlobalStyle`
 
 ${CSSReset}
 
 :root {
---black: ${({theme})=> theme.colors.black};
+--black: ${({ theme }) => theme.colors.black};
 --white: ${({ theme }) => theme.colors.white};
---darkText: ${({ theme })=> theme.colors.black3 };
---lightText: ${({ theme }) => theme.colors.white };
+--darkText: ${({ theme }) => theme.colors.black3};
+--lightText: ${({ theme }) => theme.colors.white};
 --elementBgDark: ${({ theme }) => theme.colors.black2};
 --elementBgLight: ${({ theme }) => theme.colors.white2};
 --switchBgDark: ${({ theme }) => theme.colors.accent};
@@ -22,11 +18,11 @@ ${CSSReset}
 }
   body {
     background: ${({ theme }) => theme.background};
-    color: ${({ theme }: GlobalThemeProps) => theme.text};
+    color: ${({ theme }) => theme.text};
     transition: background 0.2s ease-in, color 0.2s ease-in;
     font-size: ${({ theme }) => theme.fontSize.fontSize2};
     line-height: ${({ theme }) => theme.lineHeight.lineHeight2};
-    font-family: ${({theme})=> theme.fontFamily};
+    font-family: ${({ theme }) => theme.fontFamily};
   }
 
 h1,
@@ -34,7 +30,7 @@ h2,
 h3,
 h4 {
   font-weight: ${({ theme }) => theme.fontWeight.bold};
-  color: ${({ theme }: GlobalThemeProps) => theme.headers};
+  color: ${({ theme }) => theme.headers};
 }
 
 h1 {
@@ -72,18 +68,18 @@ h4 {
 `;
 
 export const lightTheme = {
-  background: "var(--white)",
-  headers: "var(--dark-text)",
-  text: "var(--dark-text)",
-  elementBackground: "var(--elementBgLight)",
-  switchBg: "var(--switchBgLight)",
+  background: 'var(--white)',
+  headers: 'var(--dark-text)',
+  text: 'var(--dark-text)',
+  elementBackground: 'var(--elementBgLight)',
+  switchBg: 'var(--switchBgLight)',
   elementShadow: 'rgba(0, 0, 0, 0.10)',
 };
 export const darkTheme = {
-  background: "var(--black)",
-  headers: "var(--white)",
-  text: "var(--white)",
-  elementBackground: "var(--elementBgDark)",
-  switchBg: "var(--switchBgDark)",
+  background: 'var(--black)',
+  headers: 'var(--white)',
+  text: 'var(--white)',
+  elementBackground: 'var(--elementBgDark)',
+  switchBg: 'var(--switchBgDark)',
   elementShadow: '#A445ED',
 };

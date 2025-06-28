@@ -1,31 +1,30 @@
+import React from 'react';
 import './index.css';
-
-import { ThemeProvider } from "styled-components";
-import { useRecoilValue } from "recoil";
-import { themeState, selectedInvoiceState, showFormState } from "./state";
-import { InvoiceList, Invoice, InvoiceForm } from "./views";
-import { GlobalStyles, lightTheme, darkTheme } from "./lib/styles/globals";
-import { NavBar } from "./components/navbar";
-import { Wrapper, ContentWrapper } from "./app.styles";
+import { useSelector } from 'react-redux';
+import { getTheme } from './state/ui';
+import { getSelectedInvoice } from './state/invoice';
+import { SlideOut } from './components/slideout/slideout';
+import { InvoiceList, Invoice } from './views';
+import { NavBar } from './components/navbar';
+import { Wrapper, ContentWrapper } from './app.styles';
 
 function App() {
-  const theme = useRecoilValue(themeState);
-  const selected = useRecoilValue(selectedInvoiceState);
-  const showForm = useRecoilValue(showFormState);
-  const isDarkTheme = theme === "dark";
+  const theme = useSelector(getTheme);
+  const selected = useSelector(getSelectedInvoice);
+
+  React.useEffect(() => {
+    document.body.className = theme;
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   return (
-    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
-      <GlobalStyles />
-      <Wrapper>
-        <NavBar />
-        <ContentWrapper>
-          {selected && <Invoice />}
-          {!selected && <InvoiceList />}
-          {showForm && <InvoiceForm />}
-        </ContentWrapper>
-      </Wrapper>
-    </ThemeProvider>
+    <Wrapper>
+      <NavBar />
+      <ContentWrapper>
+        {selected ? <Invoice /> : <InvoiceList />}
+        <SlideOut />
+      </ContentWrapper>
+    </Wrapper>
   );
 }
 

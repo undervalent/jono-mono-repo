@@ -1,0 +1,27 @@
+.status-chip {
+  display: flex;
+  width: 10.4rem;
+  height: 4rem;
+  border-radius: 6px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.025rem;
+  font-weight: 700;
+}
+.status-chip__tag {
+  width: 0.8rem;
+  height: 0.8rem;
+  display: inline-block;
+  margin-right: 0.5rem;
+  border-radius: 10rem;
+}
+
+.status-chip__dynamic {
+  background: var(--background);
+  color: var(--color);
+}
+.status-chip__tag-dynamic {
+  background: var(--color);
+}

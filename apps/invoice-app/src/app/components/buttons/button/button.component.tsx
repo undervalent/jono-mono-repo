@@ -1,50 +1,54 @@
-import React from "react";
-import classNames from "classnames";
-
-import "../styles/deault-button.css";
-import "./button.styles.css";
-import plus from "../../../../assets/icon-plus.svg";
+import React from 'react';
+import classNames from 'classnames';
+import { AccessibleIcon } from 'radix-ui';
+import { toCssSize } from '../../../lib/utils';
+import '../styles/deault-button.css';
+import './button.styles.css';
 
 interface Props {
-  type?: "primary" | "secondary" | "danger";
-  size?: "small" | "medium" | "large";
-  icon?: boolean;
-  onClick(): void;
+  type?: 'primary' | 'secondary' | 'danger' | 'tertiary';
+  size?: 'small' | 'medium' | 'large';
+  icon?: any;
+  children: React.ReactNode;
+  iconLabel?: string;
+  width?: number | string;
   disabled?: boolean;
-  children: React.ReactNode
+  onClick?: any;
+  intent?: string;
 }
 
 export const Button: React.FC<Props> = ({
-  type,
-  size,
+  type = 'primary',
+  size = 'medium',
   children,
-  icon,
-  onClick,
-  disabled,
+  icon = null,
+  iconLabel = '',
+  width = '',
+  disabled = false,
+  ...htmlAttributes
 }) => {
   const classes = classNames({
-    "default-button": true,
-    "main-button": true,
+    'default-button': true,
+    'main-button': true,
     [`main-button__${type}`]: true,
-    [`main-button__${size}`]: true,
+    [`main-button__${size}`]: !!width ? false : true,
     [`main-button__icon`]: icon,
     [`main-button__disabled`]: disabled,
   });
 
   return (
-    <button className={classes} onClick={onClick} disabled={disabled}>
+    <button
+      className={classes}
+      style={{ maxWidth: toCssSize(width) }}
+      disabled={disabled}
+      {...htmlAttributes}
+    >
       {icon && (
-        <div className="main-button__icon-wrapper">
-          <img src={plus} alt="plus icon" />
-        </div>
+        <AccessibleIcon.Root label={iconLabel ?? 'Icon'}>
+          {icon}
+        </AccessibleIcon.Root>
       )}
       {children}
     </button>
   );
-};
-
-Button.defaultProps = {
-  size: "medium",
-  type: "primary",
-  icon: false,
 };

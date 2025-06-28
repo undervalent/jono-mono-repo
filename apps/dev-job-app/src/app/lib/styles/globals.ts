@@ -1,6 +1,8 @@
-import { createGlobalStyle } from "styled-components";
-import { CSSReset } from "./reset";
-import { ThemeProps } from "../types";
+// @ts-nocheck
+
+import { createGlobalStyle } from 'styled-components';
+import { CSSReset } from './reset';
+import { ThemeProps } from '../types';
 
 type GlobalThemeProps = {
   theme: ThemeProps;
@@ -28,7 +30,7 @@ ${CSSReset}
 }
   body {
     background: ${({ theme }) => theme.background};
-    color: ${({ theme }: GlobalThemeProps) => theme.text};
+    color: ${({ theme }) => theme.text};
     transition: background 0.2s ease-in, color 0.2s ease-in;
     font-size: ${({ theme }) => theme.fontSize.fontSize2};
     line-height: ${({ theme }) => theme.lineHeight.lineHeight3};
@@ -39,7 +41,7 @@ h2,
 h3,
 h4 {
   font-weight: ${({ theme }) => theme.fontWeight.bold};
-  color: ${({ theme }: GlobalThemeProps) => theme.headers};
+  color: ${({ theme }) => theme.headers};
 }
 
 h1 {
@@ -77,24 +79,24 @@ h4 {
 `;
 
 export const lightTheme = {
-  background: "var(--light-bravo)",
-  headers: "var(--dark-alpha)",
-  text: "var(--grey-bravo)",
-  elementBackground: "var(--light-alpha)",
-  secondaryBtnBackground: "#EEEFFD",
-  secondaryBtnBackgroundHover: "#C5C9F5",
-  secondaryBtnText: " #5964E0",
-  checkBoxBG: "#E7E8E9",
-  checkBoxSelectedBG: "var(--primary-alpha)",
+  background: 'var(--light-bravo)',
+  headers: 'var(--dark-alpha)',
+  text: 'var(--grey-bravo)',
+  elementBackground: 'var(--light-alpha)',
+  secondaryBtnBackground: '#EEEFFD',
+  secondaryBtnBackgroundHover: '#C5C9F5',
+  secondaryBtnText: ' #5964E0',
+  checkBoxBG: '#E7E8E9',
+  checkBoxSelectedBG: 'var(--primary-alpha)',
 };
 export const darkTheme = {
-  background: "var(--dark-bravo)",
-  headers: "var(--light-alpha)",
-  text: "var(--grey-alpha)",
-  elementBackground: "var(--dark-alpha)",
-  secondaryBtnBackground: "#303642",
-  secondaryBtnBackgroundHover: "#696E76",
-  secondaryBtnText: "#fff",
-  checkBoxBG: "#313743",
-  checkBoxSelectedBG: "var(--primary-alpha)",
+  background: 'var(--dark-bravo)',
+  headers: 'var(--light-alpha)',
+  text: 'var(--grey-alpha)',
+  elementBackground: 'var(--dark-alpha)',
+  secondaryBtnBackground: '#303642',
+  secondaryBtnBackgroundHover: '#696E76',
+  secondaryBtnText: '#fff',
+  checkBoxBG: '#313743',
+  checkBoxSelectedBG: 'var(--primary-alpha)',
 };

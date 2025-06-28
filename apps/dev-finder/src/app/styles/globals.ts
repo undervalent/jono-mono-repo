@@ -1,10 +1,38 @@
-import { createGlobalStyle } from "styled-components";
-import { CSSReset } from ".";
-import { ThemeProps } from "../types";
+import { createGlobalStyle, DefaultTheme } from 'styled-components';
+import { CSSReset } from '.';
 
-type GlobalThemeProps = {
-  theme: ThemeProps;
+export const lightTheme = {
+  background: 'var(--grey-secondary)',
+  contentBackground: 'var(--white)',
+  button: 'var(--primary)',
+  hover: 'var(--secondary)',
+  text: 'var(--secondary)',
+  date: 'var(--grey-primary)',
+  headers: 'var(--dark-primary)',
+  username: 'var(--primary)',
+  themeButton: 'var(--secondary)',
+  themeButtonHover: '#222731',
 };
+export const darkTheme = {
+  background: '#141d2f',
+  contentBackground: 'var(--dark-secondary)',
+  button: 'var(--primary)',
+  hover: 'var(--secondary)',
+  text: 'var(--white)',
+  date: 'var(--white)',
+  headers: 'var(--white)',
+  username: 'var(--primary)',
+  themeButton: 'var(--white)',
+  themeButtonHover: '#90a4d4',
+};
+
+export type ThemeType = typeof lightTheme;
+
+export type ThemeProps = {
+  theme: ThemeType;
+};
+
+export const theme: DefaultTheme = lightTheme;
 
 export const GlobalStyles = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
@@ -27,8 +55,8 @@ ${CSSReset}
 
 }
   body {
-    background: ${({ theme }: GlobalThemeProps) => theme.background};
-    color: ${({ theme }: GlobalThemeProps) => theme.text};
+    background: ${({ theme }: any) => theme.background};
+    color: ${({ theme }: any) => theme.text};
     transition: background 0.2s ease-in, color 0.2s ease-in;
     font-family: 'Space Mono', monospace;
     font-size: 1.5rem;
@@ -38,7 +66,7 @@ ${CSSReset}
   h2,
   h3,
   h4 {
-    color: ${({ theme }: GlobalThemeProps) => theme.headers};
+    color: ${({ theme }: any) => theme.headers};
   }
 
   h1 {
@@ -55,35 +83,10 @@ ${CSSReset}
    font-size: 1.6rem;
    line-height: 2.4rem;
    font-weight: 400;
-    color: ${({ theme }: GlobalThemeProps) => theme.username};
+    color: ${({ theme }: any) => theme.username};
   }
   h4 {
    font-size: 1.3rem;
    line-height: 2rem;
   }
 `;
-
-export const lightTheme = {
-  background: "var(--grey-secondary)",
-  contentBackground: "var(--white)",
-  button: "var(--primary)",
-  hover: "var(--secondary)",
-  text: "var(--secondary)",
-  date: "var(--grey-primary)",
-  headers: "var(--dark-primary)",
-  username: "var(--primary)",
-  themeButton: "var(--secondary)",
-  themeButtonHover: "#222731",
-};
-export const darkTheme = {
-  background: "#141d2f",
-  contentBackground: "var(--dark-secondary)",
-  button: "var(--primary)",
-  hover: "var(--secondary)",
-  text: "var(--white)",
-  date: "var(--white)",
-  headers: "var(--white)",
-  username: "var(--primary)",
-  themeButton: "var(--white)",
-  themeButtonHover: "#90a4d4",
-};
