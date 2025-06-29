@@ -1,0 +1,38 @@
+.chip {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.3rem;
+  width: 14rem;
+  height: 7.2rem;
+  flex-shrink: 0;
+  border-radius: 1.5rem;
+  text-transform: uppercase;
+  line-height: normal;
+}
+.headline {
+  font-size: var(--fontSize1);
+  font-style: normal;
+  font-weight: var(--regular);
+  letter-spacing: 0.875px;
+  color: var(--blackDark)
+}
+.win {
+  background: var(--primaryDark);
+}
+.ties {
+  background: var(--grayDark);
+}
+.loss {
+  background: var(--accentDark);
+}
+.value {
+  color: var(--blackDark);
+  text-align: center;
+  font-size: var(--fontSize5);
+  font-style: normal;
+  font-weight: var(--bold);
+  line-height: normal;
+  letter-spacing: 1.5px;
+}
