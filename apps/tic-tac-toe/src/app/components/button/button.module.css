@@ -15,11 +15,10 @@
   cursor: pointer;
 }
 .button:disabled {
-  border-color: transparent;
   cursor: not-allowed;
   background-image: none;
   pointer-events: none;
-  opacity:var(--opacity50);
+  opacity: 0.9 !important;
 }
 .button svg {
   width: var(--size6);
@@ -29,7 +28,7 @@
 
 .light {
   background: var(--primaryDark);
-  box-shadow: 0px -8px 0px 0px #118C87 inset;
+  box-shadow: 0px -8px 0px 0px #118c87 inset;
 }
 
 .light:hover {
@@ -39,8 +38,8 @@
   background: var(--primaryLight);
 }
 .subtle {
-background: var(--grayDark);
-box-shadow: 0px -4px 0px 0px #6B8997 inset;
+  background: var(--grayDark);
+  box-shadow: 0px -4px 0px 0px #6b8997 inset;
 }
 
 .subtle:hover {
@@ -51,7 +50,7 @@ box-shadow: 0px -4px 0px 0px #6B8997 inset;
 }
 .default {
   background: var(--accentDark);
-  box-shadow: 0px -8px 0px 0px #CC8B13 inset;
+  box-shadow: 0px -8px 0px 0px #cc8b13 inset;
 }
 
 .default:hover {
@@ -63,7 +62,7 @@ box-shadow: 0px -4px 0px 0px #6B8997 inset;
 
 .sm {
   font-size: var(--fontSize2);
-  height : 5.2rem;
+  height: 5.2rem;
   width: 5.2rem;
   border-radius: var(--medium);
 }

@@ -1,5 +1,5 @@
-import { GameBoard } from "./game";
-import _ from 'lodash';
+import { GameBoard } from './game';
+import * as _ from 'remeda';
 const winningConditions = [
   [0, 1, 2],
   [3, 4, 5],
@@ -8,70 +8,70 @@ const winningConditions = [
   [1, 4, 7],
   [2, 5, 8],
   [0, 4, 8],
-  [2, 4, 6]
+  [2, 4, 6],
 ];
 
-export function handleValidation(gameState:GameBoard) {
+export function handleValidation(gameState: GameBoard) {
   let roundWon = false;
 
-  let i = 0
+  let i = 0;
   for (i; i <= 7; i++) {
-        const winCondition = winningConditions[i];
-        const a = gameState[winCondition[0]];
-        const b = gameState[winCondition[1]];
-      const c = gameState[winCondition[2]];
+    const winCondition = winningConditions[i];
+    const a = gameState[winCondition[0]];
+    const b = gameState[winCondition[1]];
+    const c = gameState[winCondition[2]];
 
-      if (!a ||!b || !c) {
-            continue;
-        }
-        if (a === b && b === c) {
-            roundWon = true;
-            break
-        }
+    if (!a || !b || !c) {
+      continue;
     }
+    if (a === b && b === c) {
+      roundWon = true;
+      break;
+    }
+  }
   if (roundWon) {
     return {
       status: 'win',
-      winningCondition: winningConditions[i]
+      winningCondition: winningConditions[i],
     };
-    }
+  }
 
   const roundDraw = !gameState.includes('');
 
   if (roundDraw) {
     return {
       status: 'tie',
-      winningCondition: null
+      winningCondition: null,
     };
   }
 
   return {
     status: '',
-    winningCondition: null
-  }
+    winningCondition: null,
+  };
 }
 
-type NumberArray = number[];
+type NumberArray = any;
 export function getAvailableSpaces(gameBoard: string[]) {
-  const emptySpaces:NumberArray = [];
+  const emptySpaces: NumberArray = [];
 
   gameBoard.forEach((element: string, idx: number) => {
     if (element) return;
     emptySpaces.push(idx);
   });
 
-  return emptySpaces
+  return emptySpaces;
 }
-
 
 export function getRandomItem(gameBoard: string[]) {
   const availableSpaces = getAvailableSpaces(gameBoard);
-  const randomItem = _.sample(availableSpaces);
+  console.log('availableSpaces -->', availableSpaces);
+  const randomItem = _.sample(1)(availableSpaces)[0];
+  console.log('RANDOME ITEM -->', randomItem);
 
   return randomItem;
-
 }
-export function sleep(milliseconds:number) {
+export function sleep(milliseconds: number) {
   const date = Date.now();
   let currentDate = null;
   do {

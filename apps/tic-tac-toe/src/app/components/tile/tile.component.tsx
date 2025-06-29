@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './tile.module.css';
-import _ from 'lodash';
+import * as _ from 'remeda';
 
 import XHoverIcon from '@assets/icon-x-outline.svg';
 import XIcon from '@assets/icon-x.svg';
@@ -14,26 +14,10 @@ import {
   setBoardAction,
   getGameStatus,
   getWinningCondition,
-  getIsVsCpu,
-  getGameBoard,
-  GameBoard,
 } from '@state/features/game';
 import { useAppSelector, useAppDispatch } from '@state/index';
 type Value = string | null;
 type Idx = number;
-
-type NumberArray = number[];
-
-function getAvailableSpaces(gameBoard: string[]) {
-  const emptySpaces: NumberArray = [];
-
-  gameBoard.forEach((element: string, idx: number) => {
-    if (element) return;
-    emptySpaces.push(idx);
-  });
-
-  return emptySpaces;
-}
 
 interface Props {
   value: Value;
@@ -45,10 +29,6 @@ function useTile(value: Value, idx: Idx) {
   const currentPlayer = useAppSelector(getCurrentPlayer);
   const status = useAppSelector(getGameStatus);
   const winningCondition = useAppSelector(getWinningCondition);
-  const isVsCpu = useAppSelector(getIsVsCpu);
-  const gameBoard = useAppSelector(getGameBoard);
-  const availableSpaces = getAvailableSpaces(gameBoard);
-  const randomItem = _.sample(availableSpaces);
 
   const hoveredIcon =
     currentPlayer === 'X' ? (
@@ -70,7 +50,6 @@ function useTile(value: Value, idx: Idx) {
       icon = hoveredIcon;
       break;
   }
-
   if (winningCondition && winningCondition.includes(idx)) {
     switch (value) {
       case 'X':
@@ -92,27 +71,22 @@ function useTile(value: Value, idx: Idx) {
     {
       icon,
       status,
+      isDisabled: status === 'completed' || !!value,
     },
     {
-      handleTileClick: () => {
-        dispatch(setBoardAction(idx));
-        if (isVsCpu) {
-          console.log('RANDOME -->', randomItem);
-          dispatch(setBoardAction(randomItem));
-        }
-      },
+      handleTileClick: () => dispatch(setBoardAction(idx)),
     },
   ];
 }
 
 export function Tile({ value, idx }: Props) {
-  const [{ icon, status }, { handleTileClick }] = useTile(value, idx);
+  const [{ icon, isDisabled }, { handleTileClick }] = useTile(value, idx);
 
   return (
     <button
       className={styles.tile}
       onClick={handleTileClick}
-      disabled={status === 'completed'}
+      disabled={isDisabled}
     >
       {icon}
     </button>

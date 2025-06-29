@@ -14,7 +14,7 @@ export function Button({
   size = 'lg',
   ...rest
 }: IProps) {
-  const classes = classNames({
+  const classes = classNames(styles.button, {
     [styles.light]: variant === 'light',
     [styles.subtle]: variant === 'subtle',
     [styles.default]: variant === 'default',

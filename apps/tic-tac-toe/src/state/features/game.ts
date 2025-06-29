@@ -62,37 +62,28 @@ export const gameSlice = createSlice({
       state.outcome = '';
       state.isModalActive = false;
     },
-    setBoardAction: (state, action) => {
-      const currentPlayer = state.currentPlayer;
-      const newBoard = [...state.gameBoard];
+    setBoardAction: (state, { payload: idx }) => {
+      if (state.gameBoard[idx]) return;
 
-      console.log('ACTION -->', newBoard[action.payload]);
+      state.gameBoard[idx] = state.currentPlayer;
 
-      if (newBoard[action.payload] === '') {
-        newBoard[action.payload] = state.currentPlayer;
-        const { status, winningCondition } = handleValidation(newBoard);
+      const { status, winningCondition } = handleValidation(state.gameBoard);
+      state.winningCondition = winningCondition;
 
-        state.gameBoard[action.payload] = currentPlayer;
-        state.winningCondition = winningCondition;
+      if (status) {
+        state.status = 'completed';
+        state.isModalActive = true;
+        state.outcome = status;
 
-        if (status) {
-          state.status = 'completed';
-          state.isModalActive = true;
-          if (status === 'tie') {
-            state.ties = state.ties + 1;
-            state.outcome = 'tie';
-          }
-          if (status === 'win') {
-            currentPlayer === 'X'
-              ? (state.xWin = state.xWin + 1)
-              : (state.oWin = state.oWin + 1);
-            state.outcome = 'win';
-          }
-          return;
+        if (status === 'win') {
+          state.currentPlayer === 'X' ? (state.xWin += 1) : (state.oWin += 1);
+        } else {
+          state.ties += 1; // tie
         }
-
-        state.currentPlayer = state.currentPlayer === 'X' ? 'O' : 'X';
+        return; // fine—returns undefined to Immer
       }
+
+      state.currentPlayer = state.currentPlayer === 'X' ? 'O' : 'X';
     },
     startNewGame: (state) => {
       state.status = 'intro';

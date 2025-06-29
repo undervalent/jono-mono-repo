@@ -3,10 +3,8 @@ import { getGameBoard } from '@state/features/game';
 import { useAppSelector } from '@state/index';
 import { Tile } from '@components/tile';
 import styles from './board.module.css';
-import { useHandleCpuTurn } from '@hooks';
 
 export function Board() {
-  useHandleCpuTurn();
   const board = useAppSelector(getGameBoard);
 
   return (
